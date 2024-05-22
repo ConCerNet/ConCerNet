@@ -35,7 +35,7 @@ const Dashboard = () => {
                             />
                             
                             <p>
-                                
+                                Hola mundo
                             </p>
 
                         </div>
