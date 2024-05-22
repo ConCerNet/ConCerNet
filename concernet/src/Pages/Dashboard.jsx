@@ -1,20 +1,28 @@
 import NavBar from "../Components/NavBar";
-import fachada from "../Images/fachada.jpg";
+import cancha from "../Images/Cancha.png";
+import parque from "../Images/Parque.png";
+import piscina from "../Images/Piscina.png";
+import salonSocial from "../Images/SalonSocial.png";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
+
 const images = [
     {
-      original: "https://picsum.photos/id/1018/1000/600/",
-      thumbnail: "https://picsum.photos/id/1018/250/150/",
+      original: cancha,
+      thumbnail: cancha,
     },
     {
-      original: "https://picsum.photos/id/1015/1000/600/",
-      thumbnail: "https://picsum.photos/id/1015/250/150/",
+      original: parque,
+      thumbnail: parque,
     },
     {
-      original: "https://picsum.photos/id/1019/1000/600/",
-      thumbnail: "https://picsum.photos/id/1019/250/150/",
+        original: piscina,
+        thumbnail: piscina,
+    },
+    {
+        original: salonSocial,
+        thumbnail: salonSocial,
     },
   ];
 
@@ -25,23 +33,33 @@ const Dashboard = () => {
                 <body>
                     <div className="home">
 
-                        <div style={{backgroundColor: "white", width: "30vw", margin:"10px 10px"}}>
-                            <ImageGallery items={images}
-                                showNav={false}
-                                showPlayButton={false}
-                                slideDuration={900}
-                                showBullets={true}
-                                showThumbnails={false}
-                            />
-                            
-                            <p>
-                                Hola mundo
+                        <div style={{backgroundColor: "white", width: "55vw", margin:"30px 350px"}}>
+                                <div className="galeria">
+                                <ImageGallery items={images}
+                                    showNav={false}
+                                    showPlayButton={false}
+                                    slideDuration={900}
+                                    showBullets={true}
+                                    showThumbnails={true}
+                                    slideInterval={3000}
+                                    autoPlay={true}
+                                >
+                                </ImageGallery>
+
+                                </div>
+                            <br/>
+                            <h3>Descripción</h3>
+                            <p style={{textAlign: "justify"}}>
+                                Como conjunto te ofrecemos los mejores espacios para que disfrutes con tus amigos y familiares, tendrás
+                                acceso a la cancha multifuncional, a la piscina tanto de niños como de adultos, al salón social donde
+                                podrás realizar cualquier evento que desees, de igual forma, tenemos el parque para que lleves a tus hijos,
+                                hermanos e incluso mascota para que te puedas distraer y disfrutar de un gran momento.
                             </p>
 
                         </div>
                     
                         <h1>Todo sobre ConCerNet</h1>
-                        <img src={fachada} alt="ConCerNet" />
+                        {/*<img src={fachada} alt="ConCerNet" />*/}
                         <div className="descripcion">
                             <p className="parrafo">
                             Bienvenido a ConCerNet, tu nueva solución digital para gestionar y reservar espacios en conjuntos cerrados. ConCerNet está diseñado para facilitarte la vida, ofreciendo una plataforma intuitiva y eficiente para que puedas reservar tus espacios favoritos de manera rápida y sencilla.
