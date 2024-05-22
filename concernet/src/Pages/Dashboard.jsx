@@ -1,15 +1,46 @@
 import NavBar from "../Components/NavBar";
 import fachada from "../Images/fachada.jpg";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
+const images = [
+    {
+      original: "https://picsum.photos/id/1018/1000/600/",
+      thumbnail: "https://picsum.photos/id/1018/250/150/",
+    },
+    {
+      original: "https://picsum.photos/id/1015/1000/600/",
+      thumbnail: "https://picsum.photos/id/1015/250/150/",
+    },
+    {
+      original: "https://picsum.photos/id/1019/1000/600/",
+      thumbnail: "https://picsum.photos/id/1019/250/150/",
+    },
+  ];
 
 const Dashboard = () => {
     return(
-
             <div className="container">
                 <NavBar />
                 <body>
                     <div className="home">
-                    <h1>Todo sobre ConCerNet</h1>
+
+                        <div style={{backgroundColor: "white", width: "30vw", margin:"10px 10px"}}>
+                            <ImageGallery items={images}
+                                showNav={false}
+                                showPlayButton={false}
+                                slideDuration={900}
+                                showBullets={true}
+                                showThumbnails={false}
+                            />
+                            
+                            <p>
+                                
+                            </p>
+
+                        </div>
+                    
+                        <h1>Todo sobre ConCerNet</h1>
                         <img src={fachada} alt="ConCerNet" />
                         <div className="descripcion">
                             <p className="parrafo">

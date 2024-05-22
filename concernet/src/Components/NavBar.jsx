@@ -6,7 +6,7 @@ import "../Styles/NavBar.css";
 const NavBar = () => {
     return (
         <body>
-            <nav>
+            <nav className="NavB">
                 <div className="Titulo">
                     <h1>ConCerNet</h1>
                 </div>
