@@ -1,0 +1,129 @@
+.descripcion {
+    width: 90vw;
+    margin: 10px 100px;
+
+}
+
+.margaritas {
+    width: 35vw;
+    float: right;
+    margin: 0px 40px;
+    border-radius: 20px;
+}
+
+.titulo1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 20px;
+    font-size: 30px;
+}
+
+.ubicacion {
+    width: 90vw;
+    margin: 0px 0px ;
+    float: left;
+}
+
+.titulo2 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px 120px;
+    font-size: 30px;
+    float: left;
+}
+
+.map {
+    border-radius: 20px;
+}
+
+.parrafo1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    width: 48vw;
+    margin: 20px 20px;
+    font-size: 18px;
+}
+
+.parrafo2 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    margin: 20px 20px;
+    font-size: 18px;
+}
+
+.comedor {
+    align-items: center;
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.Cocina {
+    align-items: center;
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.Balcon {
+    align-items: center;
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.Baños {
+    align-items: center;
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.Habitaciones {
+    align-items: center;
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+
+.habitaciones {
+    width: 50px;
+    height: 50px;
+    float:left;
+    margin: 0 10px 0 0;
+}
+
+.baños {
+    width: 50px;
+    height: 50px;
+    float:left;
+    margin: 0 10px 0 0;
+}
+
+.balcon {
+    width: 50px;
+    height: 50px;
+    float:left;
+    margin: 0 10px 0 0;
+}
+
+.cocina {
+    width: 50px;
+    height: 50px;
+    float:left;
+    margin: 0 10px 0 0;
+}
+
+.salaComedor {
+    width: 50px;
+    height: 50px;
+    float:left;
+    margin: 0 10px 0 0;
+}
+
+.link {
+    list-style-type: none;
+}
+
+.link a{
+    text-decoration: none;
+}

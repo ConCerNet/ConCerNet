@@ -3,9 +3,16 @@ import cancha from "../Images/Cancha.png";
 import parque from "../Images/Parque.png";
 import piscina from "../Images/Piscina.png";
 import salonSocial from "../Images/SalonSocial.png";
+import margaritas from "../Images/LasMargaritas.png";
+import salaComedor from "../Images/Sala-comedor.png";
+import Cocina from "../Images/Cocina.png";
+import Balcon from "../Images/Balcon.png";
+import Baños from "../Images/Baños.png";
+import Habitaciones from "../Images/Habitacion.png";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-
+import "../Styles/Dashboard.css";
+import {Link} from 'react-router-dom';
 
 const images = [
     {
@@ -33,7 +40,7 @@ const Dashboard = () => {
                 <body>
                     <div className="home">
 
-                        <div style={{backgroundColor: "white", width: "55vw", margin:"30px 350px"}}>
+                        <div style={{backgroundColor: "white", width: "55vw", margin:"20px 350px"}}>
                                 <div className="galeria">
                                 <ImageGallery items={images}
                                     showNav={false}
@@ -48,34 +55,143 @@ const Dashboard = () => {
 
                                 </div>
                             <br/>
-                            <h3>Descripción</h3>
-                            <p style={{textAlign: "justify"}}>
-                                Como conjunto te ofrecemos los mejores espacios para que disfrutes con tus amigos y familiares, tendrás
-                                acceso a la cancha multifuncional, a la piscina tanto de niños como de adultos, al salón social donde
-                                podrás realizar cualquier evento que desees, de igual forma, tenemos el parque para que lleves a tus hijos,
-                                hermanos e incluso mascota para que te puedas distraer y disfrutar de un gran momento.
-                            </p>
-
+                            
                         </div>
                     
-                        <h1>Todo sobre ConCerNet</h1>
-                        {/*<img src={fachada} alt="ConCerNet" />*/}
                         <div className="descripcion">
-                            <p className="parrafo">
-                            Bienvenido a ConCerNet, tu nueva solución digital para gestionar y reservar espacios en conjuntos cerrados. ConCerNet está diseñado para facilitarte la vida, ofreciendo una plataforma intuitiva y eficiente para que puedas reservar tus espacios favoritos de manera rápida y sencilla.
+                            <img src={margaritas} alt="ConCerNet" className="margaritas"/>
+                        
+                            <h2 className="titulo1">Descripción</h2>
+                            
+                            <p className="parrafo1">
+                                Estamos ubicados en el norte de la ciudad, la zona de mayor valorización y desarrollo, y como conjunto
+                                te ofrecemos los mejores espacios para que disfrutes con tus amigos y familiares, contamos con piscina,
+                                cancha multifunciona, salon de eventos y parque tematico de juegos infantiles.
                             </p>
-                            <h2>
-                                ¿Necesitas reservar la cancha de futbol para jugar con tus amigos?
-                            </h2>
-                            <p>
-                            ConCerNet te lo hace fácil. Explora nuestra aplicación para descubrir todas las funcionalidades que hemos preparado para ti, desde la gestión de tus reservas hasta notificaciones en tiempo real sobre la disponibilidad de los espacios.
-                            </p>
-                            <p>
-                            Estamos comprometidos a mejorar tu experiencia y hacer que la gestión de espacios sea tan cómoda y accesible como debería ser. ¡Descubre todas las posibilidades que ConCerNet tiene para ofrecer y empieza a disfrutar de una vida más organizada y sin complicaciones!
-                            </p>
-                            <h3>
-                            Gracias por elegir ConCerNet. ¡Nos alegra tenerte con nosotros!
-                            </h3>
+                            <p className="parrafo1">        
+                                Tendrás acceso a la cancha multifuncional, a la piscina tanto de niños como de adultos, al salón social donde
+                                podrás realizar cualquier evento que desees, de igual forma, tenemos el parque para que lleves a tus hijos,
+                                hermanos e incluso mascota para que te puedas distraer y disfrutar de un gran momento.
+                            </p> 
+                        </div>
+
+                        <br/><br/>
+
+                        <div className="ubicacion">
+                            <h2 className="titulo2">Ubicación</h2>
+
+                            <br/><br/><br/>
+
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.688596250973!2d-73.2690308254866!3d10.446266765197901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8ab940b7778a9f%3A0xb91ed502a4799a39!2sConjunto%20Cerrado%20La%20Fontana!5e0!3m2!1ses!2sco!4v1716419540997!5m2!1ses!2sco"
+                                width="600"
+                                height="450"
+                                style={{border:"0", margin:"10px 120px 20px ", float: "left"}}
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" className="map">
+                            </iframe>
+                            
+                            <div className="casas">
+                                
+                                <br/>
+                                <p className="parrafo2"> Nuestras casas contienen:</p>
+
+                                <br/>
+
+                                <div className="comedor">
+                                    <div style={{float: "left"}}>
+                                        <img src={salaComedor} className="salaComedor" alt="ConCerNet"/>
+                                    </div>
+                                    
+                                    <div style={{float: "left", margin: "16px"}}>
+                                        Sala - Comedor
+                                    </div>
+
+                                    <div style={{float: "right", margin: "16px 10px"}}>
+                                        1
+                                    </div>
+
+                                </div>
+
+                                <br/> <br/> <br/>
+
+                                <div className="Cocina">
+                                    <div style={{float: "left"}}>
+                                        <img src={Cocina} className="cocina" alt="ConCerNet"/>
+                                    </div>
+                                    
+                                    <div style={{float: "left", margin: "16px"}}>
+                                        Cocina
+                                    </div>
+
+                                    <div style={{float: "right", margin: "16px 10px"}}>
+                                        1
+                                    </div>
+
+                                </div>
+
+                                <br/> <br/> <br/>
+
+                                <div className="Balcon">
+                                    <div style={{float: "left"}}>
+                                        <img src={Balcon} className="balcon" alt="ConCerNet"/>
+                                    </div>
+                                    
+                                    <div style={{float: "left", margin: "16px"}}>
+                                        Balcon
+                                    </div>
+
+                                    <div style={{float: "right", margin: "16px 10px"}}>
+                                        1
+                                    </div>
+
+                                </div>
+
+                                <br/> <br/> <br/>
+
+                                <div className="Baños">
+                                    <div style={{float: "left"}}>
+                                        <img src={Baños} className="baños" alt="ConCerNet"/>
+                                    </div>
+                                    
+                                    <div style={{float: "left", margin: "16px"}}>
+                                        Baños
+                                    </div>
+
+                                    <div style={{float: "right", margin: "16px 10px"}}>
+                                        2
+                                    </div>
+
+                                </div>
+
+                                <br/> <br/> <br/>
+
+                                <div className="Habitaciones">
+                                    <div style={{float: "left"}}>
+                                        <img src={Habitaciones} className="habitaciones" alt="ConCerNet"/>
+                                    </div>
+                                    
+                                    <div style={{float: "left", margin: "16px"}}>
+                                        Habitaciones
+                                    </div>
+
+                                    <div style={{float: "right", margin: "16px 10px"}}>
+                                        3
+                                    </div>
+
+                                </div>
+
+                                <br/><br/><br/><br/><br/>
+
+
+                                <li className='link'>
+                                    Haga click <Link className="direccion" to="/Dashboard">Aquí</Link> para más información sobre las viviendas
+                                </li>
+                                
+
+                            </div>
+
                         </div>
                     </div>
                 </body>
