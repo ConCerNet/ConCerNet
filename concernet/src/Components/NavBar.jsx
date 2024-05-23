@@ -13,6 +13,7 @@ const NavBar = () => {
                 <ul>
                     <li><Link to="/Dashboard">Principal</Link></li>
                     <li><Link to="/Login">Cerrar sesión</Link></li>
+                    <li><Link to="/Espacios">Espacios Comunes</Link></li>
                 </ul>
                 <div class="busqueda-bar">
                 <input type="text" placeholder="Buscar..."/>

@@ -3,6 +3,7 @@ import Dashboard from "./Pages/Dashboard";
 import AuthProvider from "./AuthProvider";
 import PrivateRoute from "./PrivateRoute";
 import Login from './Pages/Login';
+import Espacios from "./Pages/Espacios";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route element={<PrivateRoute />}>
         <Route path="/Dashboard" element={<Dashboard />} />
         </Route>
+        <Route path="/Espacios" element={<Espacios />} />
       </Routes>
     </AuthProvider>
   );
