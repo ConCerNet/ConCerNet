@@ -13,6 +13,7 @@ const NavBar = () => {
                 <ul>
                     <li><Link to="/Dashboard">Inicio</Link></li>
                     <li><Link to="/Management">Administración</Link></li>
+                    <li><Link to="/Espacios">Espacios Comunes</Link></li>
                     <li><Link to="/Login">Iniciar sesión</Link></li>
                 </ul>
                 <div class="busqueda-bar">
