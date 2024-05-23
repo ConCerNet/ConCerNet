@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Para centrar verticalmente en toda la pantalla */
+    height: 110vh; /* Para centrar verticalmente en toda la pantalla */
     text-align: center; /* Para centrar el texto dentro del contenedor */
     font-family: Arial, sans-serif; /* Opcional: para una mejor tipografía */
 }
@@ -22,6 +22,10 @@ h1 {
     width: 100%;
     margin-bottom: 20px;
     text-align: left; /* Para alinear el texto a la izquierda */
+}
+
+.factura .descripcion{
+    transform: translateX(-100px);
 }
 
 .factura h1 {
