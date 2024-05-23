@@ -4,6 +4,7 @@ import AuthProvider from "./AuthProvider";
 import PrivateRoute from "./PrivateRoute";
 import Login from './Pages/Login';
 import Espacios from "./Pages/Espacios";
+import Agendamiento from "./Pages/Agendamiento";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard />} />
         </Route>
         <Route path="/Espacios" element={<Espacios />} />
+        <Route path="/Agendamiento" element={<Agendamiento />} />
       </Routes>
     </AuthProvider>
   );

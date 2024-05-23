@@ -1,8 +1,10 @@
-import NavBar from "../Components/NavBar";
+import NavBar from '../Components/NavBar';
 import piscina from '../Images/piscina.jpg';
 import cancha from '../Images/cancha.jpg';
 import salon from '../Images/salonSocial.jpeg';
 import '../Styles/Espacios.css';
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Espacios = ()=>{
     return (
@@ -10,11 +12,13 @@ const Espacios = ()=>{
             <NavBar />
             <div>
                 <div className="contenedorEspacios">
-                    <img src={piscina} alt="Piscina" title="PISCINA"/>
-                    <img src={cancha} alt="Cancha" title="CANCHA"/>
-                    <img className="salon" src={salon} alt="Salon" title="SALON SOCIAL"/>
+                    <Link to="/Agendamiento"><img src={piscina} alt="Piscina" title="PISCINA"/></Link>
+                    <Link to="/Agendamiento"><img src={cancha} alt="Cancha" title="CANCHA"/></Link>
+                    <Link to="/Agendamiento"><img id="salon" src={salon} alt="Salon" title="SALON SOCIAL"/></Link>
                 </div>
-                <span></span>
+                <div className="pista">
+                    <p>Presiona el espacio que deseas agendar</p>
+                </div>
             </div>
         </div>
     );
