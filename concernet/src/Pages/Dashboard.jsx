@@ -39,23 +39,22 @@ const Dashboard = () => {
                 <NavBar />
                 <body>
                     <div className="home">
-
-                        <div style={{backgroundColor: "white", width: "55vw", margin:"20px 350px"}}>
+                        <br/><br/><br/><br/>
+                        <div className="galeria" style={{backgroundColor: "white", width: "63vw", margin:"20px 280px"}}>
                                 <div className="galeria">
-                                <ImageGallery items={images}
-                                    showNav={false}
-                                    showPlayButton={false}
-                                    slideDuration={900}
-                                    showBullets={true}
-                                    showThumbnails={true}
-                                    slideInterval={3000}
-                                    autoPlay={true}
-                                >
-                                </ImageGallery>
+                                    <ImageGallery items={images}
+                                        showNav={true}
+                                        showPlayButton={false}
+                                        slideDuration={900}
+                                        showBullets={true}
+                                        showThumbnails={false}
+                                        slideInterval={3000}
+                                        autoPlay={true}
+                                    >
+                                    </ImageGallery>
 
                                 </div>
                             <br/>
-                            
                         </div>
                     
                         <div className="descripcion">

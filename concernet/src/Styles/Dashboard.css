@@ -1,3 +1,7 @@
+.galeria {
+    position: relative;
+}
+
 .descripcion {
     width: 90vw;
     margin: 10px 100px;
