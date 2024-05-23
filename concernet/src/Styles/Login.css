@@ -8,6 +8,7 @@
     margin: 0;
 }
 
+
 form {
     background: white;
     padding: 40px;
@@ -16,6 +17,20 @@ form {
     max-width: 400px;
     width: 100%;
     text-align: center;
+    animation: animacion 1s ease-out forwards ;
+}
+
+@keyframes animacion {
+    from{
+        opacity: 0;
+        transform: translateY(100%);
+
+    }
+    
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 h1 {
