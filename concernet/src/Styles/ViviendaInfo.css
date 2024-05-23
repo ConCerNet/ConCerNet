@@ -1,0 +1,52 @@
+/* styles/viviendaInfo.css */
+.container-vivenda-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vivienda-info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  width: 800px;
+}
+
+.vivienda-imagen-detalle {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.vivienda-info h2 {
+  font-size: 32px;
+  color: darkblue;
+  margin-bottom: 10px;
+}
+
+.parrafos-viviendas {
+  font-size: 20px;
+  color: #333;
+  margin: 5px 0;
+  width: 100%;
+}
+
+.boton-contactar {
+  font-size: 15px;
+  display: inline-block;
+  background-color: #0e9102;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  text-align: center;
+  border: none;
+  margin-top: 15px;
+}
+
+.boton-contactar:hover {
+  background-color: #0c7e02;
+  cursor: pointer;
+}
