@@ -10,6 +10,10 @@
     align-items: center;
     background-color: darkblue;
     padding: 15px 118px;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    top: 0;
 }
 
 .Titulo{
