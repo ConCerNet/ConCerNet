@@ -12,6 +12,7 @@ const NavBar = () => {
                 </div>
                 <ul>
                     <li><Link to="/Dashboard">Principal</Link></li>
+                    <li><Link to="/Management">Administración</Link></li>
                     <li><Link to="/Login">Cerrar sesión</Link></li>
                 </ul>
                 <div class="busqueda-bar">
