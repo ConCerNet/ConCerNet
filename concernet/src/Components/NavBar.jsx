@@ -20,10 +20,10 @@ const NavBar = () => {
             <Link to="/Espacios">Espacios Comunes</Link>
           </li>
           <li>
-            <Link to="/Login">Iniciar sesión</Link>
+            <Link to="/Viviendas">Viviendas</Link>
           </li>
           <li>
-            <Link to="/Viviendas">Viviendas</Link>
+            <Link to="/Login">Iniciar sesión</Link>
           </li>
         </ul>
         <div class="busqueda-bar">
