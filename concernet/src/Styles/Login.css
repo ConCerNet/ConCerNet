@@ -1,32 +1,44 @@
-.general {
+.general{
+    background-image: url("../Images/login.jpg");
     font-family: Arial, sans-serif;
-    background-color: #dbdbf3;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
 
+.error-message{
+    color: red;
+    margin-bottom: 20px;
+}
 
-form {
-    background: white;
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+form{
+    background: transparent;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, .1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     max-width: 400px;
     width: 100%;
     text-align: center;
-    animation: animacion 1s ease-out forwards ;
+    animation: animacion 1s ease-out forwards;
 }
 
 @keyframes animacion {
-    from{
+    from {
         opacity: 0;
         transform: translateY(100%);
-
     }
-    
     to {
         transform: translateY(0);
         opacity: 1;
@@ -46,14 +58,15 @@ h1 {
 .form_control label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: #14217e;
+    /*color: #333;*/
 }
 
 .form_control input {
     width: calc(100% - 20px);
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #ccc;
+    border-radius: 40px;
     font-size: 16px;
     box-sizing: border-box;
 }
@@ -68,7 +81,7 @@ h1 {
     color: white;
     border: none;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 40px;
     font-size: 16px;
     cursor: pointer;
     width: 100%;
@@ -76,11 +89,6 @@ h1 {
 
 .btn-submit:hover {
     background-color: #0f1a63;
-}
-
-.error-message {
-    color: red;
-    margin-bottom: 20px;
 }
 
 .sr-only {

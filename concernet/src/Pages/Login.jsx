@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useAuth } from "../AuthProvider";
 import "../Styles/Login.css";
+//import user from "../Images/user.svg";
+//import lock from "../Images/lock.svg";
 
 const Login = () => {
     const [input, setInput] = useState({
