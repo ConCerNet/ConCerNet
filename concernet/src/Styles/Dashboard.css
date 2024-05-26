@@ -1,3 +1,23 @@
+.casas .Cocina img, .Balcon img, .Baños img, .Habitaciones img, .comedor .salaComedor{
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+}
+
+
+
+@keyframes reveal {
+    from{
+        opacity: 0;
+        scale: .5;
+    }
+
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
 .galeria {
     position: relative;
 }
@@ -5,7 +25,10 @@
 .descripcion {
     width: 90vw;
     margin: 10px 100px;
-
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+    
 }
 
 .margaritas {
@@ -36,6 +59,9 @@
 
 .map {
     border-radius: 20px;
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 20%;
 }
 
 .parrafo1 {

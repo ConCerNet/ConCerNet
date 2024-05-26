@@ -26,10 +26,6 @@ const NavBar = () => {
             <Link to="/Login">Iniciar sesión</Link>
           </li>
         </ul>
-        <div class="busqueda-bar">
-          <input type="text" placeholder="Buscar..." />
-          <button type="submit">Buscar</button>
-        </div>
       </nav>
     </body>
   );
