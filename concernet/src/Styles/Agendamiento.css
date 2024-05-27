@@ -2,10 +2,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 10px;
+    position: absolute;
     margin-top: 30px;
     margin-top: 10px;
     margin-left: 160px;
+}
+
+.agendaImagen img{
+    width: 300px;
+    height: auto;
 }
 
 .contenedorAgendamiento .calendario {
