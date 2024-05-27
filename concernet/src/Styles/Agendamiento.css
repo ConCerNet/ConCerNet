@@ -1,0 +1,48 @@
+.agendaImagen{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: 30px;
+    margin-top: 10px;
+    margin-left: 160px;
+}
+
+.agendaImagen img{
+    width: 300px;
+    height: auto;
+}
+
+.contenedorAgendamiento .calendario {
+    background-color: white;
+    padding: 70px;
+    border-radius: 10px;
+    box-shadow: 1px 10px 20px 10px #14207e5b;
+    max-width: 400px;
+    text-align: center;
+    animation: animacion 1s ease-out forwards;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.calendario label {
+    display: block;
+    margin-bottom: 5px;
+    color: #14217e;
+    padding-top: 10px;
+}
+
+.calendario input{
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.calendario button{
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+

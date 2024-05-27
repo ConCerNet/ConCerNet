@@ -19,7 +19,7 @@ function App() {
           <Route path="/Management" element={<Management />} />
         </Route>
         <Route path="/Espacios" element={<Espacios />} />
-        <Route path="/Agendamiento" element={<Agendamiento />} />
+        <Route path="/Espacios/:id" element={<Agendamiento />} />
         <Route path="/Viviendas" element={<Viviendas />} />
         <Route path="/viviendas/:id" element={<ViviendaInfo />} />
       </Routes>
