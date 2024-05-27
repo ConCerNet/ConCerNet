@@ -2,6 +2,7 @@ import NavBar from "../Components/NavBar";
 import "../Styles/Management.css";
 import historial from "../Images/receipt.svg";
 import pago from "../Images/cash-register.svg";
+import Footer from "../Components/Footer";
 
 const Management = () => {
     return(
@@ -39,6 +40,7 @@ const Management = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 };

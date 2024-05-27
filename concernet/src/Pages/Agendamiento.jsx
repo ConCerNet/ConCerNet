@@ -3,6 +3,7 @@ import NavBar from "../Components/NavBar";
 import '../Styles/Agendamiento.css';
 import { useParams } from "react-router-dom";
 import espacios from "../EspaciosData";
+import Footer from "../Components/Footer";
 
 const Agendamiento = () => {
   const { id } = useParams();
@@ -31,6 +32,7 @@ const Agendamiento = () => {
             <button type="submit">Agendar</button>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };
