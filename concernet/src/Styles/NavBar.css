@@ -29,16 +29,16 @@
     padding: 0;
 }
 
-ul{
+.NavB ul{
     display: flex;
     list-style: none;
 }
 
-ul li{
+.NavB ul li{
     margin-right: 20px;
 }
 
-ul li a{
+.NavB ul li a{
     font-size: 16px;
     color: white;
     text-decoration: none;
@@ -47,6 +47,6 @@ ul li a{
     transition: 0.5s ease;
 }
 
-ul li a:hover{
+.NavB ul li a:hover{
     background-color: blue;
 }
