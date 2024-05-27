@@ -22,6 +22,11 @@
     position: relative;
 }
 
+.galeria img, .galeria img slide{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .descripcion {
     width: 90vw;
     margin: 10px 100px;
