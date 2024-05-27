@@ -1,15 +1,17 @@
 *{
+    font-family: sans-serif;
+}
+
+.NavB{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: sans-serif;
-}
-.NavB{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
     background-color: darkblue;
-    padding: 15px 20px;
+    padding: 15px 30px;
     position: fixed;
     z-index: 10;
     width: 100%;
@@ -47,28 +49,4 @@ ul li a{
 
 ul li a:hover{
     background-color: blue;
-}
-
-.busqueda-bar{
-    display: flex;
-}
-
-.busqueda-bar input{
-    font-size: 16px;
-    width: 215px;
-    padding: 10px 15px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    margin-right: 5px;
-}
-
-.busqueda-bar button{
-    font-size: 16px;
-    padding: 10px 15px;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }

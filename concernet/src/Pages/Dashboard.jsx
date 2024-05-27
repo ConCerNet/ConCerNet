@@ -13,6 +13,7 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import "../Styles/Dashboard.css";
 import { Link } from "react-router-dom";
+import Footer from "../Components/Footer";
 
 const images = [
   {
@@ -189,6 +190,7 @@ const Dashboard = () => {
           </div>
         </div>
       </body>
+      <Footer />
     </div>
   );
 };
