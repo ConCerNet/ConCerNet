@@ -23,6 +23,10 @@
     margin: 0%;
 }
 
+.contenedorEspacio{
+    height: 250px;
+}
+
 .contenedorEspacio .piscina{
     flex: 1;
     text-align: center;
@@ -50,8 +54,8 @@
 }
 
 .contenedorEspacio #piscina{
-    width: 200%;
-    height: 40%;
+    width: 300px;
+    height: 200px;
     border-radius: 20px;
     margin-left: 50%;
 }

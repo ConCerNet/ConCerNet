@@ -24,7 +24,7 @@ const Espacios = ()=>{
                             <Link key={espacio.id} to={`/Espacios/${espacio.id}`}>
                                 <div className='contenedorEspacio'>
                                     <img id={espacio.nombre} src={espacio.imagen} alt={espacio.nombre} title={espacio.nombre} />
-                                    <h3 className={espacio.nombre}>{espacio.nombre}</h3>
+                                    {/*<h3 className={espacio.nombre}>{espacio.nombre}</h3>*/}
                                 </div>
                             </Link>
                         ))}
