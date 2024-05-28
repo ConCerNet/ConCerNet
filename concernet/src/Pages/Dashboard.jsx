@@ -181,7 +181,7 @@ const Dashboard = () => {
               <br />
               <li className="link">
                 Haga click{" "}
-                <Link className="direccion" to="/Dashboard">
+                <Link className="direccion" to="/Viviendas">
                   Aquí
                 </Link>{" "}
                 para más información sobre las viviendas
