@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 
+const contacto = () => {
+  window.location.href='wa.me/573176938870';
+}
+
 const ViviendaInfo = () => {
   const { id } = useParams();
   const vivienda = viviendas.find((vivienda) => vivienda.id === parseInt(id));
@@ -30,9 +34,7 @@ const ViviendaInfo = () => {
             <p>Habitaciones: {vivienda.habitaciones}</p>
             <p>Estado: {vivienda.enVenta ? "En Venta" : "En Arriendo"}</p>
             <p>Descripción: {vivienda.descripcion}</p>
-            <Link to={``}>
-              <button className="boton-contactar">Contactar</button>
-            </Link>
+            <a href="https://api.whatsapp.com/send/?phone=573207388253&text&type=phone_number&app_absent=0" target="_blank"><button className="boton-contactar">Contactar</button></a>
           </div>
         </div>
       </div>
