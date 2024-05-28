@@ -17,7 +17,7 @@ const Espacios = ()=>{
         <div className="espacio">
             <NavBar />
                 <div className="pista">
-                    <h2>Presiona el espacio que deseas agendar</h2>
+                    <h2>Selecciona el espacio que deseas agendar</h2>
                 </div>
                 <div className='espaciosList'>
                         {espacios.map((espacio) => (
