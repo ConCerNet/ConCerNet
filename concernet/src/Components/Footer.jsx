@@ -19,7 +19,7 @@ const Footer = () =>{
                         <a href="" className="icon">
                             <img src={instagram} alt="social2" />
                         </a>
-                        <a href="" className="icon">
+                        <a href="https://api.whatsapp.com/send/?phone=573207388253&text&type=phone_number&app_absent=0" target="_blank" className="icon">
                             <img src={whatsapp} alt="social3" />
                         </a>
                         <a href="" className="icon">
