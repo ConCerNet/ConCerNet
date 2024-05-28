@@ -24,7 +24,7 @@ const Management = () => {
                         <h2>N_Factura</h2>
                         <p>0000001</p>
                     </div>
-                    <div className="descripcion">
+                    <div className="descripcionFactura">
                         <h2>Descripcion</h2>
                         <p>Pago de mantenimientos de espacios comunes</p>
                     </div>

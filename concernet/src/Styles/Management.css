@@ -24,10 +24,6 @@ h1 {
     text-align: left; /* Para alinear el texto a la izquierda */
 }
 
-.factura .descripcion{
-    transform: translateX(-100px);
-}
-
 .factura h1 {
     text-align: center; /* Centrar el título de la factura */
     color: #14217e;
