@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import React from "react";
 import "../Styles/NavBar.css";
 
+const recargar = () => {
+  window.location.recargar(true);
+}
+
 const NavBar = () => {
   return (
     <body>
