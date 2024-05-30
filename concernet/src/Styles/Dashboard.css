@@ -72,7 +72,7 @@
     border-radius: 20px;
     animation: reveal linear both;
     animation-timeline: view();
-    animation-range: entry 20% cover 20%;
+    animation-range: entry 20% cover 40%;
 }
 
 .parrafo1 {
