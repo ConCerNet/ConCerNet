@@ -1,12 +1,17 @@
-import { Link } from "react-router-dom";
-import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import React, {useEffect} from "react";
 import "../Styles/NavBar.css";
 
-const recargar = () => {
-  window.location.recargar(true);
-}
+
 
 const NavBar = () => {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  
   return (
     <body>
       <nav className="NavB">
