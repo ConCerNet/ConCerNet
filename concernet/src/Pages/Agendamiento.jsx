@@ -31,7 +31,7 @@ const Agendamiento = () => {
             <input type="time" id="hora" name="hora" required/>
 
             <button type="submit">Agendar</button>
-            <Link to="/Espacios"><button id="cancelar">Cancelar</button></Link>
+            <Link to="/Espacios" className="botonCancelar"><button id="cancelar">Cancelar</button></Link>
         </form>
       </div>
       <Footer/>
