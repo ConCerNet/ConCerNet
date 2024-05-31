@@ -1,4 +1,4 @@
-.agendaImagen{
+/*.agendaImagen{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -12,10 +12,20 @@
     width: 300px;
     height: auto;
 }
+*/
+
+.contenedorAgendamiento{
+    display: flex;
+    flex-direction: row;
+}
+
+.contenedorAgendamiento .agendaImagen img{
+    height: 600px;
+    width: 800px;
+}
 
 .contenedorAgendamiento .calendario {
     background-color: white;
-    padding: 70px;
     border-radius: 10px;
     box-shadow: 1px 10px 20px 10px #14207e5b;
     max-width: 400px;
