@@ -17,6 +17,7 @@
 .contenedorAgendamiento{
     display: flex;
     flex-direction: row;
+    animation: animacion 1s ease-out forwards;
 }
 
 .contenedorAgendamiento .agendaImagen img{
@@ -30,7 +31,7 @@
     box-shadow: 1px 10px 20px 10px #14207e5b;
     max-width: 400px;
     text-align: center;
-    animation: animacion 1s ease-out forwards;
+    /*animation: animacion 1s ease-out forwards;*/
     margin: auto;
     margin-top: 10%;
 }
