@@ -4,6 +4,7 @@ import '../Styles/Agendamiento.css';
 import { useParams } from "react-router-dom";
 import espacios from "../EspaciosData";
 import Footer from "../Components/Footer";
+import { Link } from "react-router-dom";
 
 const Agendamiento = () => {
   const { id } = useParams();
@@ -30,6 +31,7 @@ const Agendamiento = () => {
             <input type="time" id="hora" name="hora" required/>
 
             <button type="submit">Agendar</button>
+            <Link to="/Espacios"><button id="cancelar">Cancelar</button></Link>
         </form>
       </div>
       <Footer/>
