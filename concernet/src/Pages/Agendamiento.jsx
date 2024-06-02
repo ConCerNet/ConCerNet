@@ -35,9 +35,6 @@ const Agendamiento = () => {
               <button type="submit">Agendar</button>
               <Link className="cancelar" to="/Espacios"><button>Cancelar</button></Link>
             </div>
-
-            <button type="submit">Agendar</button>
-            <Link to="/Espacios" className="botonCancelar"><button id="cancelar">Cancelar</button></Link>
         </form>
       </div>
       <Footer/>
