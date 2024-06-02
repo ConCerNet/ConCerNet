@@ -47,3 +47,8 @@
     cursor: pointer;
     background-color: #14217e;
 }
+
+.botonCancelar{
+    text-decoration: none;
+}
+
