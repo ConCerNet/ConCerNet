@@ -58,7 +58,7 @@
 .desicion .cancelar{
     cursor: pointer;
     position: absolute;
-    background-color: darkblue;
+    background-color: #007BFF;
     color: whitesmoke;
     margin: -180px 150px 0 900px;
     animation: animacion2 1s ease-out forwards;
