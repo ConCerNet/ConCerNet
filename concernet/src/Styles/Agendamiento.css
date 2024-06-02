@@ -13,11 +13,11 @@
     height: auto;
     border-radius: 10px;
     margin: 0 50% 0;
-    /*z-index: 2;*/
+    z-index: 2;
     animation: animacion 1s ease-out forwards;
 }
 
-.calendario{
+.calendario .campos{
     padding: 40px;
     background-color: white;
     border-radius: 10px;
@@ -43,7 +43,41 @@
     border-radius: 10px;
 }
 
-.desicion{
+.desicion .agendar{
+    position: absolute;
+    background-color: darkblue;
+    color: whitesmoke;
     cursor: pointer;
-    background-color: #14217e;
+    margin: -180px 150px 0 800px;
+    animation: animacion2 1s ease-out forwards;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.desicion .cancelar{
+    cursor: pointer;
+    position: absolute;
+    background-color: darkblue;
+    color: whitesmoke;
+    margin: -180px 150px 0 900px;
+    animation: animacion2 1s ease-out forwards;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.desicion .cancelar a{
+    text-decoration: none;
+}
+
+@keyframes animacion2 {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

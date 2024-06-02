@@ -21,7 +21,7 @@ const Agendamiento = () => {
           <img src={espacio.imagen} alt={`Imagen del espacio ${espacio.nombre}`} />
         </div>
         <form className="calendario" action="#">
-          <div className="calendario__titulo">
+          <div className="campos">
             <label for="nombre"><b>Nombre:</b></label>
             <input type="text" id="nombre" name="nombre" required/>
 
@@ -32,8 +32,8 @@ const Agendamiento = () => {
             <input type="time" id="hora" name="hora" required/>
           </div>
             <div className="desicion">
-              <button type="submit">Agendar</button>
-              <Link className="cancelar" to="/Espacios"><button>Cancelar</button></Link>
+              <button className="agendar" type="submit">Agendar</button>
+              <Link to="/Espacios"><button className="cancelar">Cancelar</button></Link>
             </div>
         </form>
       </div>
