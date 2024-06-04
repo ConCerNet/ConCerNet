@@ -10,7 +10,7 @@
 
 .agendaImagen img{
     width: 400px;
-    height: auto;
+    height: 300px;
     border-radius: 10px;
     margin: 0 50% 0;
     z-index: 2;
@@ -23,7 +23,7 @@
     border-radius: 10px;
     box-shadow: 1px 10px 20px 10px #14207e5b;
     max-width: 600px;
-    height: 350px;
+    height: 300px;
     text-align: right;
     animation: animacion 1s ease-out forwards;
     margin: auto;
@@ -48,27 +48,37 @@
     background-color: darkblue;
     color: whitesmoke;
     cursor: pointer;
-    margin: -180px 150px 0 800px;
+    margin: -150px 150px 0 800px;
     animation: animacion2 1s ease-out forwards;
     font-size: 18px;
     border-radius: 5px;
     padding: 5px;
+    border: none;
 }
 
 .desicion .cancelar{
     cursor: pointer;
     position: absolute;
-    background-color: #007BFF;
-    color: whitesmoke;
-    margin: -180px 150px 0 900px;
+    background-color: white;
+    color: #007BFF;
+    margin: -150px 150px 0 900px;
     animation: animacion2 1s ease-out forwards;
     font-size: 18px;
     border-radius: 5px;
     padding: 5px;
+    border: none;
 }
 
 .desicion .cancelar a{
     text-decoration: none;
+}
+
+.desicion .agendar:hover{
+    background-color: #0622f0;
+}
+
+.desicion .cancelar:hover{
+    background-color: #0621f027;
 }
 
 @keyframes animacion2 {
