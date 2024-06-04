@@ -91,3 +91,7 @@
         opacity: 1;
     }
 }
+
+#nombre , #fecha, #hora{
+    width: 170px;
+}
