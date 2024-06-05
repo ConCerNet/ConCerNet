@@ -12,7 +12,7 @@
     width: 400px;
     height: 300px;
     border-radius: 10px;
-    margin: 0 110% 0;
+    margin: 5% 110% 0;
     z-index: 1;
     animation: animacion 1s ease-out forwards;
 }
@@ -49,7 +49,7 @@
     background-color: darkblue;
     color: whitesmoke;
     cursor: pointer;
-    margin: -150px 0 0 380px;
+    margin: -100px 0 0 380px;
     animation: animacion2 1s ease-out forwards;
     font-size: 18px;
     border-radius: 5px;
@@ -62,7 +62,7 @@
     position: absolute;
     background-color: white;
     color: #007BFF;
-    margin: -150px 0 0 480px;
+    margin: -100px 0 0 480px;
     animation: animacion2 1s ease-out forwards;
     font-size: 18px;
     border-radius: 5px;
