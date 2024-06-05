@@ -10,10 +10,10 @@
 
 .agendaImagen img{
     width: 400px;
-    height: auto;
+    height: 300px;
     border-radius: 10px;
-    margin: 0 50% 0;
-    z-index: 2;
+    margin: 0 110% 0;
+    z-index: 1;
     animation: animacion 1s ease-out forwards;
 }
 
@@ -23,8 +23,8 @@
     border-radius: 10px;
     box-shadow: 1px 10px 20px 10px #14207e5b;
     max-width: 600px;
-    height: 350px;
-    text-align: right;
+    height: 300px;
+    text-align: left;
     animation: animacion 1s ease-out forwards;
     margin: auto;
     margin-top: 8%;
@@ -41,6 +41,7 @@
 .calendario input{
     padding: 5px;
     border-radius: 10px;
+    width: 170px;
 }
 
 .desicion .agendar{
@@ -48,27 +49,37 @@
     background-color: darkblue;
     color: whitesmoke;
     cursor: pointer;
-    margin: -180px 150px 0 800px;
+    margin: -150px 0 0 380px;
     animation: animacion2 1s ease-out forwards;
     font-size: 18px;
     border-radius: 5px;
     padding: 5px;
+    border: none;
 }
 
 .desicion .cancelar{
     cursor: pointer;
     position: absolute;
-    background-color: #007BFF;
-    color: whitesmoke;
-    margin: -180px 150px 0 900px;
+    background-color: white;
+    color: #007BFF;
+    margin: -150px 0 0 480px;
     animation: animacion2 1s ease-out forwards;
     font-size: 18px;
     border-radius: 5px;
     padding: 5px;
+    border: none;
 }
 
-.desicion .cancelar a{
+.desicion .cancelar:link{
     text-decoration: none;
+}
+
+.desicion .agendar:hover{
+    background-color: #0622f0;
+}
+
+.desicion .cancelar:hover{
+    background-color: #0621f027;
 }
 
 @keyframes animacion2 {
@@ -81,3 +92,4 @@
         opacity: 1;
     }
 }
+
