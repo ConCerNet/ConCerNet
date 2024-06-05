@@ -70,7 +70,7 @@
     border: none;
 }
 
-.desicion .cancelar a{
+.desicion .cancelar:link{
     text-decoration: none;
 }
 
