@@ -3,8 +3,43 @@ import "../Styles/Management.css";
 import historial from "../Images/receipt.svg";
 import pago from "../Images/cash-register.svg";
 import Footer from "../Components/Footer";
+import { useState } from "react";
+
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
+import axios from "axios";
+
+
 
 const Management = () => {
+
+    const [PreferenceId, setPreferenceId] = useState(null); 
+
+    initMercadoPago('TEST-a751f345-e325-4c90-af00-c74ae88d6d3d', {
+        locale: "es-CO",
+    });
+
+    const crearPreferencia = async () => {
+        try {
+            const response = await axios.post("http://localhost:3000/crear-Preferencia", {
+                title: "Administracion",
+                quantity: 1,
+                price: 10000,
+            });
+
+            const {id} = response.data;
+            return id;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const handleBuy = async () => {
+        const id = await crearPreferencia();
+        if (id) {
+            setPreferenceId(id);
+        }
+    };
+
     return(
         <div className="container">
             <NavBar/>
@@ -34,11 +69,19 @@ const Management = () => {
                         <img src={historial} alt="historial" />
                         <p>Historial</p>
                     </div>
-                    <div className="botonPago">
+                    
+
+                    <button className="botonPago" onClick={handleBuy}>
                         <img src={pago} alt="pago" />
                         <p>Pago</p>
-                    </div>
+                    </button>
+
+                    {PreferenceId && <Wallet initialization={{ preferenceId: PreferenceId }} customization={{ texts:{ valueProp: 'smart_option'}}} />}
+                    
                 </div>
+
+                
+
             </div>
             <Footer/>
         </div>
