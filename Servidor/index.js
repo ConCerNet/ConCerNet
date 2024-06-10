@@ -5,7 +5,7 @@ import cors from "cors";
 import { MercadoPagoConfig, Preference } from 'mercadopago';
 
 const client = new MercadoPagoConfig({
-    accessToken: "TEST-5776186423733189-060813-d08dc4ec90a8969d6722fc8d8682e7f5-1847722107",
+    accessToken: "TEST-1093804644654154-060417-f65d2f086f9e17547d6312dc6ec83601-1841777517",
 });
 
 const app = express();
@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) =>{
-    res.send("Soy el server :)");
+    res.send("Soy el server de ConCerNet :)");
 });
 
 app.post("/crear-Preferencia", async (req, res) => {
@@ -25,16 +25,16 @@ app.post("/crear-Preferencia", async (req, res) => {
                 {
                     title: req.body.title,
                     quantity: Number(req.body.quantity),
-                    price: Number(req.body.price),
+                    unit_price: Number(req.body.price),
                     currency_id: "COP",
                 },
             ],
             back_urls: {
-                success: "https://www.google.com/?hl=es",
-                failure: "https://www.google.com/?hl=es",
-                pending: "https://www.google.com/?hl=es",
+                success: "https://github.com/ConCerNet/ConCerNet",
+                failure: "https://github.com/ConCerNet/ConCerNet",
+                pending: "https://github.com/ConCerNet/ConCerNet",
             },
-            auto_return: "Approved",
+            auto_return: "approved",
         };
 
         const Preferencia = new Preference(client);

@@ -1,5 +1,5 @@
 import NavBar from "../Components/NavBar";
-import "../Styles/Management.css";
+/*import "../Styles/Management.css";*/
 import historial from "../Images/receipt.svg";
 import pago from "../Images/cash-register.svg";
 import Footer from "../Components/Footer";
@@ -14,16 +14,16 @@ const Management = () => {
 
     const [PreferenceId, setPreferenceId] = useState(null); 
 
-    initMercadoPago('TEST-a751f345-e325-4c90-af00-c74ae88d6d3d', {
+    initMercadoPago('TEST-7e9d62bf-665d-4fae-89be-322d7d52f84b', {
         locale: "es-CO",
     });
 
     const crearPreferencia = async () => {
         try {
-            const response = await axios.post("http://localhost:3000/crear-Preferencia", {
+            const response = await axios.post("http://localhost:4000/crear-Preferencia", {
                 title: "Administracion",
                 quantity: 1,
-                price: 10000,
+                price: 1000,
             });
 
             const {id} = response.data;
@@ -76,7 +76,7 @@ const Management = () => {
                         <p>Pago</p>
                     </button>
 
-                    {PreferenceId && <Wallet initialization={{ preferenceId: PreferenceId }} customization={{ texts:{ valueProp: 'smart_option'}}} />}
+                    {PreferenceId && <Wallet initialization={{ preferenceId: PreferenceId }}/>}
                     
                 </div>
 
