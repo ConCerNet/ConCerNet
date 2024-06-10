@@ -25,16 +25,16 @@ app.post("/crear-Preferencia", async (req, res) => {
                 {
                     title: req.body.title,
                     quantity: Number(req.body.quantity),
-                    price: Number(req.body.price),
+                    unit_price: Number(req.body.price),
                     currency_id: "COP",
                 },
             ],
             back_urls: {
-                success: "https://www.google.com/?hl=es",
-                failure: "https://www.google.com/?hl=es",
-                pending: "https://www.google.com/?hl=es",
+                success: "https://github.com/ConCerNet/ConCerNet.git",
+                failure: "https://github.com/ConCerNet/ConCerNet.git",
+                pending: "https://github.com/ConCerNet/ConCerNet.git",
             },
-            auto_return: "Approved",
+            auto_return: "approved",
         };
 
         const Preferencia = new Preference(client);

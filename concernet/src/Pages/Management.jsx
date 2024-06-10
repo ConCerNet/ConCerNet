@@ -20,7 +20,7 @@ const Management = () => {
 
     const crearPreferencia = async () => {
         try {
-            const response = await axios.post("http://localhost:3000/crear-Preferencia", {
+            const response = await axios.post("http://localhost:4000/crear-Preferencia", {
                 title: "Administracion",
                 quantity: 1,
                 price: 10000,
@@ -79,8 +79,6 @@ const Management = () => {
                     {PreferenceId && <Wallet initialization={{ preferenceId: PreferenceId }} customization={{ texts:{ valueProp: 'smart_option'}}} />}
                     
                 </div>
-
-                
 
             </div>
             <Footer/>
