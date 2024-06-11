@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
             setUser(data.username);
             setToken(data.password);
             localStorage.setItem("site", data.password);
-            navigate("/dashboard");
+            navigate("/Dashboard");
         }
         throw Error("Usuario no encontrado");
     };
@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
         setUser(null);
         setToken("");
         localStorage.removeItem("site");
-        navigate("/login");
+        //navigate("/Dashboard");
     };
     
     return (

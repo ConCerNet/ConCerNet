@@ -1,17 +1,22 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import React, {useEffect} from "react";
+import { useAuth } from "../AuthProvider";
 import "../Styles/NavBar.css";
 
-
-
 const NavBar = () => {
-
+  const auth = useAuth();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
   
+  const handleLogout = () => {
+    auth.logOut();
+    navigate("/");
+  };
+
   return (
     <body>
       <nav className="NavB">
@@ -32,7 +37,11 @@ const NavBar = () => {
             <Link to="/Viviendas">Viviendas</Link>
           </li>
           <li>
-            <Link to="/Login">Iniciar sesión</Link>
+            {auth.user ? (
+              <Link onClick={handleLogout}>Cerrar sesión</Link>
+            ) : (
+              <Link to="/Login">Iniciar sesión</Link>
+            )}
           </li>
         </ul>
       </nav>
