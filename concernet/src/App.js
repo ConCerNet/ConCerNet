@@ -16,11 +16,10 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route element={<PrivateRoute />}>
-          <Route path="/Espacios" element={<Espacios />} />
           <Route path="/Espacios/:id" element={<Agendamiento />} />
           <Route path="/Management" element={<Management />} />
         </Route>
-        
+        <Route path="/Espacios" element={<Espacios />} />
         <Route path="/Viviendas" element={<Viviendas />} />
         <Route path="/viviendas/:id" element={<ViviendaInfo />} />
       </Routes>
