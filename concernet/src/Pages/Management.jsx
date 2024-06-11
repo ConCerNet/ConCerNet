@@ -8,8 +8,6 @@ import { useState } from "react";
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 import axios from "axios";
 
-
-
 const Management = () => {
 
     const [PreferenceId, setPreferenceId] = useState(null); 
