@@ -1,8 +1,12 @@
-import express from "express";
-import cors from "cors";
+const express = require("express");
+const cors = require("cors");
+const rolesRouter = require("./routes/roles.js");
+const agendamientoRouter = require("./routes/agendamiento.js");
+const usuarioRouter = require("./routes/usuarios.js");
+const espaciosRouter = require("./routes/espacios.js");
 
 // SDK de Mercado Pago
-import { MercadoPagoConfig, Preference } from 'mercadopago';
+const { MercadoPagoConfig, Preference } = require("mercadopago");
 
 const client = new MercadoPagoConfig({
     accessToken: "TEST-5776186423733189-060813-d08dc4ec90a8969d6722fc8d8682e7f5-1847722107",
@@ -13,10 +17,20 @@ const port = 4000;
 
 app.use(cors());
 app.use(express.json());
+app.use(
+    express.urlencoded({
+        extended: true,
+    })
+);
 
 app.get("/", (req, res) =>{
     res.send("El servidor está funcionando correctamente");
 });
+
+app.use("/agendamiento", agendamientoRouter);
+app.use("/roles", rolesRouter);
+app.use("/usuarios", usuarioRouter);
+app.use("/espacios", espaciosRouter);
 
 app.post("/crear-Preferencia", async (req, res) => {
     try {

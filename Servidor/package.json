@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +12,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "mercadopago": "^2.0.9"
+    "mercadopago": "^2.0.9",
+    "mysql2": "^3.10.1",
+    "sequelize": "^6.37.3"
   }
 }
