@@ -6,44 +6,20 @@ import espacios from "../EspaciosData";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 import axios from "axios";
 
 const Agendamiento = () => {
   const { id } = useParams();
   const espacio = espacios.find((espacio) => espacio.id === parseInt(id));
-  const [PreferenceId, setPreferenceId] = useState('');
   const [idusuario, setIdUsuario] = useState('');
   const [fechaagendamiento, setFechaAgendamiento] = useState('');
   const [horaInicio, setHoraInicio] = useState('');
   const [horaFin, setHoraFin] = useState('');
 
-  //Mercado Pago
-
-  initMercadoPago('TEST-a751f345-e325-4c90-af00-c74ae88d6d3d', {
-      locale: "es-CO",
-  });
-
-  const crearPreferenciaAgendamiento = async () => {
-      try {
-          const response = await axios.post("http://localhost:4000/crear-Preferencia-Agendamiento", {
-              title: "Agendamiento",
-              quantity: 1,
-              price: 5000,
-          });
-
-          const {id} = response.data;
-          return id;
-      } catch (error) {
-          console.log(error);
-      }
-  };
-
   const agendarEspacio = async (e) => {
     e.preventDefault();
     const fechaActual = new Date().toISOString().split('T')[0];
     const horaActual = new Date().toTimeString().split(' ')[0];
-    //const cedula = document.getElementById('cedula').value;
 
     if (fechaagendamiento < fechaActual){
       alert("No puedes agendar con una fecha que ya pasó");
@@ -72,6 +48,11 @@ const Agendamiento = () => {
     }
 
     try {
+      const responseUsuario = await axios.get(`http://localhost:4000/usuarios/${idusuario}`);
+      if(responseUsuario.data.mensaje === "Usuario no encontrado"){
+        alert('El usuario no existe');
+        return;
+      }
 
       const response = await axios.post('http://localhost:4000/agendamiento/agendar', {
         idespacio: id,
@@ -87,15 +68,6 @@ const Agendamiento = () => {
       console.error('Error al agendar', error);
     }
   };
-
-  const handleBuy = async () => {
-      const id = await crearPreferenciaAgendamiento();
-      if (id) {
-          setPreferenceId(id);
-      }
-  };
-
-  //Mercado Pago
 
   if(!espacio){
     return <div>El espacio no existe</div>
@@ -123,12 +95,8 @@ const Agendamiento = () => {
 
           </div>
             <div className="desicion">
-              <button className="agendar" type="submit" onClick={handleBuy} >Agendar</button>
+              <button className="agendar" type="submit">Agendar</button>
               <Link className="cancelar" to="/Espacios">Cancelar</Link>
-              <button className="Pagar" onClick={handleBuy}>Pago</button>
-              <div className="mercadoPago">
-                {PreferenceId && <Wallet initialization={{ preferenceId: PreferenceId }} customization={{ texts:{ valueProp: 'smart_option'}}} />}
-              </div>
             </div>
         </form>
       </div>
