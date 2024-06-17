@@ -1,13 +1,12 @@
 import React from "react";
 import NavBar from "../Components/NavBar";
 import '../Styles/Agendamiento.css';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import espacios from "../EspaciosData";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const Agendamiento = () => {
   const { id } = useParams();
