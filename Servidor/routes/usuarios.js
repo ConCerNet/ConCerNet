@@ -20,4 +20,13 @@ usuarioRouter.get('/', async function(req, res, next){
         }
 });
 
+usuarioRouter.get('/:id', async function(req, res, next){
+    try {
+        res.json(await usuarioService.buscarUsuario(req.params.id, req.body));
+        } catch (err) {
+            console.error("Error mientras se buscaba el usuario", err.message);
+            next(err);
+        }
+});
+
 module.exports = usuarioRouter;

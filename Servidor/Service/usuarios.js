@@ -21,7 +21,24 @@ async function listarUsuarios(){
         }
 }
 
+async function buscarUsuario(id){
+    try{
+        const usuario = await models.usuarios.findOne({
+            where: {
+                idusuario: id
+                }
+                });
+            if(usuario){
+                return {mensaje: "Usuario encontrado", usuario};
+            }
+            return {mensaje: "Usuario no encontrado"};
+        } catch(error){
+            return {mensaje: 'Error al buscar usuario'};
+        }
+}
+
 module.exports = {
     nuevoUsuario,
     listarUsuarios,
+    buscarUsuario,
 }
