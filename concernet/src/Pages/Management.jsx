@@ -51,15 +51,15 @@ const Management = () => {
                     </div>
                     <div className="fecha">
                         <h2>Fecha</h2>
-                        <p>dd/mm/yy</p>
+                        <p>2024/06/10</p>
                     </div>
                     <div className="numero">
-                        <h2>N_Factura</h2>
-                        <p>0000001</p>
+                        <h2>N° Factura</h2>
+                        <p>3</p>
                     </div>
                     <div className="descripcionFactura">
                         <h2>Descripcion</h2>
-                        <p>Pago de mantenimientos de espacios comunes</p>
+                        <p>Pago de Administración del conjunto</p>
                     </div>
                 </div>
                 <div className="botones">
