@@ -54,7 +54,7 @@ const Management = () => {
                         <p>2024/06/10</p>
                     </div>
                     <div className="numero">
-                        <h2>N_Factura</h2>
+                        <h2>N° Factura</h2>
                         <p>3</p>
                     </div>
                     <div className="descripcionFactura">
