@@ -7,6 +7,7 @@ import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Agendamiento = () => {
   const { id } = useParams();
@@ -15,6 +16,7 @@ const Agendamiento = () => {
   const [fechaagendamiento, setFechaAgendamiento] = useState('');
   const [horaInicio, setHoraInicio] = useState('');
   const [horaFin, setHoraFin] = useState('');
+  const navigate = useNavigate();
 
   const agendarEspacio = async (e) => {
     e.preventDefault();
@@ -63,7 +65,8 @@ const Agendamiento = () => {
         idpagoagendamiento: 1
       });
       console.log(response.data);
-      <Link to="/Dashboard">{alert("Agendamiento creado con éxito")}</Link>
+      alert("Agendamiento creado con éxito");
+      navigate("/Dashboard");
     } catch (error) {
       console.error('Error al agendar', error);
     }
