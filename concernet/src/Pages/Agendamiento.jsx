@@ -27,7 +27,7 @@ const Agendamiento = () => {
       
     };
     
-    if (horaInicio <= horaActual){
+    if (fechaagendamiento === fechaActual && horaInicio <= horaActual){
         alert("El horario ya no está disponible");
         return;
     };
