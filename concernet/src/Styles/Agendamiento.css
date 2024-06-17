@@ -49,7 +49,7 @@
     background-color: darkblue;
     color: whitesmoke;
     cursor: pointer;
-    margin: -180px 0 0 350px;
+    margin: -180px 0 0 370px;
     animation: animacion2 1s ease-out forwards;
     font-size: 18px;
     border-radius: 5px;
@@ -60,35 +60,14 @@
 .desicion .cancelar{
     cursor: pointer;
     position: absolute;
-    background-color: darkblue;
-    color: whitesmoke;
-    margin: -180px 0 0 500px;
+    background-color: white;
+    color: darkblue;
+    margin: -180px 0 0 480px;
     animation: animacion2 1s ease-out forwards;
     font-size: 18px;
     border-radius: 5px;
     padding: 5px;
     border: none;
-}
-
-.desicion .Pagar{
-    cursor: pointer;
-    position: absolute;
-    background-color: darkblue;
-    color: whitesmoke;
-    margin: -180px 0 0 438px;
-    animation: animacion2 1s ease-out forwards;
-    font-size: 18px;
-    border-radius: 5px;
-    padding: 5px;
-    border: none;
-}
-
-.mercadoPago {
-    border-radius: 5px;
-    width: 600px;
-    height: 10px;
-    transform: translate(60%,-1400%);
-    
 }
 
 .desicion .cancelar:link{
@@ -99,12 +78,8 @@
     background-color: #0622f0;
 }
 
-.desicion .Pagar:hover {
-    background-color: #0622f0;
-}
-
 .desicion .cancelar:hover{
-    background-color: #0622f0;
+    background-color: #0621f031;
 }
 
 .desicion {

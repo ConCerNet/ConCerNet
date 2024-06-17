@@ -41,7 +41,7 @@ const Management = () => {
     return(
         <div className="container">
             <NavBar/>
-
+            <br/><br/><br/>
             <div className="containerManagement">
                 <div className="factura">
                     <h1>FACTURA</h1>
@@ -63,10 +63,10 @@ const Management = () => {
                     </div>
                 </div>
                 <div className="botones">
-                    <div className="botonHistorial">
+                    {/*<div className="botonHistorial">
                         <img src={historial} alt="historial" />
                         <p>Historial</p>
-                    </div>
+                    </div>*/}
                     
 
                     <button className="botonPago" onClick={handleBuy}>
