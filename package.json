@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@getbrevo/brevo": "^2.1.1"
+  }
+}
