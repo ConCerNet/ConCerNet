@@ -13,16 +13,16 @@ const Footer = () =>{
             <footer className="footerContainer">
                 <ul className="social-icon">
                     <li>
-                        <a href="" className="icon">
+                        <a href="https://www.youtube.com/@FaztCode" className="icon">
                             <img src={youtube} alt="social1" />
                         </a>
-                        <a href="" className="icon">
+                        <a href="https://www.instagram.com/coding_dev_/" className="icon">
                             <img src={instagram} alt="social2" />
                         </a>
-                        <a href="" className="icon">
+                        <a href="https://api.whatsapp.com/send/?phone=573207388253&text&type=phone_number&app_absent=0" className="icon">
                             <img src={whatsapp} alt="social3" />
                         </a>
-                        <a href="" className="icon">
+                        <a href="mailto:anedgoca2018@gmail.com" className="icon">
                             <img src={mail} alt="social4" />
                         </a>
                     </li>
