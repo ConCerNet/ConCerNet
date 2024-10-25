@@ -44,9 +44,9 @@ app.post("/crear-Preferencia", async (req, res) => {
                 },
             ],
             back_urls: {
-                success: "https://github.com/ConCerNet/ConCerNet.git",
-                failure: "https://github.com/ConCerNet/ConCerNet.git",
-                pending: "https://github.com/ConCerNet/ConCerNet.git",
+                success: "http://localhost:3000/Management",
+                failure: "http://localhost:3000/Management",
+                pending: "http://localhost:3000/Management",
             },
             auto_return: "approved",
         };
@@ -76,9 +76,9 @@ app.post("/crear-Preferencia-Agendamiento", async (req, res) => {
                 },
             ],
             back_urls: {
-                success: "https://github.com/ConCerNet/ConCerNet.git",
-                failure: "https://github.com/ConCerNet/ConCerNet.git",
-                pending: "https://github.com/ConCerNet/ConCerNet.git",
+                success: "http://localhost:3000/Management",
+                failure: "http://localhost:3000/Management",
+                pending: "http://localhost:3000/Management",
             },
             auto_return: "approved",
         };
