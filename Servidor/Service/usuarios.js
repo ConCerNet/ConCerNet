@@ -1,5 +1,6 @@
 const sequelize = require("./config-db.js");
 const initModels = require("../models/init-models.js");
+const { where } = require("sequelize");
 const models = initModels(sequelize);
 
 async function nuevoUsuario(usuario){
@@ -37,8 +38,27 @@ async function buscarUsuario(id){
         }
 }
 
+async function autenticarUsuario(nombre, contraseña) {
+    try {
+        const usuario = await models.usuarios.findOne({where: {nombre: nombre}})
+        
+        if(!usuario){
+            return {mensaje: "Usuario no encontrado", autenticado: false}
+        }
+        if(usuario.contraseña !== contraseña){
+            return {mensaje: "Contraseña incorrecta", autenticado: false}
+        }
+
+        return {mensaje: "Usuario autenticado correctamente", autenticado: true, usuario}
+    } catch (error) {
+        console.log("Error al autenticar el usuario", error)
+        return {mensaje: "Error al autenticar usuario", autenticado: false}
+    }
+}
+
 module.exports = {
     nuevoUsuario,
     listarUsuarios,
     buscarUsuario,
+    autenticarUsuario,
 }

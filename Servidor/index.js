@@ -31,6 +31,7 @@ app.use("/agendamiento", agendamientoRouter);
 app.use("/roles", rolesRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/espacios", espaciosRouter);
+app.use("/auth", usuarioRouter);
 
 app.post("/crear-Preferencia", async (req, res) => {
     try {
