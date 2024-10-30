@@ -34,11 +34,7 @@ const NavBar = () => {
             <Link to="/reporte_pagos">Pagos</Link>
           </li>
           <li>
-            {auth.user ? (
-              <Link onClick={handleLogout}>Cerrar sesión</Link>
-            ) : (
-              <Link to="/Login">Iniciar sesión</Link>
-            )}
+            <Link to="/Login">Cerrar Sesion</Link>
           </li>
         </ul>
       </nav>
