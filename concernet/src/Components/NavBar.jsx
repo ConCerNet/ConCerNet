@@ -28,7 +28,7 @@ const NavBar = () => {
             <Link to="/Dashboard">Inicio</Link>
           </li>
           <li>
-            <Link to="/Management">Administración</Link>
+            <Link to="/Management">Pagos</Link>
           </li>
           <li>
             <Link to="/Espacios">Espacios Comunes</Link>

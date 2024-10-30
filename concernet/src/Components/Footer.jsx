@@ -43,7 +43,7 @@ const Footer = () =>{
                         <Link to="/Dashboard" className="enlace">Inicio</Link>
                     </li>
                     <li>
-                        <Link to="/Management" className="enlace">Administración</Link>
+                        <Link to="/Management" className="enlace">Pagos</Link>
                     </li>
                     <li>
                         <Link to="/Espacios" className="enlace">Espacios Comunes</Link>
