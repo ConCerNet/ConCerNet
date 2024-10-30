@@ -5,7 +5,6 @@
     margin-bottom: 50px; /* Ajusta el valor para dar más o menos espacio */
 }
 
-
 .calendario {
     display: flex;
     flex-direction: row;
@@ -16,7 +15,13 @@
     margin: auto;
     margin-top: 10%;
     overflow: hidden;
+}
 
+.calendario label {
+    display: block;
+    margin-bottom: 1px;
+    color: #14217e;
+    padding-top: 10px;
 }
 
 .agendaImagen {
@@ -52,13 +57,34 @@
     padding: 8px; /* Ajusta el padding según lo que prefieras */
 }
 
-
 .botonContainer {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    gap: 50px; /* Añade espacio entre los botones */
+    margin-top: 10px; /* Da espacio adicional si es necesario */
 }
 
-.botonContainer button {
-    width: 48%; /* Para que cada botón ocupe la mitad del contenedor */
+.botonAgendar, .botonCancelar {
+    flex: 1; /* Hace que ambos botones se expandan de forma proporcional */
+    text-align: center;
+    background-color: darkblue;
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    animation: animacion2 1s ease-out forwards;
+}
+
+.botonCancelar {
+    background-color: white;
+    color: darkblue;
+}
+
+.botonAgendar:hover {
+    background-color: #0622f0;
+}
+
+.botonCancelar:hover {
+    background-color: #0621f031;
 }
