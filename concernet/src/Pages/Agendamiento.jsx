@@ -17,21 +17,27 @@ const Agendamiento = () => {
     <div className="agendamiento">
       <NavBar />
       <div className="contenedorAgendamiento">
-        <div className="agendaImagen">
-          <img src={espacio.imagen} alt={`Imagen del espacio ${espacio.nombre}`} />
-        </div>
+        
         <form className="calendario" action="#">
-            <label for="nombre"><b>Nombre:</b></label>
-            <input type="text" id="nombre" name="nombre" required/>
+            <div className="agendaImagen">
+              <img src={espacio.imagen} alt={`Imagen del espacio ${espacio.nombre}`} />
+            </div>
+            <div className="calendarioimputs">
+              <label for="nombre"><b>Cedula:</b></label>
+              <input type="text" id="cedula" name="cedula" required/>
 
-            <label for="fecha"><b>Fecha:</b></label>
-            <input type="date" id="fecha" name="fecha" required/>
+              <label for="nombre"><b>Nombre:</b></label>
+              <input type="text" id="nombre" name="nombre" required/>
 
-            <label for="hora"><b>Hora:</b></label>
-            <input type="time" id="hora" name="hora" required/>
+              <label for="fecha"><b>Fecha:</b></label>
+              <input type="date" id="fecha" name="fecha" required/>
 
-            <button type="submit">Agendar</button>
-            <Link to="/Espacios" className="botonCancelar"><button id="cancelar">Cancelar</button></Link>
+              <label for="hora"><b>Hora:</b></label>
+              <input type="time" id="hora" name="hora" required/>
+
+              <button type="submit">Agendar</button>
+              <Link to="/Espacios" className="botonCancelar"><button id="cancelar">Cancelar</button></Link>
+            </div>
         </form>
       </div>
       <Footer/>

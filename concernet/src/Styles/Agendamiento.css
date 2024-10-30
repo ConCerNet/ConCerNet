@@ -1,67 +1,44 @@
-/*.agendaImagen{
+.contenedorAgendamiento {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: absolute;
-    margin-top: 30px;
-    margin-top: 10px;
-    margin-left: 160px;
-}
-
-.agendaImagen img{
-    width: 300px;
-    height: auto;
-}
-*/
-/*actualizacion prueba*/
-.agendamiento{
-    background-color: rgb(167, 167, 245);
-}
-
-.contenedorAgendamiento{
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     animation: animacion 1s ease-out forwards;
+    margin-bottom: 50px; /* Ajusta el valor para dar más o menos espacio */
 }
 
-.contenedorAgendamiento .agendaImagen img{
-    height: 600px;
-    width: 800px;
-}
 
-.contenedorAgendamiento .calendario {
+.calendario {
+    display: flex;
+    flex-direction: row;
     background-color: white;
     border-radius: 10px;
     box-shadow: 1px 10px 20px 10px #14207e5b;
-    max-width: 400px;
-    text-align: center;
-    /*animation: animacion 1s ease-out forwards;*/
+    max-width: 800px; /* Aumenta el ancho del contenedor */
     margin: auto;
     margin-top: 10%;
+    overflow: hidden;
+
 }
 
-.calendario label {
-    display: block;
-    margin-bottom: 5px;
-    color: #14217e;
-    padding-top: 10px;
+.agendaImagen {
+    flex: 1; /* Ocupa la mitad del contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.calendario input{
-    padding: 5px;
-    border-radius: 10px;
+.agendaImagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
 }
 
-.calendario button{
-    display: block;
-    margin: auto;
-    margin-top: 30px;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 20px;
+.calendarioimputs {
+    flex: 1; /* Ocupa la otra mitad del contenedor */
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px; /* Espacio entre los inputs */
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
 }
-
-.botonCancelar{
-    text-decoration: none;
-}
-
