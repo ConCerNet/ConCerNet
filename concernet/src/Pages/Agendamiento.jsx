@@ -32,11 +32,16 @@ const Agendamiento = () => {
               <label for="fecha"><b>Fecha:</b></label>
               <input type="date" id="fecha" name="fecha" required/>
 
-              <label for="hora"><b>Hora:</b></label>
-              <input type="time" id="hora" name="hora" required/>
+              <label for="horaInicio"><b>Hora Inicio:</b></label>
+              <input type="time" id="horaInicio" name="horaInicio" required/>
 
-              <button type="submit">Agendar</button>
-              <Link to="/Espacios" className="botonCancelar"><button id="cancelar">Cancelar</button></Link>
+              <label for="horaFin"><b>Hora Fin:</b></label>
+              <input type="time" id="horaFin" name="horaFin" required/>
+
+              <div className="buttonContainer">
+                <button type="submit">Agendar</button>
+                <Link to="/Espacios" className="botonCancelar"><button id="cancelar">Cancelar</button></Link>
+              </div>
             </div>
         </form>
       </div>

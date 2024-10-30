@@ -42,3 +42,23 @@
     align-items: flex-start;
     text-align: left;
 }
+
+.calendarioimputs input[type="text"],
+.calendarioimputs input[type="date"],
+.calendarioimputs input[type="time"] {
+    width: 100%; /* Ajusta el tamaño del input */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 8px; /* Ajusta el padding según lo que prefieras */
+}
+
+
+.botonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.botonContainer button {
+    width: 48%; /* Para que cada botón ocupe la mitad del contenedor */
+}
