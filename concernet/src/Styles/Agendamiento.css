@@ -53,17 +53,15 @@
 .calendarioimputs input[type="time"] {
     width: 100%; /* Ajusta el tamaño del input */
     box-sizing: border-box;
-    margin-bottom: 10px;
     padding: 8px; /* Ajusta el padding según lo que prefieras */
 }
 
-.botonContainer {
+.buttonContainer {
     display: flex;
-    gap: 50px; /* Añade espacio entre los botones */
-    margin-top: 10px; /* Da espacio adicional si es necesario */
+    gap: 40px; /* Añade espacio entre los botones */
 }
 
-.botonAgendar, .botonCancelar {
+.botonAgendar {
     flex: 1; /* Hace que ambos botones se expandan de forma proporcional */
     text-align: center;
     background-color: darkblue;
@@ -71,14 +69,22 @@
     cursor: pointer;
     font-size: 18px;
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px 50px;
     border: none;
     animation: animacion2 1s ease-out forwards;
 }
 
 .botonCancelar {
+    display: inline-block; /* Asegura que actúe como un botón */
     background-color: white;
     color: darkblue;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px 50px;
+    text-decoration: none; /* Quita el subrayado típico de los enlaces */
+    animation: animacion2 1s ease-out forwards;
 }
 
 .botonAgendar:hover {

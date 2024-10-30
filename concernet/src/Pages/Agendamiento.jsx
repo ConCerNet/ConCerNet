@@ -40,7 +40,7 @@ const Agendamiento = () => {
 
               <div className="buttonContainer">
                 <button type="submit" className="botonAgendar">Agendar</button>
-                <Link to="/Espacios" className="botonCancelar"><button id="cancelar">Cancelar</button></Link>
+                <Link to="/Espacios" className="botonCancelar">Cancelar</Link>
               </div>
             </div>
         </form>
