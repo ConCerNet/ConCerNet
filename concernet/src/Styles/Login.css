@@ -21,7 +21,7 @@
     width: 100%;
 }
 
-form{
+.login form{
     background: transparent;
     padding: 40px;
     border-radius: 10px;
