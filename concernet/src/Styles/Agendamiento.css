@@ -35,6 +35,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    border-radius: 10px;
 }
 
 .calendarioimputs {
@@ -50,7 +51,8 @@
 
 .calendarioimputs input[type="text"],
 .calendarioimputs input[type="date"],
-.calendarioimputs input[type="time"] {
+.calendarioimputs input[type="time"],
+.calendarioimputs input[type="number"] {
     width: 100%; /* Ajusta el tamaño del input */
     box-sizing: border-box;
     padding: 8px; /* Ajusta el padding según lo que prefieras */
