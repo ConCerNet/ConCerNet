@@ -1,2 +1,2 @@
 # ConCerNet
-Pagina web para agendar espacios en tu conjunto cerrado
+Pagina web para agendar espacios en tu conjunto cerrado.
