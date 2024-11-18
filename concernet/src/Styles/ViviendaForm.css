@@ -1,0 +1,136 @@
+/* Contenedor principal del formulario */
+.space-y-4 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilos generales del formulario */
+  .mt-1 {
+    margin-top: 0.25rem; /* Margen superior pequeño */
+  }
+  
+  .block {
+    display: block; /* Se asegura de que el elemento sea un bloque */
+  }
+  
+  .w-full {
+    width: 100%; /* Ancho completo */
+  }
+  
+  .rounded-md {
+    border-radius: 0.375rem; /* Bordes ligeramente redondeados */
+  }
+  
+  .border-gray-300 {
+    border-color: #d1d5db; /* Borde gris claro */
+  }
+  
+  .shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  }
+  
+    /* Estilos para el enfoque del campo de texto y otros elementos con focus */
+  .focus\:border-blue-500:focus {
+    border-color: #3b82f6; /* Borde azul al hacer focus */
+  }
+  
+  .focus\:outline-none:focus {
+    outline: none; /* Elimina cualquier contorno preexistente */
+  }
+  
+  .focus\:ring-blue-500:focus {
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Simula un anillo azul */
+  }
+  
+  /* También podrías combinar el borde azul con un box-shadow para un efecto más visible */
+  input:focus, select:focus, textarea:focus {
+    border-color: #3b82f6; /* Color de borde al recibir el foco */
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Simula el anillo de enfoque */
+  }
+  
+  /* Estilos de las etiquetas de los campos */
+  .text-sm {
+    font-size: 0.875rem; /* Tamaño de fuente pequeño */
+  }
+  
+  .font-medium {
+    font-weight: 500; /* Peso medio de la fuente */
+  }
+  
+  .text-gray-700 {
+    color: #374151; /* Gris oscuro */
+  }
+  
+  /* Estilos para el grid (distribución en columnas) */
+  .grid {
+    display: grid;
+  }
+  
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  }
+  
+  .gap-4 {
+    gap: 1rem; /* Espaciado entre las celdas */
+  }
+  
+  /* Estilos del botón de envío */
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .bg-blue-600 {
+    background-color: #2563eb; /* Azul oscuro */
+  }
+  
+  .text-white {
+    color: white; /* Texto blanco */
+  }
+  
+  .rounded-md {
+    border-radius: 0.375rem; /* Bordes redondeados */
+  }
+  
+  .hover\:bg-blue-700:hover {
+    background-color: #1d4ed8; /* Azul más oscuro al pasar el mouse */
+  }
+  
+  .pt-4 {
+    padding-top: 1rem; /* Padding superior */
+  }
+  
+  /* Estilos del input URL */
+  [type="url"] {
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 0.5rem; /* Espaciado interno */
+    border: 1px solid #d1d5db; /* Borde gris */
+    border-radius: 0.375rem; /* Bordes redondeados */
+  }
+  
+  /* Estilos para el select */
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+  }
+  
+  /* Estilos para los botones */
+  button {
+    cursor: pointer; /* Cursor en forma de mano */
+  }
+  
+  button:focus {
+    outline: none; /* Elimina el contorno del botón cuando se hace focus */
+  }
+  
+  button:hover {
+    background-color: #1d4ed8; /* Cambio de color al pasar el mouse */
+  }
+  

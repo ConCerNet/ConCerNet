@@ -1,0 +1,90 @@
+/* Estilos generales para el formulario */
+.space-y-4 > * + * {
+    margin-top: 16px;
+  }
+  
+  /* Estilos para los elementos del formulario */
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151; /* Gray 700 */
+  }
+  
+  input, select {
+    margin-top: 8px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db; /* Gray 300 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 0.875rem;
+  }
+  
+  input:focus, select:focus {
+    border-color: #3b82f6; /* Blue 500 */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Blue ring */
+  }
+  
+  button {
+    padding: 8px 16px;
+    background-color: #2563eb; /* Blue 600 */
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+  
+  button:hover {
+    background-color: #1d4ed8; /* Blue 700 */
+  }
+  
+  /* Estilos para la sección de acción (botón) */
+  .flex {
+    display: flex;
+  }
+  
+  .justify-end {
+    justify-content: flex-end;
+  }
+  
+  .space-x-3 > * + * {
+    margin-left: 12px;
+  }
+  
+  .pt-4 {
+    padding-top: 16px;
+  }
+  
+  /* Estilos opcionales para bordes, fondos y texto */
+  .block {
+    display: block;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .text-gray-700 {
+    color: #374151; /* Gray 700 */
+  }
+  
+  .text-gray-500 {
+    color: #6b7280; /* Gray 500 */
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  /* Estilos para el input y select */
+  input[type="url"] {
+    padding-right: 36px; /* Hacer espacio para un ícono de URL si es necesario */
+  }
+  
