@@ -29,4 +29,20 @@ usuarioRouter.get('/:id', async function(req, res, next){
         }
 });
 
+usuarioRouter.post('/login', async function(req, res, next) {
+    try {
+        const { username, password } = req.body;
+        const resultado = await usuarioService.autenticarUsuario(username, password);
+        
+        if (!resultado.autenticado) {
+            return res.status(401).json({ mensaje: resultado.mensaje });
+        }
+
+        res.status(200).json({ mensaje: resultado.mensaje, usuario: resultado.usuario });
+    } catch (err) {
+        console.error("Error mientras se autenticaba el usuario", err.message);
+        next(err);
+    }
+});
+
 module.exports = usuarioRouter;

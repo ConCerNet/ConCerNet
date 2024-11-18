@@ -1,5 +1,6 @@
 import { useContext, createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const AuthContext = createContext();
 
@@ -8,14 +9,20 @@ const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(localStorage.getItem("site") || "");
     const navigate = useNavigate();
     
-    const loginAction = (data) => {
-        if (data.username === "JJCO10" && data.password === "juanjose10") {
-            setUser(data.username);
-            setToken(data.password);
-            localStorage.setItem("site", data.password);
-            navigate("/Dashboard");
+    const loginAction = async (data) => {
+        try {
+            const response = await axios.post('http://localhost:4000/auth/login', data)
+
+            if (response.status === 200) {
+                const {usuario} = response.data
+                setUser(usuario.nombre);
+                setToken(usuario.contraseña);
+                localStorage.setItem("site", usuario.contraseña);
+                navigate("/Dashboard");
+            }
+        } catch (error) {
+            alert("Usuario o contraseña incorrectos")
         }
-        throw Error("Usuario no encontrado");
     };
 
     const logOut = () => {
