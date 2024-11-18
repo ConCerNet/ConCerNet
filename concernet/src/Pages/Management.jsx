@@ -39,6 +39,7 @@ const Management = () => {
             descripcion: "Pago de Administración del conjunto",
             monto: 10000,
         },
+        
     ]);
 
     const handleBuy = async (payment) => {
@@ -73,7 +74,9 @@ const Management = () => {
                         <button className="botonPago" onClick={() => handleBuy(pago)}>
                             <img src={pagoimg} alt="pago" />
                             <p>Pagar</p>
+
                         </button>
+                        {PreferenceId && <Wallet initialization={{ preferenceId: PreferenceId }} customization={{ texts:{ valueProp: 'smart_option'}}} />}
                     </div>
                 ))}
             </div>
