@@ -76,7 +76,9 @@ const Management = () => {
                             <p>Pagar</p>
 
                         </button>
-                        {PreferenceId && <Wallet initialization={{ preferenceId: PreferenceId }} customization={{ texts:{ valueProp: 'smart_option'}}} />}
+                        {PreferenceId === pago.id && (
+                            <Wallet initialization={{ preferenceId: PreferenceId }} customization={{ texts: { valueProp: 'smart_option' } }} />
+                        )}
                     </div>
                 ))}
             </div>
