@@ -1,13 +1,24 @@
 import "../Styles/Footer.css";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import youtube from "../Images/youtube.svg";
 import instagram from "../Images/instagram.svg";
 import whatsapp from "../Images/whatsapp.svg";
 import mail from "../Images/mail.svg";
+import { useAuth } from "../AuthProvider";
 
 
 const Footer = () =>{
+
+    const auth = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        auth.logOut();
+        navigate("/");
+      };
+
+
     return(
         <div className="footer">
             <footer className="footerContainer">
@@ -41,7 +52,11 @@ const Footer = () =>{
                         <Link to="/Viviendas" className="enlace">Viviendas</Link>
                     </li>
                     <li>
+                        {auth.user ? (
+                        <Link onClick={handleLogout} className="enlace">Cerrar sesión</Link>
+                        ) : (
                         <Link to="/Login" className="enlace">Iniciar sesión</Link>
+                        )}
                     </li>
                 </ul>
                 <p className="text">
