@@ -1,107 +1,89 @@
-/* Contenedor principal de filtros */
+/* Filters.css */
+
+/* Contenedor principal */
 .bg-white {
-    background-color: white;
-  }
-  
-  .p-4 {
-    padding: 16px;
-  }
-  
-  .rounded-lg {
-    border-radius: 8px;
-  }
-  
-  .shadow {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .mb-6 {
-    margin-bottom: 24px;
-  }
-  
-  /* Grid de filtros */
-  .grid {
-    display: grid;
-    gap: 16px;
-  }
-  
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  @media (max-width: 768px) {
-    .md\:grid-cols-3 {
-      grid-template-columns: 1fr; /* Para pantallas pequeñas */
-    }
-  }
-  
-  /* Estilos para cada campo de filtro */
-  label {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #374151; /* Gray 700 */
-    margin-bottom: 4px;
-  }
-  
-  input {
-    padding-left: 40px; /* Espacio para el ícono */
-    width: 100%;
-    padding: 8px;
-    border-radius: 8px;
-    border: 1px solid #d1d5db; /* Gray 300 */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    font-size: 0.875rem;
-  }
-  
-  input:focus {
-    border-color: #3b82f6; /* Blue 500 */
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Blue ring */
-  }
-  
-  /* Contenedor de ícono */
-  .relative {
-    position: relative;
-  }
-  
-  .absolute {
-    position: absolute;
-  }
-  
-  .left-3 {
-    left: 12px;
-  }
-  
-  .top-1\/2 {
-    top: 50%;
-  }
-  
-  .-translate-y-1\/2 {
-    transform: translateY(-50%);
-  }
-  
-  .text-gray-400 {
-    color: #9ca3af; /* Gray 400 */
-  }
-  
-  .w-5, .h-5 {
-    width: 20px;
-    height: 20px;
-  }
-  
-  /* Para pantallas de tipo 'pagos' */
-  .md\:col-span-3 {
-    grid-column: span 3;
-  }
-  
-  /* Filtros para cada tipo de búsqueda */
-  input::placeholder {
-    color: #9ca3af; /* Gray 400 */
-    opacity: 1; /* Forzamos la visibilidad del color en los placeholders */
-  }
-  
-  input[type="text"] {
-    padding-right: 40px; /* Para el ícono de la lupa */
-  }
-  
+  background-color: white;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+/* Grid y espaciado */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.md\:grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+/* Estilos de inputs */
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
+.w-full {
+  width: 90%;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.border-gray-300 {
+  border-color: #d1d5db;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.focus\:border-blue-500:focus {
+  border-color: #3b82f6;
+}
+
+.focus\:ring-blue-500:focus {
+  outline-color: #3b82f6;
+}
+
+/* Iconos */
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.left-3 {
+  left: 0.75rem;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.-translate-y-1\/2 {
+  transform: translateY(-50%);
+}
