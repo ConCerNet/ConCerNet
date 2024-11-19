@@ -41,7 +41,7 @@ const Agendamiento = () => {
     }
   }
 
-  const agendarEspacio = async (e, valor) => {
+  const agendarEspacio = async (e) => {
     e.preventDefault();
     try {
       
