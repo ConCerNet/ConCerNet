@@ -117,7 +117,7 @@ function DashboardAdmin() {
                     alt="ConCerNet"
                   />
               <span className="ml-2 text-xl font-semibold text-gray-900">
-                <h1>ConcerNet</h1>
+                <h1 style={{color:"#0056b3"}}>ConcerNet</h1>
               </span>
             </div>
             <div className="login text-gray-900">
