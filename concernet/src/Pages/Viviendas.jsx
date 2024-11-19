@@ -10,7 +10,7 @@ const Viviendas = () => {
     <div className="container">
       <NavBar />
       <div className="container-viviendas">
-        <h1>Viviendas Disponibles</h1>
+        <h1 style={{color: "#0056b3"}}>Viviendas Disponibles</h1>
         <ViviendasList viviendas={viviendas} />
       </div>
       <Footer/>

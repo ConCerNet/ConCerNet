@@ -9,7 +9,7 @@
 .containerManagement h2 {
     font-size: 24px;
     font-weight: bold;
-    color: darkblue;
+    color: #0056b3;
 }
 
 /* Estilos para cada factura */
@@ -47,7 +47,7 @@
 
 /* Estilos para el botón de pago */
 .botonPago {
-    background-color: darkblue;
+    background-color: #1773d5;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -62,7 +62,7 @@
 
 /* Efecto de hover para el botón de pago */
 .botonPago:hover {
-    background-color: rgb(0, 0, 250);
+    background-color: #0056b3;
 }
 
 /* Estilos para la imagen dentro del botón de pago */
