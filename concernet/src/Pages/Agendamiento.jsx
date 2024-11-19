@@ -18,43 +18,67 @@ const Agendamiento = () => {
   const [horaFin, setHoraFin] = useState('');
   const navigate = useNavigate();
 
-  const agendarEspacio = async (e) => {
-    e.preventDefault();
-    const fechaActual = new Date().toISOString().split('T')[0];
-    const horaActual = new Date().toTimeString().split(' ')[0];
+  const handleChangeCedula = async (valor) => {
 
-    if (fechaagendamiento < fechaActual){
-      alert("No puedes agendar con una fecha que ya pasó");
-      return;
-      
-    };
-    
-    if (fechaagendamiento === fechaActual && horaInicio <= horaActual){
-        alert("El horario ya no está disponible");
-        return;
-    };
+    setIdUsuario(valor);
 
-    if (horaInicio >= horaFin){
-      alert("Los horarios no son correctos");
-      return;
-    }
-
-    const horaInicioDate = new Date(`1970-01-01T${horaInicio}:00`);
-    const horaFinDate = new Date(`1970-01-01T${horaFin}:00`);
-
-    const diferenciaHoras = (horaFinDate - horaInicioDate) / (1000 * 60 * 60);
-
-    if (diferenciaHoras < 1) {
-      alert('La diferencia entre la hora de inicio y la hora de fin debe ser de al menos 1 hora');
+    if(valor === ''){
+      setNombreUsuario('');
       return;
     }
 
     try {
+
+      const responseComplete = await axios.get(`http://localhost:4000/usuarios/${valor}`);
+      const user = responseComplete.data;
+
+      setNombreUsuario(user.nombre);
+
+    } catch (error) {
+      
+      console.error("Error al buscar usuario:", error);
+      setNombreUsuario('Usuario no encontrado');
+    }
+  }
+
+  const agendarEspacio = async (e) => {
+    e.preventDefault();
+    try {
+      
       const responseUsuario = await axios.get(`http://localhost:4000/usuarios/${idusuario}`);
       if(responseUsuario.data.mensaje === "Usuario no encontrado"){
         alert('El usuario no existe');
         return;
       }
+
+      const fechaActual = new Date().toISOString().split('T')[0];
+      const horaActual = new Date().toTimeString().split(' ')[0];
+
+      if (fechaagendamiento < fechaActual){
+        alert("No puedes agendar con una fecha que ya pasó");
+        return;
+        
+      };
+      
+      if (fechaagendamiento === fechaActual && horaInicio <= horaActual){
+          alert("El horario ya no está disponible");
+          return;
+      };
+
+      if (horaInicio >= horaFin){
+        alert("Los horarios no son correctos");
+        return;
+      }
+
+      const horaInicioDate = new Date(`1970-01-01T${horaInicio}:00`);
+      const horaFinDate = new Date(`1970-01-01T${horaFin}:00`);
+
+      const diferenciaHoras = (horaFinDate - horaInicioDate) / (1000 * 60 * 60);
+
+    if (diferenciaHoras < 1) {
+      alert('La diferencia entre la hora de inicio y la hora de fin debe ser de al menos 1 hora');
+      return;
+    }
 
       const response = await axios.post('http://localhost:4000/agendamiento/agendar', {
         idespacio: id,
@@ -85,10 +109,10 @@ const Agendamiento = () => {
           </div>
           <div className="calendarioimputs">
             <label for="cedula"><b>Cédula:</b></label>
-            <input type="number" id="cedula" name="cedula" value={idusuario} onChange={(e) => setIdUsuario(e.target.value)} required/>
+            <input type="number" id="cedula" name="cedula" value={idusuario} onChange={(e) => handleChangeCedula(e.target.value)} required/>
 
             <label for="nombre"><b>Nombre:</b></label>
-            <input type="text" disabled id="nombre" name="nombre" value={nombreusuario} onChange={(e) => setNombreUsuario(e.target.value)} required/>
+            <input type="text" disabled id="nombre" name="nombre" value={nombreusuario} required/>
             
             <label for="fecha"><b>Fecha:</b></label>
             <input type="date" id="fecha" name="fecha" value={fechaagendamiento} onChange={(e) => setFechaAgendamiento(e.target.value)} required/>
