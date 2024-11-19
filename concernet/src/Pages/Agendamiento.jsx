@@ -12,6 +12,7 @@ const Agendamiento = () => {
   const { id } = useParams();
   const espacio = espacios.find((espacio) => espacio.id === parseInt(id));
   const [idusuario, setIdUsuario] = useState('');
+  const [nombreusuario, setNombreUsuario] = useState('');
   const [fechaagendamiento, setFechaAgendamiento] = useState('');
   const [horaInicio, setHoraInicio] = useState('');
   const [horaFin, setHoraFin] = useState('');
@@ -85,6 +86,9 @@ const Agendamiento = () => {
           <div className="calendarioimputs">
             <label for="cedula"><b>Cédula:</b></label>
             <input type="number" id="cedula" name="cedula" value={idusuario} onChange={(e) => setIdUsuario(e.target.value)} required/>
+
+            <label for="nombre"><b>Nombre:</b></label>
+            <input type="text" disabled id="nombre" name="nombre" value={nombreusuario} onChange={(e) => setNombreUsuario(e.target.value)} required/>
             
             <label for="fecha"><b>Fecha:</b></label>
             <input type="date" id="fecha" name="fecha" value={fechaagendamiento} onChange={(e) => setFechaAgendamiento(e.target.value)} required/>

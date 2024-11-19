@@ -11,7 +11,7 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 1px 10px 20px 10px #14207e5b;
-    max-width: 800px; /* Aumenta el ancho del contenedor */
+    max-width: 1000px; /* Aumenta el ancho del contenedor */
     margin: auto;
     margin-top: 10%;
     overflow: hidden;
