@@ -13,11 +13,15 @@ const AuthProvider = ({ children }) => {
         try {
             const response = await axios.post('http://localhost:4000/auth/login', data)
 
-            if (response.status === 200) {
-                const {usuario} = response.data
-                setUser(usuario.nombre);
-                setToken(usuario.contraseña);
-                localStorage.setItem("site", usuario.contraseña);
+            const { usuario } = response.data;
+            setUser(usuario.nombre);
+            setToken(usuario.contraseña);
+            localStorage.setItem("site", usuario.contraseña);
+
+            // Verifica el rol del usuario para decidir la redirección
+            if (usuario.idrol === 1) {
+                navigate("/Dashboard_admin");
+            } else {
                 navigate("/Dashboard");
             }
         } catch (error) {

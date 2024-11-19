@@ -5,12 +5,14 @@ import ViviendasGrid from "../Components/ViviendasGrid"
 import PagosTable from "../Components/PagosTable"
 import Filters from "../Components/Filtrers"
 import '../Styles/Dashboard_admin.css'
+import concernet from "../Images/icoConcernet2.ico";
 import {
   usuarios as initialUsuarios,
   viviendas as initialViviendas,
   pagos as initialPagos
 } from "../Components/data"
-import { Building } from "lucide-react"
+import {Link, useNavigate} from "react-router-dom";
+import { useAuth } from "../AuthProvider";
 
 function DashboardAdmin() {
   const [activeTab, setActiveTab] = useState("usuarios")
@@ -22,6 +24,8 @@ function DashboardAdmin() {
     email: "",
     direccion: ""
   })
+
+  const auth = useAuth();
 
   // Filtrado
   const handleFilterChange = (name, value) => {
@@ -106,10 +110,26 @@ function DashboardAdmin() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <Building className="w-8 h-8 text-blue-600" />
+              {/* <Building className="w-8 h-8 text-blue-600" /> */}
+              <img
+                    src={concernet}
+                    className="w-8 h-8 text-blue-600"
+                    alt="ConCerNet"
+                  />
               <span className="ml-2 text-xl font-semibold text-gray-900">
-                ConcerNet
+                <h1>ConcerNet</h1>
               </span>
+            </div>
+            <div className="login text-gray-900">
+              <ul>
+                <li>
+                  {auth.user ? (
+                    <Link to="/Login">Cerrar sesión</Link>
+                  ) : (
+                    <Link to="/Login">Iniciar sesión</Link>
+                  )}
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -120,9 +140,6 @@ function DashboardAdmin() {
           <h1 className="text-3xl font-bold text-gray-900">
             Panel de Administración
           </h1>
-          <p className="mt-2 text-gray-600">
-            Gestiona usuarios, propiedades y pagos de forma eficiente
-          </p>
         </div>
 
         <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />

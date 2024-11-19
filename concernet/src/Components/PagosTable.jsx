@@ -78,7 +78,7 @@ export default function PagosTable({
                   {pago.fecha}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {pago.monto.toLocaleString("es-ES")}€
+                  {pago.monto.toLocaleString("es-ES")}$
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {pago.concepto}

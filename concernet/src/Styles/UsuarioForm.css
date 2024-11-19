@@ -1,8 +1,10 @@
 /* Estilos generales para el formulario */
-.space-y-4 > * + * {
-    margin-top: 16px;
+  .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
   }
-  
+
   /* Estilos para los elementos del formulario */
   label {
     display: block;
@@ -11,6 +13,11 @@
     color: #374151; /* Gray 700 */
   }
   
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
   input, select {
     margin-top: 8px;
     width: 100%;
@@ -20,42 +27,35 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     font-size: 0.875rem;
   }
-  
+
   input:focus, select:focus {
     border-color: #3b82f6; /* Blue 500 */
     outline: none;
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Blue ring */
   }
   
-  button {
-    padding: 8px 16px;
-    background-color: #2563eb; /* Blue 600 */
-    color: white;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-size: 0.875rem;
-  }
-  
-  button:hover {
-    background-color: #1d4ed8; /* Blue 700 */
-  }
-  
-  /* Estilos para la sección de acción (botón) */
-  .flex {
-    display: flex;
+  button, optgroup {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
   }
   
   .justify-end {
     justify-content: flex-end;
   }
-  
-  .space-x-3 > * + * {
-    margin-left: 12px;
+
+  /* Estilos para la sección de acción (botón) */
+  .flex {
+    display: flex;
   }
   
   .pt-4 {
-    padding-top: 16px;
+    padding-top: 1rem;
   }
   
   /* Estilos opcionales para bordes, fondos y texto */

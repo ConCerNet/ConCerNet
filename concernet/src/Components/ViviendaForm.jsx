@@ -45,7 +45,7 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Precio (€)
+            Precio ($)
           </label>
           <input
             type="number"
@@ -57,15 +57,18 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Metros cuadrados
+            Estado
           </label>
-          <input
-            type="number"
-            name="metros"
-            defaultValue={vivienda?.metros}
+          <select
+            name="estado"
+            defaultValue={vivienda?.estado}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             required
-          />
+          >
+            <option value="disponible">Disponible</option>
+            <option value="reservada">Reservada</option>
+            <option value="vendida">Vendida</option>
+          </select>
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
@@ -93,21 +96,6 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
             required
           />
         </div>
-      </div>
-      <div>
-        <label className="block text-sm font-medium text-gray-700">
-          Estado
-        </label>
-        <select
-          name="estado"
-          defaultValue={vivienda?.estado}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-          required
-        >
-          <option value="disponible">Disponible</option>
-          <option value="reservada">Reservada</option>
-          <option value="vendida">Vendida</option>
-        </select>
       </div>
       <div>
         <label className="block text-sm font-medium text-gray-700">

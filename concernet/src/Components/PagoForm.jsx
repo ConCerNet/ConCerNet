@@ -46,7 +46,7 @@ export default function PagoForm({ pago, viviendas, onSubmit }) {
       </div>
       <div>
         <label className="block text-sm font-medium text-gray-700">
-          Monto (€)
+          Monto ($)
         </label>
         <input
           type="number"

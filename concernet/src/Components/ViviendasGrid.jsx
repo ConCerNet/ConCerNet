@@ -67,7 +67,7 @@ export default function ViviendasGrid({ viviendas, onAdd, onEdit, onDelete }) {
               <p className="text-gray-600 text-sm mb-4">{vivienda.direccion}</p>
               <div className="flex justify-between items-center mb-4">
                 <span className="text-2xl font-bold text-blue-600">
-                  {vivienda.precio.toLocaleString("es-ES")}€
+                  {vivienda.precio.toLocaleString("es-ES")}$
                 </span>
               </div>
               <div className="flex justify-between text-gray-500 mb-4">
