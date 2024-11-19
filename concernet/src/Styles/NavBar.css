@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    background-color: #1773d5;
+    background-color: darkblue;
     padding: 15px 30px;
     position: fixed;
     z-index: 10;
@@ -48,5 +48,5 @@
 }
 
 .NavB ul li a:hover{
-    background-color: #0056b3;
+    background-color: rgb(28, 28, 182);
 }

@@ -106,7 +106,7 @@ function DashboardAdmin() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <nav className="bg-white shadow-sm">
+      <nav className="bg-white shadow-sm nav">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
@@ -117,7 +117,7 @@ function DashboardAdmin() {
                     alt="ConCerNet"
                   />
               <span className="ml-2 text-xl font-semibold text-gray-900">
-                <h1 style={{color:"#0056b3"}}>ConcerNet</h1>
+                <h1 className="titulo">ConcerNet</h1>
               </span>
             </div>
             <div className="login text-gray-900">

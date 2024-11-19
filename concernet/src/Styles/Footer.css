@@ -9,7 +9,7 @@
 .footerContainer{
     position: relative;
     width:  100%;
-    background-color: #1773d5;
+    background-color: darkblue;
     min-height: 100px;
     padding: 20px 50px;
     display: flex;
