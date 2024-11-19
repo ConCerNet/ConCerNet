@@ -1,0 +1,108 @@
+/* Estilos para el fondo del modal */
+  .fixed {
+    position: fixed;
+  }
+  
+  .inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .bg-black {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad */
+  }
+  
+  .z-50 {
+    z-index: 50;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  /* Estilos para el contenedor del modal */
+  .bg-white {
+    background-color: white;
+  }
+  
+  .rounded-lg {
+    border-radius: 8px;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .max-w-2xl {
+    max-width: 672px; /* Máximo tamaño 2xl */
+  }
+  
+  .mx-4 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  
+  /* Contenido del modal */
+  .p-4 {
+    padding: 16px;
+  }
+  
+  /* Estilos del encabezado del modal */
+  .flex {
+    display: flex;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .p-4 {
+    padding: 16px;
+  }
+  
+  .border-b {
+    border-bottom: 1px solid #e5e7eb; /* Línea de borde gris claro */
+  }
+  
+  /* Título del modal */
+  .text-xl {
+    font-size: 1.25rem; /* Tamaño de fuente del título */
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  /* Botón de cierre */
+  .text-gray-500 {
+    color: #6b7280; /* Gris oscuro */
+  }
+  
+  .hover\:text-gray-700:hover {
+    color: #374151; /* Gris más oscuro al pasar el mouse */
+  }
+  
+  .w-6, .h-6 {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Contenido dentro del modal */
+  .p-4 {
+    padding: 16px;
+  }
+  

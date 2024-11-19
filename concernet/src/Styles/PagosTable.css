@@ -1,0 +1,277 @@
+/* Contenedor principal de la tabla de pagos */
+  .bg-white {
+    background-color: #ffffff;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem; /* Bordes redondeados */
+  }
+  
+  .shadow {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  
+  /* Estilos del encabezado de la tabla */
+  .p-4 {
+    padding: 1rem; /* Padding general */
+  }
+  
+  .border-b {
+    border-bottom: 1px solid #e5e7eb; /* Borde inferior */
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem; /* Tamaño de fuente grande */
+  }
+  
+  .font-semibold {
+    font-weight: 600; /* Peso de la fuente */
+  }
+  
+  /* Estilos del botón de agregar nuevo pago */
+  .bg-blue-600 {
+    background-color: #2563eb; /* Azul oscuro */
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .rounded-md {
+    border-radius: 0.375rem; /* Bordes redondeados */
+  }
+  
+  .hover\:bg-blue-700:hover {
+    background-color: #1d4ed8; /* Azul más oscuro al pasar el mouse */
+  }
+  
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .mr-2 {
+    margin-right: 0.5rem; /* Margen derecho */
+  }
+  
+  /* Estilos de la tabla */
+  .min-w-full {
+    min-width: 100%;
+  }
+  
+  .divide-y {
+    border-collapse: collapse;
+  }
+  
+  .divide-gray-200 tr {
+    border-bottom: 1px solid #e5e7eb; /* Línea divisoria entre filas */
+  }
+  
+  .bg-gray-50 {
+    background-color: #f9fafb; /* Fondo gris claro */
+  }
+  
+  .text-xs {
+    font-size: 0.75rem; /* Tamaño de fuente extra pequeño */
+  }
+  
+  .font-medium {
+    font-weight: 500; /* Peso medio de la fuente */
+  }
+  
+  .text-gray-500 {
+    color: #6b7280; /* Gris medio */
+  }
+  
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  .tracking-wider {
+    letter-spacing: 0.05em; /* Espaciado de letras */
+  }
+  
+  .hover\:bg-gray-50:hover {
+    background-color: #f9fafb; /* Fondo gris claro al pasar el mouse */
+  }
+  
+  /* Estilos de las celdas */
+  .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .whitespace-nowrap {
+    white-space: nowrap; /* Evita el salto de línea */
+  }
+  
+  .text-sm {
+    font-size: 0.875rem; /* Tamaño pequeño de la fuente */
+  }
+  
+  .text-gray-900 {
+    color: #111827; /* Gris muy oscuro */
+  }
+  
+  /* Estilos para los estados */
+  .bg-green-100 {
+    background-color: #d1fad6; /* Fondo verde claro */
+  }
+  
+  .text-green-800 {
+    color: #166534; /* Texto verde oscuro */
+  }
+  
+  .bg-yellow-100 {
+    background-color: #fef3c7; /* Fondo amarillo claro */
+  }
+  
+  .text-yellow-800 {
+    color: #854d0e; /* Texto amarillo oscuro */
+  }
+  
+  .px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .inline-flex {
+    display: inline-flex;
+  }
+  
+  .text-xs {
+    font-size: 0.75rem; /* Fuente extra pequeña */
+  }
+  
+  .leading-5 {
+    line-height: 1.25rem; /* Altura de línea */
+  }
+  
+  .font-semibold {
+    font-weight: 600; /* Fuente seminegrita */
+  }
+  
+  .rounded-full {
+    border-radius: 9999px; /* Bordes completamente redondeados */
+  }
+  
+  /* Estilos de las acciones */
+  .font-medium {
+    font-weight: 500; /* Peso medio */
+  }
+  
+  .text-blue-600 {
+    color: #2563eb; /* Azul */
+  }
+  
+  .hover\:text-blue-900:hover {
+    color: #1d4ed8; /* Azul oscuro al pasar el mouse */
+  }
+  
+  .text-red-600 {
+    color: #dc2626; /* Rojo */
+  }
+  
+  .hover\:text-red-900:hover {
+    color: #9b1c1c; /* Rojo oscuro al pasar el mouse */
+  }
+  
+  /* Modal */
+  .fixed {
+    position: fixed;
+  }
+  
+  .inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .bg-black {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
+  }
+  
+  .z-50 {
+    z-index: 50; /* Nivel de apilamiento superior */
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .max-w-2xl {
+    max-width: 32rem; /* Ancho máximo */
+  }
+  
+  .mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem; /* Bordes redondeados */
+  }
+  
+  .bg-white {
+    background-color: #ffffff; /* Fondo blanco */
+  }
+  
+  .border-b {
+    border-bottom: 1px solid #e5e7eb; /* Borde inferior */
+  }
+  
+  .p-4 {
+    padding: 1rem; /* Padding */
+  }
+  
+  .text-xl {
+    font-size: 1.25rem; /* Tamaño de fuente */
+  }
+  
+  .font-semibold {
+    font-weight: 600; /* Peso seminegrita */
+  }
+  
+  .text-gray-500 {
+    color: #6b7280; /* Gris */
+  }
+  
+  .hover\:text-gray-700:hover {
+    color: #374151; /* Gris más oscuro */
+  }
+  

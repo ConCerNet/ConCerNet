@@ -1,86 +1,90 @@
 import NavBar from "../Components/NavBar";
 import "../Styles/Management.css";
-//import historial from "../Images/receipt.svg";
-import pago from "../Images/cash-register.svg";
+import pagoimg from "../Images/cash-register.svg";
 import Footer from "../Components/Footer";
 import { useState } from "react";
 
-import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
-import axios from "axios";
+import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 
 const Management = () => {
+    const [PreferenceId, setPreferenceId] = useState(null);
 
-    const [PreferenceId, setPreferenceId] = useState(null); 
-
-    initMercadoPago('TEST-a751f345-e325-4c90-af00-c74ae88d6d3d', {
+    initMercadoPago("TEST-a751f345-e325-4c90-af00-c74ae88d6d3d", {
         locale: "es-CO",
     });
 
-    const crearPreferencia = async () => {
-        try {
-            const response = await axios.post("http://localhost:4000/crear-Preferencia", {
-                title: "Administracion",
-                quantity: 1,
-                price: 10000,
-            });
+    // Datos simulados
+    const [payments, setPayments] = useState([
+        {
+            id: 1,
+            usuario: "JJCO10",
+            fecha: "2024/06/10",
+            numero: 3,
+            descripcion: "Pago de Administración del conjunto",
+            monto: 10000,
+        },
+        {
+            id: 2,
+            usuario: "DPeralta",
+            fecha: "2024/05/10",
+            numero: 2,
+            descripcion: "Pago de Administración del conjunto",
+            monto: 10000,
+        },
+        {
+            id: 3,
+            usuario: "AGonzalez",
+            fecha: "2024/04/10",
+            numero: 1,
+            descripcion: "Pago de Administración del conjunto",
+            monto: 10000,
+        },
+        
+    ]);
 
-            const {id} = response.data;
-            return id;
-        } catch (error) {
-            console.log(error);
-        }
+    const handleBuy = async (payment) => {
+        console.log("Comprar con ID:", payment.id);
+        setPreferenceId(payment.id); // Simulación
     };
 
-    const handleBuy = async () => {
-        const id = await crearPreferencia();
-        if (id) {
-            setPreferenceId(id);
-        }
-    };
-
-    return(
+    return (
         <div className="container">
-            <NavBar/>
-            <br/><br/><br/>
+            <NavBar />
+            <br /><br /><br />
             <div className="containerManagement">
-                <div className="factura">
-                    <h1>FACTURA</h1>
-                    <div className="Usuario">
-                        <h2>Usuario</h2>
-                        <p>JJCO10</p>
-                    </div>
-                    <div className="fecha">
-                        <h2>Fecha</h2>
-                        <p>2024/06/10</p>
-                    </div>
-                    <div className="numero">
-                        <h2>N° Factura</h2>
-                        <p>3</p>
-                    </div>
-                    <div className="descripcionFactura">
-                        <h2>Descripcion</h2>
-                        <p>Pago de Administración del conjunto</p>
-                    </div>
-                </div>
-                <div className="botones">
-                    {/*<div className="botonHistorial">
-                        <img src={historial} alt="historial" />
-                        <p>Historial</p>
-                    </div>*/}
-                    
+                <h2>Lista de Pagos</h2>
+                {payments.map((pago) => (
+                    <div key={pago.id} className="factura lista">
+                        <div className="Usuario">
+                            <h3>Usuario</h3>
+                            <p>{pago.usuario}</p>
+                        </div>
+                        <div className="fecha">
+                            <h3>Fecha</h3>
+                            <p>{pago.fecha}</p>
+                        </div>
+                        <div className="numero">
+                            <h3>N° Factura</h3>
+                            <p>{pago.numero}</p>
+                        </div>
+                        <div className="descripcionFactura">
+                            <h3>Descripción</h3>
+                            <p>{pago.descripcion}</p>
+                        </div>
+                        <button className="botonPago" onClick={() => handleBuy(pago)}>
+                            <img src={pagoimg} alt="pago" />
+                            <p>Pagar</p>
 
-                    <button className="botonPago" onClick={handleBuy}>
-                        <img src={pago} alt="pago" />
-                        <p>Pago</p>
-                    </button>
-
-                    {PreferenceId && <Wallet initialization={{ preferenceId: PreferenceId }} customization={{ texts:{ valueProp: 'smart_option'}}} />}
-                    
-                </div>
-
+                        </button>
+                        {PreferenceId === pago.id && (
+                            <Wallet initialization={{ preferenceId: PreferenceId }} customization={{ texts: { valueProp: 'smart_option' } }} />
+                        )}
+                    </div>
+                ))}
             </div>
-            <Footer/>
+            <Footer />
         </div>
-    )
+    );
 };
+
 export default Management;

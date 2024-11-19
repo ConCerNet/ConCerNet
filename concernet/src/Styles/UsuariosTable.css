@@ -1,0 +1,231 @@
+/* Estilo para el contenedor principal */
+  .bg-white {
+    background-color: white;
+  }
+  
+  .botonazul, .botonrojo {
+    padding: 8px 5px;
+    background-color: #ffffff00;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+
+  .botonazul:hover {
+    background-color: #0051ff20;
+  }
+
+  .botonrojo:hover {
+    background-color: #ff000020; /* Rojo oscuro */
+    ;
+  }
+
+  .rounded-lg {
+    border-radius: 8px;
+  }
+
+  .w-5 {
+    width: 1.25rem;
+  }
+
+  .h-5 {
+    height: 1.25rem;
+  }
+
+  .w-10 {
+    width: 2.5rem;
+  }
+
+  .h-10 {
+    height: 2.5rem;
+  }
+
+  .ml-4 {
+    margin-left: 1.5rem;
+  }
+
+  .py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .tracking-wider {
+    letter-spacing: 0.05em;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-gray-500 {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
+  }
+
+
+  .text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  
+  /* Estilo para el encabezado de la tabla */
+  .p-4 {
+    padding: 16px;
+  }
+  
+  .border-b {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+  }
+  
+  .text-gray-900 {
+    color: #4b5563;
+  }
+  
+  .bg-blue-600 {
+    background-color: #2563eb;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .rounded-md {
+    border-radius: 8px;
+  }
+  
+  .hover\:bg-blue-700:hover {
+    background-color: #ffffff;
+  }
+  
+  .mr-2 {
+    margin-right: 8px;
+  }
+  
+  /* Estilo para la tabla */
+  .min-w-full {
+    width: 100%;
+  }
+  
+  .divide-y {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  
+  .divide-gray-200 tr {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .bg-gray-50 {
+    background-color: #f9fafb;
+  }
+  
+  
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  .hover\:bg-gray-50:hover {
+    background-color: #f9fafb;
+  }
+  
+  /* Estilos para las celdas de la tabla */
+  
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .text-blue-600 {
+    color: #ffffff;
+  }
+  
+  .hover\:text-blue-900:hover {
+    color: #ffffff;
+  }
+  
+  .text-red-600 {
+    color: #ef4444;
+  }
+  
+  .hover\:text-red-900:hover {
+    color: #ffffff;
+  }
+  
+  /* Estilo para los tags de rol */
+  .inline-flex {
+    display: inline-flex;
+  }
+  
+  .leading-5 {
+    line-height: 1.25rem;
+  }
+
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  
+  .bg-purple-100 {
+    background-color: #f3e8ff;
+  }
+  
+  .text-purple-800 {
+    color: #6b21a8;
+  }
+  
+  .bg-green-100 {
+    background-color: #d1fae5;
+  }
+  
+  .text-green-800 {
+    color: #047857;
+  }
+  
+  /* Estilos del modal */
+  .modal {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 32px;
+    border-radius: 8px;
+    width: 400px;
+    margin: 0 auto;
+  }

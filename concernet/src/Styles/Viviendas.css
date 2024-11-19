@@ -1,20 +1,20 @@
 /* styles/viviendas.css */
 
-.container-viviendas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 100px 10px;
-}
+  .container-viviendas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 10px;
+  }
 
-.viviendas-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
-  width: 100%;
-  max-width: 1200px; /* Ajusta el tamaño máximo según sea necesario */
-}
+  .viviendas-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Ajusta el tamaño máximo según sea necesario */
+  }
 
 @keyframes reveal {
   from{

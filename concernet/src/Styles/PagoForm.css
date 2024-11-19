@@ -1,0 +1,93 @@
+/* Contenedor del formulario */
+  .space-y-4 {
+    margin-bottom: 16px;
+  }
+  
+  /* Estilos generales de los inputs y selects */
+  .mt-1 {
+    margin-top: 8px;
+  }
+  
+  .block {
+    display: block;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .rounded-md {
+    border-radius: 4px; /* Bordes redondeados */
+  }
+  
+  .border-gray-300 {
+    border-color: #d1d5db; /* Gris claro */
+  }
+  
+  .shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Sombra pequeña */
+  }
+  
+  /* Estilos para los inputs y selects cuando están en focus */
+  /* input:focus, select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  } */
+  
+  /* Estilos para los labels */
+  .text-sm {
+    font-size: 0.875rem; /* Tamaño pequeño */
+  }
+  
+  .font-medium {
+    font-weight: 500; /* Peso de la fuente */
+  }
+  
+  .text-gray-700 {
+    color: #374151; /* Gris oscuro */
+  }
+  
+  /* Estilos del botón de submit */
+  .px-4 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .py-2 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  .bg-blue-600 {
+    background-color: #2563eb; /* Azul oscuro */
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .rounded-md {
+    border-radius: 4px;
+  }
+  
+  .hover\:bg-blue-700:hover {
+    background-color: #1d4ed8; /* Azul más oscuro al pasar el mouse */
+  }
+  
+  /* Estilos del contenedor del botón */
+  .flex {
+    display: flex;
+  }
+  
+  .justify-end {
+    justify-content: flex-end; /* Alinea los elementos al final */
+  }
+  
+  .space-x-3 {
+    margin-right: 12px; /* Espacio entre los elementos */
+  }
+  
+  .pt-4 {
+    padding-top: 16px;
+  }
+  

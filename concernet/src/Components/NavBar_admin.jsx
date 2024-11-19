@@ -25,23 +25,16 @@ const NavBar = () => {
         </div>
         <ul>
           <li>
-            <Link to="/Dashboard">Inicio</Link>
+            <Link to="/usuarios_admin">Usuarios</Link>
           </li>
           <li>
-            <Link to="/Management">Facturas</Link>
+            <Link to="/viviendas_admin">Viviendas</Link>
           </li>
           <li>
-            <Link to="/Espacios">Espacios Comunes</Link>
+            <Link to="/reporte_pagos">Pagos</Link>
           </li>
           <li>
-            <Link to="/Viviendas">Viviendas</Link>
-          </li>
-          <li>
-            {auth.user ? (
-              <Link onClick={handleLogout}>Cerrar sesión</Link>
-            ) : (
-              <Link to="/Login">Iniciar sesión</Link>
-            )}
+            <Link to="/Login">Cerrar Sesion</Link>
           </li>
         </ul>
       </nav>

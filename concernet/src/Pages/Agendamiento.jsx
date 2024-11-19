@@ -12,6 +12,7 @@ const Agendamiento = () => {
   const { id } = useParams();
   const espacio = espacios.find((espacio) => espacio.id === parseInt(id));
   const [idusuario, setIdUsuario] = useState('');
+  const [nombreusuario, setNombreUsuario] = useState('');
   const [fechaagendamiento, setFechaAgendamiento] = useState('');
   const [horaInicio, setHoraInicio] = useState('');
   const [horaFin, setHoraFin] = useState('');
@@ -78,14 +79,17 @@ const Agendamiento = () => {
     <div className="agendamiento">
       <NavBar />
       <div className="contenedorAgendamiento">
-        <div className="agendaImagen">
-          <img src={espacio.imagen} alt={`Imagen del espacio ${espacio.nombre}`} />
-        </div>
         <form className="calendario" onSubmit={agendarEspacio}>
-          <div className="campos">
+         <div className="agendaImagen">
+           <img src={espacio.imagen} alt={`Imagen del espacio ${espacio.nombre}`} />
+          </div>
+          <div className="calendarioimputs">
             <label for="cedula"><b>Cédula:</b></label>
             <input type="number" id="cedula" name="cedula" value={idusuario} onChange={(e) => setIdUsuario(e.target.value)} required/>
 
+            <label for="nombre"><b>Nombre:</b></label>
+            <input type="text" disabled id="nombre" name="nombre" value={nombreusuario} onChange={(e) => setNombreUsuario(e.target.value)} required/>
+            
             <label for="fecha"><b>Fecha:</b></label>
             <input type="date" id="fecha" name="fecha" value={fechaagendamiento} onChange={(e) => setFechaAgendamiento(e.target.value)} required/>
 
@@ -94,12 +98,12 @@ const Agendamiento = () => {
 
             <label for="horaFin"><b>Hora Fin:</b></label>
             <input type="time" id="horaFin" name="horaFin" value={horaFin} onChange={(e) => setHoraFin(e.target.value)} required/>
-
-          </div>
-            <div className="desicion">
-              <button className="agendar" type="submit">Agendar</button>
-              <Link className="cancelar" to="/Espacios">Cancelar</Link>
+            
+            <div className="buttonContainer">
+              <button className="botonAgendar" type="submit">Agendar</button>
+              <Link className="botonCancelar" to="/Espacios">Cancelar</Link>
             </div>
+          </div>
         </form>
       </div>
       <Footer/>
