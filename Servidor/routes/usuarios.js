@@ -20,14 +20,38 @@ usuarioRouter.get('/', async function(req, res, next){
         }
 });
 
-usuarioRouter.get('/:id', async function(req, res, next){
-    try {
-        res.json(await usuarioService.buscarUsuario(req.params.id, req.body));
-        } catch (err) {
-            console.error("Error mientras se buscaba el usuario", err.message);
-            next(err);
-        }
+usuarioRouter.get('/:id', async function (req, res, next) {
+  try {
+    const usuario = await usuarioService.buscarUsuario(req.params.id);
+    if (!usuario) {
+      return res.status(404).json({ mensaje: "Usuario no encontrado" });
+    }
+    res.status(200).json(usuario);
+  } catch (err) {
+    console.error("Error mientras se buscaba el usuario", err.message);
+    next(err);
+  }
 });
+
+
+// usuarioRouter.get('/buscarCedula', async function(req, res, next) {
+//     try {
+//         const {cedula} = req.query;
+//         if(!cedula){
+//             return res.status(400).json({error: "Falta el parametro cedula"});
+//         }
+//         const resultado = await usuarioService.buscarUsuarioCedula(cedula);
+
+//         if(resultado.usuario){
+//             res.status(200).json(resultado.usuario);
+//         }
+//         res.status(404).json({ mensaje: resultado.mensaje });
+
+//     } catch (err) {
+//         console.error("Error mientras se buscaba el usuario por cédula", err.message);
+//         next(err);
+//     }
+// });
 
 usuarioRouter.post('/login', async function(req, res, next) {
     try {
