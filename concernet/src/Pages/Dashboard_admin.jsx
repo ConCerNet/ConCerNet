@@ -113,7 +113,7 @@ function DashboardAdmin() {
               {/* <Building className="w-8 h-8 text-blue-600" /> */}
               <img
                     src={concernet}
-                    className="w-8 h-8 text-blue-600"
+                    className="w-8 h-8 text-blue-600 img"
                     alt="ConCerNet"
                   />
               <span className="ml-2 text-xl font-semibold text-gray-900">

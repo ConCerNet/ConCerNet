@@ -39,7 +39,7 @@ export default function PagosTable({
           <h2 className="text-lg font-semibold">Pagos de Administración</h2>
           <button
             onClick={() => setModalMode("create")}
-            className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 button"
           >
             <Plus className="w-5 h-5 mr-2" />
             Nuevo Pago
@@ -97,13 +97,13 @@ export default function PagosTable({
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                   <button
                     onClick={() => handleEdit(pago)}
-                    className="text-blue-600 hover:text-blue-900 mr-3"
+                    className="text-blue-600 hover:text-blue-900 mr-3 botonazul"
                   >
                     <Pencil className="w-5 h-5" />
                   </button>
                   <button
                     onClick={() => onDelete(pago.id)}
-                    className="text-red-600 hover:text-red-900"
+                    className="text-red-600 hover:text-red-900 botonrojo"
                   >
                     <Trash2 className="w-5 h-5" />
                   </button>

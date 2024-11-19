@@ -18,7 +18,7 @@ export default function Filters({ filters, onFilterChange, type }) {
                   value={filters.nombre || ""}
                   onChange={e => onFilterChange("nombre", e.target.value)}
                   placeholder="Buscar por nombre..."
-                  className="pl-10 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="pl-10 w-fullfilter rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
                 />
                 <Search className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
               </div>
@@ -33,7 +33,7 @@ export default function Filters({ filters, onFilterChange, type }) {
                   value={filters.email || ""}
                   onChange={e => onFilterChange("email", e.target.value)}
                   placeholder="Buscar por email..."
-                  className="pl-10 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="pl-10 w-fullfilter rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
                 />
                 <Search className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
               </div>
@@ -48,7 +48,7 @@ export default function Filters({ filters, onFilterChange, type }) {
                   value={filters.direccion || ""}
                   onChange={e => onFilterChange("direccion", e.target.value)}
                   placeholder="Buscar por direccion..."
-                  className="pl-10 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="pl-10 w-fullfilter rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
                 />
                 <Search className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
               </div>
@@ -66,7 +66,7 @@ export default function Filters({ filters, onFilterChange, type }) {
                 value={filters.direccion || ""}
                 onChange={e => onFilterChange("direccion", e.target.value)}
                 placeholder="Buscar por dirección..."
-                className="pl-10 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="pl-10 w-fullfilter rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
               />
               <Search className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
             </div>

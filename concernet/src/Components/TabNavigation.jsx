@@ -7,7 +7,7 @@ export default function TabNavigation({ activeTab, setActiveTab }) {
     <div className="flex space-x-4 mb-6">
       <button
         onClick={() => setActiveTab("usuarios")}
-        className={`flex items-center px-4 py-2 rounded-lg ${
+        className={`flex items-center px-4 py-2 rounded-lg button ${
           activeTab === "usuarios"
             ? "bg-blue-600 text-white"
             : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -18,7 +18,7 @@ export default function TabNavigation({ activeTab, setActiveTab }) {
       </button>
       <button
         onClick={() => setActiveTab("viviendas")}
-        className={`flex items-center px-4 py-2 rounded-lg ${
+        className={`flex items-center px-4 py-2 rounded-lg button ${
           activeTab === "viviendas"
             ? "bg-blue-600 text-white"
             : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -29,7 +29,7 @@ export default function TabNavigation({ activeTab, setActiveTab }) {
       </button>
       <button
         onClick={() => setActiveTab("pagos")}
-        className={`flex items-center px-4 py-2 rounded-lg ${
+        className={`flex items-center px-4 py-2 rounded-lg button ${
           activeTab === "pagos"
             ? "bg-blue-600 text-white"
             : "bg-gray-100 text-gray-600 hover:bg-gray-200"

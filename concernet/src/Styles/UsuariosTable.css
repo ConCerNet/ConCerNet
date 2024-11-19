@@ -3,14 +3,23 @@
     background-color: white;
   }
   
-  button {
+  .botonazul, .botonrojo {
     padding: 8px 5px;
-    background-color: #ffffff;
+    background-color: #ffffff00;
     color: white;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     font-size: 0.875rem;
+  }
+
+  .botonazul:hover {
+    background-color: #0051ff20;
+  }
+
+  .botonrojo:hover {
+    background-color: #ff000020; /* Rojo oscuro */
+    ;
   }
 
   .rounded-lg {
@@ -60,7 +69,6 @@
     color: rgb(107 114 128 / var(--tw-text-opacity));
   }
 
-  
 
   .text-xs {
     font-size: 0.75rem;

@@ -1,5 +1,5 @@
 /* Contenedor del formulario */
-.space-y-4 {
+  .space-y-4 {
     margin-bottom: 16px;
   }
   
@@ -29,10 +29,10 @@
   }
   
   /* Estilos para los inputs y selects cuando están en focus */
-  input:focus, select:focus {
-    border-color: #3b82f6; /* Azul al hacer focus */
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Sombra azul al hacer focus */
-  }
+  /* input:focus, select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  } */
   
   /* Estilos para los labels */
   .text-sm {

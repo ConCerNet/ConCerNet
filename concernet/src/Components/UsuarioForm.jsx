@@ -24,7 +24,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
           type="text"
           name="nombre"
           defaultValue={usuario?.nombre}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
           required
         />
       </div>
@@ -34,7 +34,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
           type="email"
           name="email"
           defaultValue={usuario?.email}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
           required
         />
       </div>
@@ -43,7 +43,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
         <select
           name="rol"
           defaultValue={usuario?.rol}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 select"
           required
         >
           <option value="usuario">Usuario</option>
@@ -58,14 +58,14 @@ export default function UsuarioForm({ usuario, onSubmit }) {
           type="url"
           name="avatar"
           defaultValue={usuario?.avatar}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
           required
         />
       </div>
       <div className="flex justify-end space-x-3 pt-4">
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 button"
         >
           {usuario ? "Actualizar" : "Crear"} Usuario
         </button>

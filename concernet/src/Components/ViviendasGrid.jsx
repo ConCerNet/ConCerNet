@@ -27,7 +27,7 @@ export default function ViviendasGrid({ viviendas, onAdd, onEdit, onDelete }) {
       <div className="mb-6 flex justify-end">
         <button
           onClick={() => setModalMode("create")}
-          className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 button"
         >
           <Plus className="w-5 h-5 mr-2" />
           Nueva Vivienda
@@ -87,13 +87,13 @@ export default function ViviendasGrid({ viviendas, onAdd, onEdit, onDelete }) {
               <div className="flex justify-end space-x-2 pt-2 border-t">
                 <button
                   onClick={() => handleEdit(vivienda)}
-                  className="p-2 text-blue-600 hover:bg-blue-50 rounded"
+                  className="p-2 text-blue-600 hover:bg-blue-50 rounded botonazul"
                 >
                   <Pencil className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => onDelete(vivienda.id)}
-                  className="p-2 text-red-600 hover:bg-red-50 rounded"
+                  className="p-2 text-red-600 hover:bg-red-50 rounded botonrojo"
                 >
                   <Trash2 className="w-5 h-5" />
                 </button>

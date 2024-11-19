@@ -26,7 +26,7 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
           type="text"
           name="titulo"
           defaultValue={vivienda?.titulo}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
           required
         />
       </div>
@@ -38,7 +38,7 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
           type="text"
           name="direccion"
           defaultValue={vivienda?.direccion}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
           required
         />
       </div>
@@ -51,7 +51,7 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
             type="number"
             name="precio"
             defaultValue={vivienda?.precio}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
         </div>
@@ -62,7 +62,7 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
           <select
             name="estado"
             defaultValue={vivienda?.estado}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 select"
             required
           >
             <option value="disponible">Disponible</option>
@@ -80,7 +80,7 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
             type="number"
             name="habitaciones"
             defaultValue={vivienda?.habitaciones}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
         </div>
@@ -92,7 +92,7 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
             type="number"
             name="baños"
             defaultValue={vivienda?.baños}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
         </div>
@@ -105,14 +105,14 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
           type="url"
           name="imagen"
           defaultValue={vivienda?.imagen}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
           required
         />
       </div>
       <div className="flex justify-end space-x-3 pt-4">
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 button"
         >
           {vivienda ? "Actualizar" : "Crear"} Vivienda
         </button>

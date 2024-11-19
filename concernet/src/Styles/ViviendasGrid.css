@@ -1,6 +1,5 @@
 /* Estilos para el contenedor del formulario y botones */
  
-
   .mb-6 {
     margin-bottom: 1.5rem;
   }
@@ -147,9 +146,9 @@
     background-color: #fed7d7; /* Rojo claro */
   }
   
-  .text-red-800 {
-    color: #9b2c2c; /* Rojo oscuro */
-  }
+  /* .text-red-800 {
+    color: #9b2c2c;
+  } */
   
   /* Estilos de la información de la vivienda */
   .text-lg {
@@ -180,9 +179,9 @@
     font-weight: 700;
   }
   
-  .text-blue-600 {
-    color: #2563eb; /* Azul */
-  }
+  /* .text-blue-600 {
+    color: #2563eb;
+  } */
   
   .mb-4 {
     margin-bottom: 1rem;
@@ -212,15 +211,15 @@
     background-color: #eff6ff; /* Azul claro */
   }
   
-  .text-blue-600 {
-    color: #2563eb; /* Azul */
-  }
+  /* .text-blue-600 {
+    color: #2563eb;
+  } */
   
   .hover\:bg-red-50:hover {
     background-color: #fee2e2; /* Rojo claro */
   }
   
-  .text-red-600 {
-    color: #e11d48; /* Rojo fuerte */
+  /* .text-red-600 {
+    color: #e11d48;
   }
-  
+   */
