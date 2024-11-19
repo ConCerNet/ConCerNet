@@ -63,7 +63,7 @@ h1 {
 }
 
 .form_control input {
-    width: calc(100% - 20px);
+    width: calc(100%);
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 40px;
