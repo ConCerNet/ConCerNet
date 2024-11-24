@@ -27,7 +27,7 @@ describe("Validar Login", () => {
     try {
       ValidarLogin({ username: "JuanJose987654321", password: "jjcarmona321" });
     } catch (error) {
-      expect(error.message).toBe("El nombre de usuario debe tener menos de 16 caracteres.");
+      expect(error.message).toBe("El nombre de usuario debe tener menos de 17 caracteres.");
     }
   });
 
