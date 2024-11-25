@@ -20,11 +20,11 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
     }
 
     if (!precio) {
-        throw new Error("El precio no puede estar vacío o ser menor a 1");
+        throw new Error("El precio no puede estar vacío o en 0");
     }
     
     if (precio < 1) {
-        throw new Error("El precio no puede ser menor a 1");
+        throw new Error("El precio no puede ser menor o igual a 0");
     }
 
     // if (precio.length < 6) {
@@ -32,11 +32,11 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
     // }
     
     if (!metrosCuadrados) {
-        throw new Error("El número de metros cuadrados no puede estar vacío o ser menor a 1");
+        throw new Error("El número de metros cuadrados no puede estar vacío o en 0");
     }
     
     if (metrosCuadrados < 1) {
-        throw new Error("El número de metros cuadrados no puede ser menor a 1");
+        throw new Error("El número de metros cuadrados no puede ser menor o igual a 0");
     }
     
     if (metrosCuadrados < 10) {
@@ -44,11 +44,11 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
     }
 
     if (!habitaciones) {
-        throw new Error("El número de habitaciones no puede estar vacío o ser menor a 1");
+        throw new Error("El número de habitaciones no puede estar vacío o en 0");
     }
 
     if (habitaciones < 1) {
-        throw new Error("El número de habitaciones no puede ser menor a 1");
+        throw new Error("El número de habitaciones no puede ser menor o igual 0");
     }
     
     if (habitaciones > 9) {
@@ -56,11 +56,11 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
     }
 
     if (!baños) {
-        throw new Error("El número de baños no puede estar vacío o ser menor a 1");
+        throw new Error("El número de baños no puede estar vacío o en 0");
     }
 
     if (baños < 1) {
-        throw new Error("El número de baños no puede ser menor a 1");
+        throw new Error("El número de baños no puede ser menor o igual a 0");
     }
 
     if (baños > 9) {
@@ -81,8 +81,8 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
     }
 
     // Opcional: Validar el tamaño del archivo si estás trabajando con un objeto `File`
-    if (imagen.size > 10 * 1024 * 1024) { // 5 MB
-        throw new Error("El tamaño del archivo no debe exceder los 10 MB");
+    if (imagen.size > 5 * 1024 * 1024) { // 5 MB
+        throw new Error("El tamaño del archivo no debe exceder los 5 MB");
     }
   
     return { direccion, estado, precio, metrosCuadrados, habitaciones, baños, imagen};

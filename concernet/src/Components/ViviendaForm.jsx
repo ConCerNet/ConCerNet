@@ -147,7 +147,7 @@ export default function ViviendaForm({ vivienda, onSubmit }) {
           name="imagen"
           accept="image/png, image/jpeg, image/jpg, image/gif"
           className="inputImagen"
-          required
+          // required
         />
       </div>
 

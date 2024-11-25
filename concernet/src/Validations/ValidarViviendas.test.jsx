@@ -131,7 +131,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El precio no puede estar vacío o ser menor a 1");
+      expect(error.message).toBe("El precio no puede estar vacío o en 0");
     }
   });
   
@@ -147,7 +147,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El precio no puede ser menor a 1");
+      expect(error.message).toBe("El precio no puede ser menor o igual a 0");
     }
   });
   
@@ -163,7 +163,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de metros cuadrados no puede estar vacío o ser menor a 1");
+      expect(error.message).toBe("El número de metros cuadrados no puede estar vacío o en 0");
     }
   });
   
@@ -179,7 +179,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de metros cuadrados no puede ser menor a 1");
+      expect(error.message).toBe("El número de metros cuadrados no puede ser menor o igual a 0");
     }
   });
  
@@ -211,7 +211,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de habitaciones no puede estar vacío o ser menor a 1");
+      expect(error.message).toBe("El número de habitaciones no puede estar vacío o en 0");
     }
   });
   
@@ -227,7 +227,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de habitaciones no puede ser menor a 1");
+      expect(error.message).toBe("El número de habitaciones no puede ser menor o igual 0");
     }
   });
   
@@ -259,7 +259,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de baños no puede estar vacío o ser menor a 1");
+      expect(error.message).toBe("El número de baños no puede estar vacío o en 0");
     }
   });
   
@@ -275,7 +275,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de baños no puede ser menor a 1");
+      expect(error.message).toBe("El número de baños no puede ser menor o igual a 0");
     }
   });
   
