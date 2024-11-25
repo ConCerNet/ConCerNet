@@ -12,10 +12,10 @@ export default function UsuarioForm({ usuario, onSubmit }) {
       apellidos: formData.get("apellidos"),
       direccion: formData.get("direccion"),
       telefono: formData.get("telefono"),
-      fechaNacimiento: formData.get("fechaNacimiento"),
       email: formData.get("email"),
+      contraseña: formData.get("contraseña"),
       rol: formData.get("rol"),
-      contraseña: formData.get("contraseña")
+      fechaNacimiento: formData.get("fechaNacimiento")
     })
   }
 

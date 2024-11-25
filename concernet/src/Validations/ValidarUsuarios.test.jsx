@@ -5,24 +5,26 @@ describe("Validar Usuarios", () => {
     const resultado = ValidarUsuarios({
       tipoDocumento: "CC",
       noDocumento: "1065121521",
-      nombre: "Carmen",
-      apellido: "Gutierrez",
+      nombres: "Carmen",
+      apellidos: "Gutierrez",
       direccion: "Mz F Casa 7A",
       telefono: "3186934810",
       email: "carmengutierrez@gmail.com",
       contraseña: "Carmen12345",
       fechaNacimiento: "15/08/2006",
+      rol: "Propietario"
     });
     expect(resultado).toEqual({
         tipoDocumento: "CC",
         noDocumento: "1065121521",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.com",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
     });
   });
 
@@ -31,13 +33,14 @@ describe("Validar Usuarios", () => {
       ValidarUsuarios({ 
       tipoDocumento: "",
       noDocumento: "1065121521",
-      nombre: "Carmen",
-      apellido: "Gutierrez",
+      nombres: "Carmen",
+      apellidos: "Gutierrez",
       direccion: "Mz F Casa 7A",
       telefono: "3186934810",
       email: "carmengutierrez@gmail.com",
       contraseña: "Carmen12345",
       fechaNacimiento: "15/08/2006",
+      rol: "Propietario"
     });
     } catch (error) {
       expect(error.message).toBe("Debe seleccionar una opción para la entidad de pago");
@@ -49,13 +52,14 @@ describe("Validar Usuarios", () => {
       ValidarUsuarios({ 
       tipoDocumento: "CCC",
       noDocumento: "1065121521",
-      nombre: "Carmen",
-      apellido: "Gutierrez",
+      nombres: "Carmen",
+      apellidos: "Gutierrez",
       direccion: "Mz F Casa 7A",
       telefono: "3186934810",
       email: "carmengutierrez@gmail.com",
       contraseña: "Carmen12345",
       fechaNacimiento: "15/08/2006",
+      rol: "Propietario"
     });
     } catch (error) {
       expect(error.message).toBe("La opción seleccionada no es válida");
@@ -67,13 +71,14 @@ describe("Validar Usuarios", () => {
       ValidarUsuarios({ 
       tipoDocumento: "CC",
       noDocumento: "",
-      nombre: "Carmen",
-      apellido: "Gutierrez",
+      nombres: "Carmen",
+      apellidos: "Gutierrez",
       direccion: "Mz F Casa 7A",
       telefono: "3186934810",
       email: "carmengutierrez@gmail.com",
       contraseña: "Carmen12345",
       fechaNacimiento: "15/08/2006",
+      rol: "Propietario"
     });
     } catch (error) {
       expect(error.message).toBe("El número de documento no puede estar vacío");
@@ -85,13 +90,14 @@ describe("Validar Usuarios", () => {
       ValidarUsuarios({ 
       tipoDocumento: "CC",
       noDocumento: "1065121",
-      nombre: "Carmen",
-      apellido: "Gutierrez",
+      nombres: "Carmen",
+      apellidos: "Gutierrez",
       direccion: "Mz F Casa 7A",
       telefono: "3186934810",
       email: "carmengutierrez@gmail.com",
       contraseña: "Carmen12345",
       fechaNacimiento: "15/08/2006",
+      rol: "Propietario"
     });
     } catch (error) {
       expect(error.message).toBe("El número de documento debe tener al menos 8 digitos");
@@ -103,13 +109,14 @@ describe("Validar Usuarios", () => {
       ValidarUsuarios({ 
       tipoDocumento: "CC",
       noDocumento: "10654457124",
-      nombre: "Carmen",
-      apellido: "Gutierrez",
+      nombres: "Carmen",
+      apellidos: "Gutierrez",
       direccion: "Mz F Casa 7A",
       telefono: "3186934810",
       email: "carmengutierrez@gmail.com",
       contraseña: "Carmen12345",
       fechaNacimiento: "15/08/2006",
+      rol: "Propietario"
     });
     } catch (error) {
       expect(error.message).toBe("El número de documento no puede tener más de 10 dígitos");
@@ -121,13 +128,14 @@ describe("Validar Usuarios", () => {
       ValidarUsuarios({ 
       tipoDocumento: "CC",
       noDocumento: "1045712445",
-      nombre: "",
-      apellido: "Gutierrez",
+      nombres: "",
+      apellidos: "Gutierrez",
       direccion: "Mz F Casa 7A",
       telefono: "3186934810",
       email: "carmengutierrez@gmail.com",
       contraseña: "Carmen12345",
       fechaNacimiento: "15/08/2006",
+      rol: "Propietario"
     });
     } catch (error) {
       expect(error.message).toBe("El nombre no puede estar vacío");
@@ -139,13 +147,14 @@ describe("Validar Usuarios", () => {
       ValidarUsuarios({ 
       tipoDocumento: "CC",
       noDocumento: "1045712445",
-      nombre: "Juan Esteban Andres Felipe",
-      apellido: "Gutierrez",
+      nombres: "Juan Esteban Andres Felipe",
+      apellidos: "Gutierrez",
       direccion: "Mz F Casa 7A",
       telefono: "3186934810",
       email: "carmengutierrez@gmail.com",
       contraseña: "Carmen12345",
       fechaNacimiento: "15/08/2006",
+      rol: "Propietario"
     });
     } catch (error) {
       expect(error.message).toBe("El nombre no puede tener más de 25 caracteres");
@@ -153,36 +162,38 @@ describe("Validar Usuarios", () => {
   });
   
   
-  it("Apellido vacío", () => {
+  it("Apellidosapellidos vacío", () => {
       try {
           ValidarUsuarios({ 
               tipoDocumento: "CC",
               noDocumento: "1045712445",
-              nombre: "Carmen",
-              apellido: "",
+              nombres: "Carmen",
+              apellidos: "",
               direccion: "Mz F Casa 7A",
               telefono: "3186934810",
               email: "carmengutierrez@gmail.com",
               contraseña: "Carmen12345",
               fechaNacimiento: "15/08/2006",
+              rol: "Propietario"
             });
         } catch (error) {
             expect(error.message).toBe("El apellido no puede estar vacío");
         }
     });
     
-    it("Apellido de más de 25 caracteres", () => {
+    it("Apellidosapellidos de más de 25 caracteres", () => {
       try {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez Gonzalez Carmona Peralta",
+        nombres: "Carmen",
+        apellidos: "Gutierrez Gonzalez Carmona Peralta",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.com",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("El apellido no puede tener más de 25 caracteres");
@@ -194,13 +205,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.com",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("La direccion no puede estar vacía");
@@ -212,13 +224,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Cra 33B #20A-34 Calle 4",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.com",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("La direccion no puede tener más de 20 caracteres");
@@ -230,13 +243,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Cr",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.com",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("La direccion no puede tener menos de 3 caracteres");
@@ -248,13 +262,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "",
         email: "carmengutierrez@gmail.com",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("El teléfono no puede estar vacío");
@@ -266,13 +281,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.com",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("El teléfono debe tener 10 dígitos");
@@ -284,13 +300,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("El email no puede estar vacío");
@@ -302,13 +319,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "@gmail.co",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("El email no puede tener menos de 10 caracteres");
@@ -320,13 +338,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "claudiagutierrezarroyo@gmail.co",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("El email no puede tener más de 30 caracteres");
@@ -338,13 +357,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.co",
         contraseña: "",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("La contraseña no puede estar vacía");
@@ -356,13 +376,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.co",
         contraseña: "carmen",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("La contraseña debe tener al menos 8 caracteres");
@@ -374,13 +395,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.co",
         contraseña: "carmensoniagutierrez123",
         fechaNacimiento: "15/08/2006",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("La contraseña no puede tener más de 20 caracteres");
@@ -392,13 +414,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.co",
         contraseña: "carmen12345",
         fechaNacimiento: "",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("La fecha de nacimiento no puede estar vacía");
@@ -410,13 +433,14 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.co",
         contraseña: "carmen12345",
         fechaNacimiento: "2024/08/15",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("La fecha de nacimiento no es válida");
@@ -428,16 +452,55 @@ describe("Validar Usuarios", () => {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
         noDocumento: "1045712445",
-        nombre: "Carmen",
-        apellido: "Gutierrez",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
         email: "carmengutierrez@gmail.co",
         contraseña: "carmen12345",
         fechaNacimiento: "23/11/2010",
+        rol: "Propietario"
       });
       } catch (error) {
         expect(error.message).toBe("Debe ser mayor de 18 años");
+      }
+    });
+    
+    it("Rol vacío o por defecto", () => {
+      try {
+        ValidarUsuarios({ 
+        tipoDocumento: "CC",
+        noDocumento: "1045712445",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
+        direccion: "Mz F Casa 7A",
+        telefono: "3186934810",
+        email: "carmengutierrez@gmail.co",
+        contraseña: "carmen12345",
+        fechaNacimiento: "15/08/2006",
+        rol: ""
+      });
+      } catch (error) {
+        expect(error.message).toBe("Debe seleccionar una opción para el rol del usuario");
+      }
+    });
+    
+    it("Rol inválido", () => {
+      try {
+        ValidarUsuarios({ 
+        tipoDocumento: "CC",
+        noDocumento: "1045712445",
+        nombres: "Carmen",
+        apellidos: "Gutierrez",
+        direccion: "Mz F Casa 7A",
+        telefono: "3186934810",
+        email: "carmengutierrez@gmail.co",
+        contraseña: "carmen12345",
+        fechaNacimiento: "15/08/2006",
+        rol: "Fiador"
+      });
+      } catch (error) {
+        expect(error.message).toBe("La opción seleccionada no es válida");
       }
     });
   

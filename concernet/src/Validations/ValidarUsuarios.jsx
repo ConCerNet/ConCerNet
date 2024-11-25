@@ -1,4 +1,4 @@
-function ValidarLogin({ tipoDocumento, noDocumento, nombre, apellido, direccion, telefono, email, contraseña, fechaNacimiento }) {
+function ValidarLogin({ tipoDocumento, noDocumento, nombres, apellidos, direccion, telefono, email, contraseña, fechaNacimiento, rol }) {
     const tiposDeDocumentos = ["CC", "CE", "PP"];
 
 
@@ -17,16 +17,16 @@ function ValidarLogin({ tipoDocumento, noDocumento, nombre, apellido, direccion,
     if (noDocumento.length >= 11) {
       throw new Error("El número de documento no puede tener más de 10 dígitos");
     }
-    if (!nombre || nombre.length < 1) {
+    if (!nombres || nombres.length < 1) {
       throw new Error("El nombre no puede estar vacío");
     }
-    if (nombre.length > 25) {
+    if (nombres.length > 25) {
       throw new Error("El nombre no puede tener más de 25 caracteres");
     }
-    if (!apellido || apellido.length < 1) {
+    if (!apellidos || apellidos.length < 1) {
       throw new Error("El apellido no puede estar vacío");
     }
-    if (apellido.length > 25) {
+    if (apellidos.length > 25) {
       throw new Error("El apellido no puede tener más de 25 caracteres");
     }
     if (!direccion || direccion.length < 1) {
@@ -83,8 +83,17 @@ function ValidarLogin({ tipoDocumento, noDocumento, nombre, apellido, direccion,
     if (edad < 18 || (edad === 18 && (mesDiferencia < 0 || (mesDiferencia === 0 && diaDiferencia < 0)))) {
         throw new Error("Debe ser mayor de 18 años");
     }
+    
+    const roles = ["Arrendatario", "Propietario"];
+
+    if (!rol || rol === "default") {
+      throw new Error("Debe seleccionar una opción para el rol del usuario");
+    }
+    if (!roles.includes(rol)) {
+      throw new Error("La opción seleccionada no es válida");
+    }
   
-    return { tipoDocumento, noDocumento, nombre, apellido, direccion, telefono, email, contraseña, fechaNacimiento };
+    return { tipoDocumento, noDocumento, nombres, apellidos, direccion, telefono, email, contraseña, fechaNacimiento, rol };
   }
   
   module.exports = ValidarLogin;
