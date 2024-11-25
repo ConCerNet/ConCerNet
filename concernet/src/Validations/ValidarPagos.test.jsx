@@ -161,7 +161,7 @@ describe("Validar Pagoss", () => {
         }
     });
     
-    it("Entidad de pago sin eleccion", () => {
+    it("Entidad de pago por defecto", () => {
         try {
           ValidarPagos({ 
             direccion: "Mz F Casa 7A",
