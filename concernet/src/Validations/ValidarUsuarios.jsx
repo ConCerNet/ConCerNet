@@ -1,4 +1,4 @@
-function ValidarLogin({ tipoDocumento, noDocumento, nombres, apellidos, direccion, telefono, email, contraseña, fechaNacimiento, rol }) {
+function ValidarUsuarios({ tipoDocumento, noDocumento, nombres, apellidos, direccion, telefono, email, contraseña, fechaNacimiento, rol }) {
     const tiposDeDocumentos = ["CC", "CE", "PP"];
 
 
@@ -96,4 +96,4 @@ function ValidarLogin({ tipoDocumento, noDocumento, nombres, apellidos, direccio
     return { tipoDocumento, noDocumento, nombres, apellidos, direccion, telefono, email, contraseña, fechaNacimiento, rol };
   }
   
-  module.exports = ValidarLogin;
+  module.exports = ValidarUsuarios;
