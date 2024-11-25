@@ -1,19 +1,27 @@
 export const usuarios = [
     {
-      id: 1,
-      nombre: "Ana García",
-      email: "ana.garcia@ejemplo.com",
-      rol: "admin",
-      fechaRegistro: "2024-01-15",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150"
+      tipoDocumento: "CC",
+      noDocumento: 123456789,
+      nombres: "Ana Carolina",
+      apellidos: "Hernandez Diaz",
+      direccion: "Mz I Casa 10B",
+      telefono: 3045161578,
+      email: "ana.hernandez@ejemplo.com",
+      rol: "Arrendatario",
+      contraseña: "anahernandez123",
+      fechaNacimiento: "2000-10-10"
     },
     {
-      id: 2,
-      nombre: "Carlos Rodríguez",
-      email: "carlos.rodriguez@ejemplo.com",
-      rol: "usuario",
-      fechaRegistro: "2024-02-20",
-      avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150"
+      tipoDocumento: "CC",
+      noDocumento: 987654321,
+      nombres: "Ana Carolina",
+      apellidos: "Hernandez Diaz",
+      direccion: "Mz I Casa 10B",
+      telefono: 3045161578,
+      email: "ana.hernandez@ejemplo.com",
+      rol: "Propietario",
+      contraseña: "anahernandez123",
+      fechaNacimiento: "2002-12-16"
     }
   ]
   

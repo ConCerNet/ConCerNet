@@ -1,5 +1,14 @@
 .h-16 {
-    height: 4rem;
+    height: 5rem;
+    background-color: darkblue;
+}
+
+.nav {
+    background-color: darkblue;
+}
+
+.titulo {
+    color: white;
 }
 
 .justifu-between {
@@ -67,7 +76,7 @@
 
 .login ul li a{
     font-size: 16px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 11px 15px;
     border-radius: 5px;
@@ -75,8 +84,7 @@
 }
 
 .login ul li a:hover{
-    background-color: #2563eb;
-    color:#e5e7eb
+    background-color: rgb(28, 28, 182);
 }
 
 @media (min-width: 1024px) {
@@ -94,6 +102,7 @@
     line-height: inherit;
     letter-spacing: inherit;
     color: inherit;
+    cursor: pointer;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {

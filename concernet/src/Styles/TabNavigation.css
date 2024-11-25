@@ -1,6 +1,11 @@
 /* TabNavigation.css */
 .bg-blue-600 {
-  background-color: #2563eb;
+  background-color: #007BFF;
+  cursor: pointer;
+}
+
+.bg-blue-600:hover {
+  cursor: pointer;
 }
 
 .text-white {

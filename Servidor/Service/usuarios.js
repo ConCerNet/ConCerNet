@@ -22,20 +22,34 @@ async function listarUsuarios(){
         }
 }
 
-async function buscarUsuario(id){
-    try{
-        const usuario = await models.usuarios.findOne({
-            where: {
-                idusuario: id
-                }
-                });
-            if(usuario){
-                return {mensaje: "Usuario encontrado", usuario};
-            }
-            return {mensaje: "Usuario no encontrado"};
-        } catch(error){
-            return {mensaje: 'Error al buscar usuario'};
-        }
+async function buscarUsuario(id) {
+  try {
+    const usuario = await models.usuarios.findOne({
+      where: { idusuario: id },
+    });
+    if (!usuario) {
+      return null;
+    }
+    return usuario;
+  } catch (error) {
+    throw new Error("Error al buscar usuario");
+  }
+}
+
+
+async function buscarUsuarioCedula(cedula) {
+    try {
+     const usuario = await models.usuarios.findOne({
+        where: {
+            nodocumento: cedula}
+     });
+     if(usuario){
+        return {mensaje: "El usuario fue encontrado", usuario};
+     }
+     return {mensaje: "Usuario no encontrado por cédula"};
+    } catch (error) {
+        return {mensaje: 'Error al encontrar usuario'};
+    }
 }
 
 async function autenticarUsuario(nombre, contraseña) {
@@ -60,5 +74,6 @@ module.exports = {
     nuevoUsuario,
     listarUsuarios,
     buscarUsuario,
+    buscarUsuarioCedula,
     autenticarUsuario,
 }
