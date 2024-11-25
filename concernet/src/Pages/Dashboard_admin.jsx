@@ -11,7 +11,7 @@ import {
   viviendas as initialViviendas,
   pagos as initialPagos
 } from "../Components/data"
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { useAuth } from "../AuthProvider";
 
 function DashboardAdmin() {
@@ -20,7 +20,7 @@ function DashboardAdmin() {
   const [viviendas, setViviendas] = useState(initialViviendas)
   const [pagos, setPagos] = useState(initialPagos)
   const [filters, setFilters] = useState({
-    nombre: "",
+    nombres: "",
     email: "",
     direccion: ""
   })
@@ -33,13 +33,16 @@ function DashboardAdmin() {
   }
 
   const filteredUsuarios = usuarios.filter(usuario => {
-    const nombreMatch = usuario.nombre
-      .toLowerCase()
-      .includes(filters.nombre.toLowerCase())
+    const nombreMatch = usuario.nombres
+    ? usuario.nombres.toLowerCase().includes(filters.nombres?.toLowerCase() || "")
+    : false;
     const emailMatch = usuario.email
-      .toLowerCase()
-      .includes(filters.email.toLowerCase())
-    return nombreMatch && emailMatch
+    ? usuario.email.toLowerCase().includes(filters.email?.toLowerCase() || "")
+    : false;
+    const direccionMatch = usuario.direccion
+    ? usuario.direccion.toLowerCase().includes(filters.direccion?.toLowerCase() || "")
+    : false;
+    return nombreMatch && emailMatch && direccionMatch
   })
 
   const filteredViviendas = viviendas.filter(vivienda =>

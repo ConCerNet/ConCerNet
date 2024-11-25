@@ -9,13 +9,13 @@ export default function UsuariosTable({ usuarios, onAdd, onEdit, onDelete }) {
   const [selectedUser, setSelectedUser] = useState(null)
 
   const handleEdit = usuario => {
-    setSelectedUser(usuario)
+    setSelectedUser({ ...usuario})
     setModalMode("edit")
   }
 
   const handleSubmit = data => {
     if (modalMode === "edit" && selectedUser) {
-      onEdit(selectedUser.id, data)
+      onEdit(selectedUser.id, {...data})
     } else {
       onAdd(data)
     }
@@ -31,66 +31,63 @@ export default function UsuariosTable({ usuarios, onAdd, onEdit, onDelete }) {
             onClick={() => setModalMode("create")}
             className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 button"
           >
-            <UserPlus className="w-5 h-5 mr-2" />
+            <UserPlus className="w-5 h-5 mr-2"/>
             Nuevo Usuario
           </button>
         </div>
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                Identificacion
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Usuario
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Email
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                Direccion
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Rol
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Fecha de registro
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                Telefono
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Acciones
               </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {usuarios.map(usuario => (
-              <tr key={usuario.id} className="hover:bg-gray-50">
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="h-10 w-10 flex-shrink-0">
-                      <img
-                        className="h-10 w-10 rounded-full object-cover"
-                        src={usuario.avatar}
-                        alt={usuario.nombre}
-                      />
-                    </div>
-                    <div className="ml-4">
-                      <div className="text-sm font-medium text-gray-900">
-                        {usuario.nombre}
-                      </div>
-                    </div>
+              <tr key={usuario.noDocumento} className="hover:bg-gray-50">
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <div className="ml-4">
+                    {usuario.noDocumento}
+                  </div>
+                </td>
+                <td className="px-6 py-4 text-sm text-gray-500">
+                  <div className="ml-4">
+                    {usuario.nombres}
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {usuario.email}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <span
-                    className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                      usuario.rol === "admin"
-                        ? "bg-purple-100 text-purple-800"
-                        : "bg-green-100 text-green-800"
-                    }`}
-                  >
-                    {usuario.rol}
-                  </span>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {usuario.direccion}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {usuario.fechaRegistro}
+                  {usuario.rol}
                 </td>
+
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {usuario.telefono}
+                </td>
+                
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                   <button
                     onClick={() => handleEdit(usuario)}
