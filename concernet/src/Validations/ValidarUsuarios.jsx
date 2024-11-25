@@ -1,10 +1,12 @@
 function ValidarLogin({ tipoDocumento, noDocumento, nombre, apellido, direccion, telefono, email, contraseña, fechaNacimiento }) {
+    const tiposDeDocumentos = ["CC", "CE", "PP"];
 
-    if (!tipoDocumento || tipoDocumento.length < 1) {
-      throw new Error("El tipo de documento no puede estar vacío");
+
+    if (!tipoDocumento || tiposDeDocumentos === "default") {
+      throw new Error("Debe seleccionar una opción para la entidad de pago");
     }
-    if (tipoDocumento.length > 2 || tipoDocumento.length < 2) {
-      throw new Error("El tipo de documento debe tener 2 caracteres");
+    if (!tiposDeDocumentos.includes(tipoDocumento)) {
+      throw new Error("La opción seleccionada no es válida");
     }
     if (!noDocumento || noDocumento.length < 1) {
       throw new Error("El número de documento no puede estar vacío");

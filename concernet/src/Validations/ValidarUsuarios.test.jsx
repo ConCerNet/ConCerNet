@@ -40,7 +40,7 @@ describe("Validar Usuarios", () => {
       fechaNacimiento: "15/08/2006",
     });
     } catch (error) {
-      expect(error.message).toBe("El tipo de documento no puede estar vacío");
+      expect(error.message).toBe("Debe seleccionar una opción para la entidad de pago");
     }
   });
   
@@ -58,7 +58,7 @@ describe("Validar Usuarios", () => {
       fechaNacimiento: "15/08/2006",
     });
     } catch (error) {
-      expect(error.message).toBe("El tipo de documento debe tener 2 caracteres");
+      expect(error.message).toBe("La opción seleccionada no es válida");
     }
   });
 
@@ -423,7 +423,7 @@ describe("Validar Usuarios", () => {
       }
     });
     
-    it("Fecha de nacimiento con formato inválido", () => {
+    it("Más de 18 años", () => {
       try {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
