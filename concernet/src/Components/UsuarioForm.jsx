@@ -178,7 +178,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 select"
             required
           >
-            <option value="default" disabled>Seleccione un rol</option>
+            <option value="default" disabled selected>Seleccione un rol</option>
             <option value="Propietario">Propietario</option>
             <option value="Arrendatario">Arrendatario</option>
           </select>

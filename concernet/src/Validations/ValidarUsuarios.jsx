@@ -47,8 +47,8 @@ function ValidarUsuarios({ tipoDocumento, noDocumento, nombres, apellidos, direc
     if (!email || email.length < 1) {
       throw new Error("El email no puede estar vacío");
     }
-    if (email.length < 10) {
-      throw new Error("El email no puede tener menos de 10 caracteres");
+    if (email.length < 12) {
+      throw new Error("El email no puede tener menos de 12 caracteres");
     }
     if (email.length > 30) {
       throw new Error("El email no puede tener más de 30 caracteres");

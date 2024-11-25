@@ -162,7 +162,7 @@ describe("Validar Usuarios", () => {
   });
   
   
-  it("Apellidosapellidos vacío", () => {
+  it("Apellidos vacío", () => {
       try {
           ValidarUsuarios({ 
               tipoDocumento: "CC",
@@ -181,7 +181,7 @@ describe("Validar Usuarios", () => {
         }
     });
     
-    it("Apellidosapellidos de más de 25 caracteres", () => {
+    it("Apellidos de más de 25 caracteres", () => {
       try {
         ValidarUsuarios({ 
         tipoDocumento: "CC",
@@ -284,7 +284,7 @@ describe("Validar Usuarios", () => {
         nombres: "Carmen",
         apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
-        telefono: "3186934810",
+        telefono: "31869348106",
         email: "carmengutierrez@gmail.com",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
@@ -323,13 +323,13 @@ describe("Validar Usuarios", () => {
         apellidos: "Gutierrez",
         direccion: "Mz F Casa 7A",
         telefono: "3186934810",
-        email: "@gmail.co",
+        email: "c@gmail.co",
         contraseña: "Carmen12345",
         fechaNacimiento: "15/08/2006",
         rol: "Propietario"
       });
       } catch (error) {
-        expect(error.message).toBe("El email no puede tener menos de 10 caracteres");
+        expect(error.message).toBe("El email no puede tener menos de 12 caracteres");
       }
     });
     
