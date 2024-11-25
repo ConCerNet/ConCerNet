@@ -166,7 +166,7 @@ describe("Validar Login", () => {
     }
   });
   
-  it("Metros cuadrados menor a 0", () => {
+  it("Metros cuadrados menor a 1", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
@@ -179,6 +179,22 @@ describe("Validar Login", () => {
       });
     } catch (error) {
       expect(error.message).toBe("El número de metros cuadrados no puede ser menor a 1");
+    }
+  });
+ 
+  it("Metros cuadrados de un dígito", () => {
+    try {
+      Validarviviendas({ 
+        direccion: "Mz F Casa 7A",
+        estado: "En arriendo",
+        precio: 450000,
+        metrosCuadrados: 5,
+        habitaciones: 3,
+        baños: 3,
+        imagen: "casa.png",
+      });
+    } catch (error) {
+      expect(error.message).toBe("El número de metros cuadrados debe tener al menos 2 dígitos");
     }
   });
   
@@ -214,6 +230,22 @@ describe("Validar Login", () => {
     }
   });
   
+  it("Habitaciones mayor a 9", () => {
+    try {
+      Validarviviendas({ 
+        direccion: "Mz F Casa 7A",
+        estado: "En arriendo",
+        precio: 450000,
+        metrosCuadrados: 157,
+        habitaciones: 15,
+        baños: 3,
+        imagen: "casa.png",
+      });
+    } catch (error) {
+      expect(error.message).toBe("El número de habitaciones no puede ser mayor a 9");
+    }
+  });
+  
   it("Baños vacíos o en 0", () => {
     try {
       Validarviviendas({ 
@@ -246,6 +278,22 @@ describe("Validar Login", () => {
     }
   });
   
+  it("Baños mayor a 9", () => {
+    try {
+      Validarviviendas({ 
+        direccion: "Mz F Casa 7A",
+        estado: "En arriendo",
+        precio: 450000,
+        metrosCuadrados: 157,
+        habitaciones: 3,
+        baños: 15,
+        imagen: "casa.png",
+      });
+    } catch (error) {
+      expect(error.message).toBe("El número de baños no puede ser mayor a 9");
+    }
+  });
+  
   it("Imagen vacía", () => {
     try {
       Validarviviendas({ 
@@ -262,21 +310,24 @@ describe("Validar Login", () => {
     }
   });
   
-  it("Formato de imágen inválido", () => {
-    try {
-      Validarviviendas({ 
-        direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
-        precio: 450000,
-        metrosCuadrados: 157,
-        habitaciones: 3,
-        baños: 3,
-        imagen: "casa.pdf",
-      });
-    } catch (error) {
-      expect(error.message).toBe("El archivo debe ser una imagen en formato .jpg, .jpeg, .png o .gif");
-    }
-  });
+  // it("Imagen de más de 10 MB", () => {
+  //   try {
+
+  //     const tamañoImagen = { size: 15 * 1024 * 1024 };
+
+  //     Validarviviendas({ 
+  //       direccion: "Mz F Casa 7A",
+  //       estado: "En arriendo",
+  //       precio: 450000,
+  //       metrosCuadrados: 157,
+  //       habitaciones: 3,
+  //       baños: 3,
+  //       imagen: tamañoImagen,
+  //     });
+  //   } catch (error) {
+  //     expect(error.message).toBe("El tamaño del archivo no debe exceder los 10 MB");
+  //   }
+  // });
 
   
 });

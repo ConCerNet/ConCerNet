@@ -9,7 +9,7 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
         throw new Error("La direccion no puede tener menos de 3 caracteres");
     }
 
-    const estados = ["En venta", "En arriendo", "Vendida", "Arrendada", "No disponible"];
+    const estados = ["En venta", "En arriendo", "Vendida", "Arrendada"];
 
     if (!estado || estado === "default") {
         throw new Error("Debe seleccionar una opción para el estado de la vivienda");
@@ -39,9 +39,9 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
         throw new Error("El número de metros cuadrados no puede ser menor a 1");
     }
     
-    // if (metrosCuadrados.length < 2) {
-    //     throw new Error("El número de metros cuadrados debe tener al menos 2 dígitos");
-    // }
+    if (metrosCuadrados < 10) {
+        throw new Error("El número de metros cuadrados debe tener al menos 2 dígitos");
+    }
 
     if (!habitaciones) {
         throw new Error("El número de habitaciones no puede estar vacío o ser menor a 1");
@@ -49,6 +49,10 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
 
     if (habitaciones < 1) {
         throw new Error("El número de habitaciones no puede ser menor a 1");
+    }
+    
+    if (habitaciones > 9) {
+        throw new Error("El número de habitaciones no puede ser mayor a 9");
     }
 
     if (!baños) {
@@ -59,9 +63,9 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
         throw new Error("El número de baños no puede ser menor a 1");
     }
 
-    // if (baños.length > 1) {
-    //     throw new Error("El número de baños no puede ser mayor a 9");
-    // }
+    if (baños > 9) {
+        throw new Error("El número de baños no puede ser mayor a 9");
+    }
 
     // Validación para la imagen
     if (!imagen) {
@@ -77,8 +81,8 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
     }
 
     // Opcional: Validar el tamaño del archivo si estás trabajando con un objeto `File`
-    // if (imagen.size > 5 * 1024 * 1024) { // 5 MB
-    //     throw new Error("El tamaño del archivo no debe exceder los 5 MB");
+    // if (imagen.size > 10 * 1024 * 1024) { // 5 MB
+    //     throw new Error("El tamaño del archivo no debe exceder los 10 MB");
     // }
   
     return { direccion, estado, precio, metrosCuadrados, habitaciones, baños, imagen};
