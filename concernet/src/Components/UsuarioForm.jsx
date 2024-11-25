@@ -1,11 +1,30 @@
 import React from "react"
 import '../Styles/UsuarioForm.css'
+import ValidarUsuarios from "../Validations/ValidarUsuarios";
 
 export default function UsuarioForm({ usuario, onSubmit }) {
-  const handleSubmit = e => {
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
-    onSubmit({
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   const formData = new FormData(e.currentTarget)
+  //   onSubmit({
+  //     tipoDocumento: formData.get("tipoDocumento"),
+  //     noDocumento: formData.get("noDocumento"),
+  //     nombres: formData.get("nombres"),
+  //     apellidos: formData.get("apellidos"),
+  //     direccion: formData.get("direccion"),
+  //     telefono: formData.get("telefono"),
+  //     email: formData.get("email"),
+  //     contraseña: formData.get("contraseña"),
+  //     rol: formData.get("rol"),
+  //     fechaNacimiento: formData.get("fechaNacimiento")
+  //   })
+  // }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+
+    const datosFormulario = {
       tipoDocumento: formData.get("tipoDocumento"),
       noDocumento: formData.get("noDocumento"),
       nombres: formData.get("nombres"),
@@ -14,10 +33,23 @@ export default function UsuarioForm({ usuario, onSubmit }) {
       telefono: formData.get("telefono"),
       email: formData.get("email"),
       contraseña: formData.get("contraseña"),
+      fechaNacimiento: formData.get("fechaNacimiento"),
       rol: formData.get("rol"),
-      fechaNacimiento: formData.get("fechaNacimiento")
-    })
-  }
+    };
+
+    console.log("Datos enviados al validador:", datosFormulario);
+
+    try {
+      // Llama a la función de validación
+      ValidarUsuarios(datosFormulario);
+
+      // Si pasa la validación, llama al callback onSubmit
+      onSubmit(datosFormulario);
+    } catch (error) {
+      // Muestra el error al usuario
+      alert(error.message);
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -25,15 +57,15 @@ export default function UsuarioForm({ usuario, onSubmit }) {
         <div>
           <label className="block text-sm font-medium text-gray-700">Tipo de Documento</label>
           <select
-            name="TipoDocumento"
-            defaultValue={usuario?.tipoDocumento}
+            name="tipoDocumento"
+            defaultValue={usuario?.tipoDocumento || "default"}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 select"
             required
           >
-            <option value="default" disabled>Seleccione una opcion</option>
-            <option value="Cedula">CC</option>
-            <option value="CedulaExtrangeria">CE</option>
-            <option value="Pasaporte">PP</option>
+            <option value="default" disabled selected>Seleccione una opcion</option>
+            <option value="CC">CC</option>
+            <option value="CE">CE</option>
+            <option value="PP">PP</option>
           </select>
         </div>
 

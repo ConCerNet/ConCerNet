@@ -3,7 +3,7 @@ function ValidarUsuarios({ tipoDocumento, noDocumento, nombres, apellidos, direc
 
 
     if (!tipoDocumento || tiposDeDocumentos === "default") {
-      throw new Error("Debe seleccionar una opción para la entidad de pago");
+      throw new Error("Debe seleccionar un tipo de documento");
     }
     if (!tiposDeDocumentos.includes(tipoDocumento)) {
       throw new Error("La opción seleccionada no es válida");

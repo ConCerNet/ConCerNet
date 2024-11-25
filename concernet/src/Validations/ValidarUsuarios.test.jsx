@@ -43,7 +43,7 @@ describe("Validar Usuarios", () => {
       rol: "Propietario"
     });
     } catch (error) {
-      expect(error.message).toBe("Debe seleccionar una opción para la entidad de pago");
+      expect(error.message).toBe("Debe seleccionar un tipo de documento");
     }
   });
   
