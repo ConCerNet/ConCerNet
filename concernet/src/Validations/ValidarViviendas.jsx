@@ -9,7 +9,7 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
         throw new Error("La direccion no puede tener menos de 3 caracteres");
     }
 
-    const estados = ["En venta", "En arriendo", "Vendida", "Arrendada"];
+    const estados = ["En Venta", "En Arriendo", "Vendida", "Arrendada"];
 
     if (!estado || estado === "default") {
         throw new Error("Debe seleccionar una opción para el estado de la vivienda");
@@ -68,22 +68,22 @@ function Validarviviendas({ direccion, estado, precio, metrosCuadrados, habitaci
     }
 
     // Validación para la imagen
-    if (!imagen) {
+    if (!imagen || !imagen.name) {
         throw new Error("Debe adjuntar una imagen");
     }
 
     // Extensiones permitidas
     const extensionesValidas = ["jpg", "jpeg", "png", "gif"];
-    const extension = imagen.split(".").pop().toLowerCase();
+    const extension = imagen.name.split(".").pop().toLowerCase();
 
     if (!extensionesValidas.includes(extension)) {
         throw new Error("El archivo debe ser una imagen en formato .jpg, .jpeg, .png o .gif");
     }
 
     // Opcional: Validar el tamaño del archivo si estás trabajando con un objeto `File`
-    // if (imagen.size > 10 * 1024 * 1024) { // 5 MB
-    //     throw new Error("El tamaño del archivo no debe exceder los 10 MB");
-    // }
+    if (imagen.size > 10 * 1024 * 1024) { // 5 MB
+        throw new Error("El tamaño del archivo no debe exceder los 10 MB");
+    }
   
     return { direccion, estado, precio, metrosCuadrados, habitaciones, baños, imagen};
   }

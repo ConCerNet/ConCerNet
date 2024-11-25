@@ -37,8 +37,6 @@ export default function UsuarioForm({ usuario, onSubmit }) {
       rol: formData.get("rol"),
     };
 
-    console.log("Datos enviados al validador:", datosFormulario);
-
     try {
       // Llama a la función de validación
       ValidarUsuarios(datosFormulario);

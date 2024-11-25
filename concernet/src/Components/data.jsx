@@ -28,27 +28,25 @@ export const usuarios = [
   export const viviendas = [
     {
       id: 1,
-      titulo: "Ático de lujo con terraza",
       direccion: "Calle Mayor 123, Madrid",
+      estado: "En Venta",
       precio: 450000,
-      metros: 120,
+      metrosCuadrados: 120,
       habitaciones: 3,
       baños: 2,
-      imagen:
+      ImagenVivienda:
         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500",
-      estado: "disponible"
     },
     {
       id: 2,
-      titulo: "Chalet con jardín",
       direccion: "Avenida del Parque 45, Barcelona",
+      estado: "Arrendada",
       precio: 680000,
-      metros: 250,
+      metrosCuadrados: 250,
       habitaciones: 4,
       baños: 3,
-      imagen:
+      ImagenVivienda:
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500",
-      estado: "reservada"
     }
   ]
   

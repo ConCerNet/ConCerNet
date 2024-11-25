@@ -1,10 +1,11 @@
 const Validarviviendas = require("./ValidarViviendas");
 
 describe("Validar Login", () => {
+
   it("Datos de vivienda correctos", () => {
     const resultado = Validarviviendas({
       direccion: "Mz F Casa 7A",
-      estado: "En arriendo",
+      estado: "En Arriendo",
       precio: 450000,
       metrosCuadrados: 157,
       habitaciones: 3,
@@ -13,7 +14,7 @@ describe("Validar Login", () => {
     });
     expect(resultado).toEqual({
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -26,7 +27,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -42,7 +43,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Cra 33B #20A-34 Calle 4",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -58,7 +59,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Cr",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -122,7 +123,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 0,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -138,7 +139,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: -450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -154,7 +155,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 0,
         habitaciones: 3,
@@ -170,7 +171,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: -157,
         habitaciones: 3,
@@ -186,7 +187,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 5,
         habitaciones: 3,
@@ -202,7 +203,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 0,
@@ -218,7 +219,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: -3,
@@ -234,7 +235,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 15,
@@ -250,7 +251,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -266,7 +267,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -282,7 +283,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -298,7 +299,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -317,7 +318,7 @@ describe("Validar Login", () => {
 
   //     Validarviviendas({ 
   //       direccion: "Mz F Casa 7A",
-  //       estado: "En arriendo",
+  //       estado: "En Arriendo",
   //       precio: 450000,
   //       metrosCuadrados: 157,
   //       habitaciones: 3,
