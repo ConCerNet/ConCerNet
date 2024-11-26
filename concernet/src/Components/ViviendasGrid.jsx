@@ -51,6 +51,8 @@ export default function ViviendasGrid({ viviendas, onAdd, onEdit, onDelete }) {
                   className={`px-2 py-1 text-xs font-semibold rounded-full ${
                     (vivienda.estado === "En Venta" || vivienda.estado === "En Arriendo")
                       ? "bg-green-100 text-green-800"
+                      : (vivienda.estado === "Vendida" || vivienda.estado === "Arrendada") 
+                      ? "bg-red-100 text-red-800"
                       : "bg-red-100 text-red-800"
                   }`}
                 >
