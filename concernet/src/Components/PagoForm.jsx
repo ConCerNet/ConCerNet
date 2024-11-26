@@ -1,19 +1,52 @@
 import React from "react"
 import '../Styles/PagoForm.css'
+import ValidarPagos from "../Validations/ValidarPagos"
 
 export default function PagoForm({ pago, onSubmit }) {
+  // const handleSubmit = e => {
+  //   e.preventDefault()
+  //   const formData = new FormData(e.currentTarget)
+  //   onSubmit({
+  //     direccion: formData.get("direccion"),
+  //     titular: formData.get("titular"),
+  //     descripcion: formData.get("descripcion"),
+  //     valor: Number(formData.get("valor")),
+  //     fechaPago: formData.get("fechaPago"),
+  //     estado: formData.get("estado"),
+  //     entidadDePago: formData.get("entidadDePago")
+  //   })
+  // }
+
   const handleSubmit = e => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
-    onSubmit({
-      direccion: formData.get("direccion"),
-      titular: formData.get("titular"),
-      descripcion: formData.get("descripcion"),
-      valor: Number(formData.get("valor")),
-      fechaPago: formData.get("fechaPago"),
-      estado: formData.get("estado"),
-      entidadDePago: formData.get("entidadDePago")
-    })
+
+    // Obtener los datos del formulario
+    const direccion = formData.get("direccion")
+    const titular = formData.get("titular")
+    const descripcion = formData.get("descripcion")
+    const valor = Number(formData.get("valor"))
+    const fechaPago = formData.get("fechaPago")
+    const estado = formData.get("estado")
+    const entidadDePago = formData.get("entidadDePago")
+
+    try {
+      // Validar los datos antes de enviarlos
+      const validatedData = ValidarPagos({
+        direccion,
+        descripcion,
+        valor,
+        fechaPago,
+        estado,
+        entidadDePago
+      })
+
+      // Si la validación es exitosa, llamar a onSubmit
+      onSubmit(validatedData)
+    } catch (error) {
+      // Si ocurre un error en la validación, mostrar el mensaje
+      alert(error.message)
+    }
   }
 
   return (
@@ -102,8 +135,6 @@ export default function PagoForm({ pago, onSubmit }) {
           </select>
         </div>
       </div>
-
-
 
       <div>
         <label className="block text-sm font-medium text-gray-700">

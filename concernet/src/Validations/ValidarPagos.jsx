@@ -37,13 +37,8 @@ function ValidarPagos({ direccion, descripcion, valor, fechaPago, estado, entida
     if (fechaPago < fechaActual) {
       throw new Error("La fecha de pago no puede ser una que ya pasó");
     }
-
-    if (isNaN(factura.getTime())) {
-      throw new Error("El formato de la fecha de pago no es válido");
-    }
-
     
-    const estados = ["Mercado Pago", "Efectivo", "Transferencia"];
+    const estados = ["Pago", "Abono"];
   
     if (!estado || estados === "default") {
       throw new Error("Debe seleccionar un estado para el pago");
