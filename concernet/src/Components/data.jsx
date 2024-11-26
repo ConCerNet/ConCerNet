@@ -1,65 +1,75 @@
 export const usuarios = [
     {
-      id: 1,
-      nombre: "Ana García",
-      email: "ana.garcia@ejemplo.com",
-      rol: "admin",
-      fechaRegistro: "2024-01-15",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150"
+      tipoDocumento: "CC",
+      noDocumento: 123456789,
+      nombres: "Ana Carolina",
+      apellidos: "Hernandez Diaz",
+      direccion: "Mz I Casa 10B",
+      telefono: 3045161578,
+      email: "ana.hernandez@ejemplo.com",
+      rol: "Arrendatario",
+      contraseña: "anahernandez123",
+      fechaNacimiento: "2000-10-10"
     },
     {
-      id: 2,
-      nombre: "Carlos Rodríguez",
-      email: "carlos.rodriguez@ejemplo.com",
-      rol: "usuario",
-      fechaRegistro: "2024-02-20",
-      avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150"
+      tipoDocumento: "CC",
+      noDocumento: 987654321,
+      nombres: "Ana Carolina",
+      apellidos: "Hernandez Diaz",
+      direccion: "Mz I Casa 10B",
+      telefono: 3045161578,
+      email: "ana.hernandez@ejemplo.com",
+      rol: "Propietario",
+      contraseña: "anahernandez123",
+      fechaNacimiento: "2002-12-16"
     }
   ]
   
   export const viviendas = [
     {
       id: 1,
-      titulo: "Ático de lujo con terraza",
       direccion: "Calle Mayor 123, Madrid",
+      estado: "En Venta",
       precio: 450000,
-      metros: 120,
+      metrosCuadrados: 120,
       habitaciones: 3,
       baños: 2,
-      imagen:
+      ImagenVivienda:
         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500",
-      estado: "disponible"
     },
     {
       id: 2,
-      titulo: "Chalet con jardín",
       direccion: "Avenida del Parque 45, Barcelona",
+      estado: "Arrendada",
       precio: 680000,
-      metros: 250,
+      metrosCuadrados: 250,
       habitaciones: 4,
       baños: 3,
-      imagen:
+      ImagenVivienda:
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500",
-      estado: "reservada"
     }
   ]
   
   export const pagos = [
     {
       id: 1,
-      viviendaId: 1,
-      fecha: "2024-03-01",
-      monto: 150,
-      concepto: "Cuota mensual marzo",
-      estado: "pagado"
+      direccion: "Mz F Casa 10B",
+      titular: "Ana Carolina Hernandez",
+      descripcion: "Cuota mensual noviembre",
+      valor: 150000,
+      fechaPago: "2024-11-22",
+      estado: "Abono",
+      entidadDePago: "Efectivo"
     },
     {
       id: 2,
-      viviendaId: 2,
-      fecha: "2024-03-01",
-      monto: 200,
-      concepto: "Cuota mensual marzo",
-      estado: "pendiente"
+      direccion: "Mz b Casa 7A",
+      titular: "Carlos Alberto Guillen",
+      descripcion: "Cuota mensual noviembre",
+      valor: 200000,
+      fechaPago: "2024-11-25",
+      estado: "Pago",
+      entidadDePago: "Efectivo"
     }
   ]
   

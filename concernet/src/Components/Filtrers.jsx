@@ -15,8 +15,8 @@ export default function Filters({ filters, onFilterChange, type }) {
               <div className="relative">
                 <input
                   type="text"
-                  value={filters.nombre || ""}
-                  onChange={e => onFilterChange("nombre", e.target.value)}
+                  value={filters.nombres || ""}
+                  onChange={e => onFilterChange("nombres", e.target.value)}
                   placeholder="Buscar por nombre..."
                   className="pl-10 w-fullfilter rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
                 />
