@@ -53,19 +53,23 @@ export const usuarios = [
   export const pagos = [
     {
       id: 1,
-      viviendaId: 1,
-      fecha: "2024-03-01",
-      monto: 150,
-      concepto: "Cuota mensual marzo",
-      estado: "pagado"
+      direccion: "Mz F Casa 10B",
+      titular: "Ana Carolina Hernandez",
+      descripcion: "Cuota mensual noviembre",
+      valor: 150000,
+      fechaPago: "2024-11-22",
+      estado: "Abono",
+      entidadDePago: "Efectivo"
     },
     {
       id: 2,
-      viviendaId: 2,
-      fecha: "2024-03-01",
-      monto: 200,
-      concepto: "Cuota mensual marzo",
-      estado: "pendiente"
+      direccion: "Mz b Casa 7A",
+      titular: "Carlos Alberto Guillen",
+      descripcion: "Cuota mensual noviembre",
+      valor: 200000,
+      fechaPago: "2024-11-25",
+      estado: "Pago",
+      entidadDePago: "Efectivo"
     }
   ]
   

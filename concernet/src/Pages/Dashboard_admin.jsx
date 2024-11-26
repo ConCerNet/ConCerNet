@@ -49,12 +49,16 @@ function DashboardAdmin() {
     vivienda.direccion.toLowerCase().includes(filters.direccion.toLowerCase())
   )
 
-  const filteredPagos = pagos.filter(pago => {
-    const vivienda = viviendas.find(v => v.id === pago.viviendaId)
-    return vivienda?.direccion
-      .toLowerCase()
-      .includes(filters.direccion.toLowerCase())
-  })
+  // const filteredPagos = pagos.filter(pago => {
+  //   const vivienda = viviendas.find(v => v.id === pago.viviendaId)
+  //   return vivienda?.direccion
+  //     .toLowerCase()
+  //     .includes(filters.direccion.toLowerCase())
+  // })
+
+  const filteredPagos = pagos.filter(pago =>
+    pago.direccion.toLowerCase().includes(filters.direccion.toLowerCase())
+  )
 
   // Usuarios CRUD
   const handleAddUsuario = usuario => {
