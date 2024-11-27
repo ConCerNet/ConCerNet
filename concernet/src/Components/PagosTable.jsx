@@ -51,6 +51,9 @@ export default function PagosTable({
               <th className="px-6 py-3 text-left text-xs font-medium  uppercase tracking-wider">
                 Direccion
               </th>
+              {/* <th style={{textAlign: "center"}} className="px-6 py-3 text-left text-xs font-medium  uppercase tracking-wider">
+                Número de Casa
+              </th> */}
               <th className="px-6 py-3 text-left text-xs font-medium  uppercase tracking-wider">
                 Titular
               </th>
@@ -78,8 +81,11 @@ export default function PagosTable({
             {pagos.map(pago => (
               <tr key={pago.id} className="hover:bg-gray-50">
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {pago.direccion}
+                  {pago.direccion} {pago.noCasa}
                 </td>
+                {/* <td style={{textAlign: "center"}} className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {pago.noCasa}
+                </td> */}
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {pago.titular}
                 </td>
