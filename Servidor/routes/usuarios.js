@@ -4,7 +4,11 @@ const usuarioService = require("../Service/usuarios.js");
 
 usuarioRouter.post('/registrar', async function(req, res, next){
     try{
-        res.json(await usuarioService.nuevoUsuario(req.body));
+        const resultado = await usuarioService.nuevoUsuario(req.body);
+        if (!resultado.usuario) {
+            return res.status(400).json({mensaje: resultado.mensaje});
+        }
+        return res.status(200).json({mensaje: resultado.mensaje, usuario: resultado.usuario});
     } catch(err){
         console.error("Error mientras se registraba el usuario", err.message);
         next(err);
