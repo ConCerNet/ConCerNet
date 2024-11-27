@@ -33,8 +33,8 @@ function ValidarUsuarios({ tipoDocumento, noDocumento, nombres, apellidos, direc
     if (!apellidos || apellidos.length < 1) {
       throw new Error("El apellido no puede estar vacío");
     }
-    if (apellidos.length > 25) {
-      throw new Error("El apellido no puede tener más de 25 caracteres");
+    if (apellidos.length > 30) {
+      throw new Error("El apellido no puede tener más de 30 caracteres");
     }
 
     //Dirección
