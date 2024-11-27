@@ -5,6 +5,12 @@ const models = initModels(sequelize);
 
 async function nuevoUsuario(usuario){
     try{
+        const userExistente = await models.usuarios.findOne({
+            where: { nodocumento: usuario.nodocumento }
+        });
+        if(userExistente){
+            return { mensaje: "El usuario ya existe", usuario: null };
+        }
         const dbUsuario = await models.usuarios.create({...usuario,});
         return {mensaje: "Usuario registrado correctamente", usuario: dbUsuario};
     } catch(error){

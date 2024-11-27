@@ -30,8 +30,8 @@ function initModels(sequelize) {
   usuarios.hasMany(agendamientos, { as: "agendamientos", foreignKey: "idusuario"});
   detallesadmon.belongsTo(usuarios, { as: "idusuario_usuario", foreignKey: "idusuario"});
   usuarios.hasMany(detallesadmon, { as: "detallesadmons", foreignKey: "idusuario"});
-  viviendas.belongsTo(usuarios, { as: "idusuario_usuario", foreignKey: "idusuario"});
-  usuarios.hasMany(viviendas, { as: "viviendas", foreignKey: "idusuario"});
+  usuarios.belongsTo(viviendas, { as: "vivienda", foreignKey: "numerovivienda" });
+  viviendas.hasOne(usuarios, { as: "usuario", foreignKey: "numerovivienda" });  
 
   return {
     agendamientos,

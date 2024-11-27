@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../AuthProvider";
 import "../Styles/Login.css";
+import ValidarLogin from "../Validations/ValidarLogin";
 //import user from "../Images/user.svg";
 //import lock from "../Images/lock.svg";
 
@@ -14,16 +15,16 @@ const Login = () => {
 
     const handleSubmitEvent = (e) => {
         e.preventDefault();
-        if (input.username !== "" && input.password !== "") {
-            try {
-                auth.loginAction(input);
-            } catch (error) {
-                setMensaje(error.message);
-            }
-            return;
-        }
+        try {
+            // Validar los datos del usuario
+            ValidarLogin(input);
 
-        alert("El usuario y la contraseña es obligatorio");
+            // Si pasa la validación, intenta iniciar sesión
+            auth.loginAction(input);
+        } catch (error) {
+            // Mostrar mensaje de error
+            alert(error.message);
+        }
     };
 
     const handleInput = (e) => {
