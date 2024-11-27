@@ -71,6 +71,10 @@ const Management = () => {
                             <h3>Descripción</h3>
                             <p>{pago.descripcion}</p>
                         </div>
+                        <div className="precioFactura">
+                            <h3>Precio</h3>
+                            <p>{pago.monto.toLocaleString("es-ES")}$</p>
+                        </div>
                         <button className="botonPago" onClick={() => handleBuy(pago)}>
                             <img src={pagoimg} alt="pago" />
                             <p>Pagar</p>
