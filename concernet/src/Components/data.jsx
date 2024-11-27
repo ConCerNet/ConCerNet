@@ -4,7 +4,7 @@ export const usuarios = [
       noDocumento: 123456789,
       nombres: "Ana Carolina",
       apellidos: "Hernandez Diaz",
-      direccion: "Mz I Casa 10B",
+      direccion: "Manzana I",
       noCasa: "10",
       telefono: 3045161578,
       email: "ana.hernandez@ejemplo.com",
@@ -17,7 +17,7 @@ export const usuarios = [
       noDocumento: 987654321,
       nombres: "Carlos Alberto",
       apellidos: "Guillen Herrera",
-      direccion: "Mz g Casa 9a",
+      direccion: "Manzana G",
       noCasa: "9",
       telefono: 3044656158,
       email: "carlos.guillen@ejemplo.com",
@@ -30,9 +30,20 @@ export const usuarios = [
   export const viviendas = [
     {
       id: 1,
-      direccion: "Calle Mayor 123, Madrid",
+      direccion: "Mz F Casa 9B",
       estado: "En Venta",
-      precio: 450000,
+      precio: 150000000,
+      metrosCuadrados: 120,
+      habitaciones: 3,
+      baños: 2,
+      ImagenVivienda:
+        "https://definicion.de/wp-content/uploads/2011/01/casa-2.jpg",
+    },
+    {
+      id: 2,
+      direccion: "Mz B Casa 1A",
+      estado: "En Venta",
+      precio: 200000000,
       metrosCuadrados: 120,
       habitaciones: 3,
       baños: 2,
@@ -40,15 +51,26 @@ export const usuarios = [
         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500",
     },
     {
-      id: 2,
-      direccion: "Avenida del Parque 45, Barcelona",
-      estado: "Arrendada",
+      id: 3,
+      direccion: "Mz E Casa 5B",
+      estado: "En Arriendo",
       precio: 680000,
       metrosCuadrados: 250,
       habitaciones: 4,
       baños: 3,
       ImagenVivienda:
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500",
+        "https://arquitectopablorestrepo.com/wp-content/uploads/2024/06/Diseno-casa-campestre-La-Morada-1-600x600.jpg",
+    },
+    {
+      id: 4,
+      direccion: "Mz H Casa 4A",
+      estado: "En Arriendo",
+      precio: 700000,
+      metrosCuadrados: 250,
+      habitaciones: 4,
+      baños: 3,
+      ImagenVivienda:
+        "https://www.construyehogar.com/wp-content/uploads/2016/01/Casa-moderna-un-piso.jpg",
     }
   ]
   

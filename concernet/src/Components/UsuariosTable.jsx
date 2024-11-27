@@ -48,7 +48,7 @@ export default function UsuariosTable({ usuarios, onAdd, onEdit, onDelete }) {
                 Email
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                Direccion
+                Manzana
               </th>
               <th style={{textAlign: "center"}} className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Numero de Casa
