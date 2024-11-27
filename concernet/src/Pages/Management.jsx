@@ -1,6 +1,6 @@
 import NavBar from "../Components/NavBar";
 import "../Styles/Management.css";
-import pagoimg from "../Images/cash-register.svg";
+import pagoimg from "../Images/facturacion.png";
 import Footer from "../Components/Footer";
 import { useState } from "react";
 
@@ -52,7 +52,7 @@ const Management = () => {
             <NavBar />
             <br /><br /><br />
             <div className="containerManagement">
-                <h2>Lista de Pagos</h2>
+                <h1 className="lista-de-pagos">Lista de Pagos</h1>
                 {payments.map((pago) => (
                     <div key={pago.id} className="factura lista">
                         <div className="Usuario">

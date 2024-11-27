@@ -1,3 +1,13 @@
+/* Título de "Lista de Pagos" centrado con padding */
+.containerManagement .lista-de-pagos {
+    text-align: center; /* Centra el texto */
+    padding-top: 20px;  /* Añade espacio en la parte superior */
+    padding-bottom: 20px;  /* Añade espacio en la parte inferior */
+    font-size: 24px; /* Ajusta el tamaño de la fuente según sea necesario */
+    font-weight: bold;
+    color: darkblue; /* Puedes ajustar el color según tus preferencias */
+}
+
 /* Contenedor general de las facturas */
 .containerManagement .factura {
     background-color: #f9f9f9;
