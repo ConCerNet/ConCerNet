@@ -30,6 +30,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
       nombres: formData.get("nombres"),
       apellidos: formData.get("apellidos"),
       direccion: formData.get("direccion"),
+      noCasa: formData.get("noCasa"),
       telefono: formData.get("telefono"),
       email: formData.get("email"),
       contraseña: formData.get("contraseña"),
@@ -125,6 +126,23 @@ export default function UsuarioForm({ usuario, onSubmit }) {
         
         <div>
           <label className="block text-sm font-medium text-gray-700">
+            Numero de la Casa
+          </label>
+          <input
+            type="text"
+            name="noCasa"
+            defaultValue={usuario?.noCasa}
+            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
+            required
+          />
+        </div>
+        
+      </div>
+      
+      <div className="grid grid-cols-2 gap-4"> 
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
             Telefono
           </label>
           <input
@@ -135,9 +153,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
             required
           />
         </div>
-      </div>
-      
-      <div className="grid grid-cols-2 gap-4"> 
+        
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Fecha de Nacimiento
@@ -146,19 +162,6 @@ export default function UsuarioForm({ usuario, onSubmit }) {
             type="date"
             name="fechaNacimiento"
             defaultValue={usuario?.fechaNacimiento}
-            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
-            required
-          />
-        </div>
-        
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Correo Electronico
-          </label>
-          <input
-            type="email"
-            name="email"
-            defaultValue={usuario?.email}
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
@@ -195,6 +198,20 @@ export default function UsuarioForm({ usuario, onSubmit }) {
         </div>
       </div> */}
 
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Correo Electronico
+          </label>
+          <input
+            type="email"
+            name="email"
+            defaultValue={usuario?.email}
+            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
+            required
+          />
+        </div>
+
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Contraseña
@@ -207,6 +224,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
             required
           />
         </div>
+      </div>
       
       <div className="flex justify-end space-x-3 pt-4">
         <button
