@@ -1,5 +1,6 @@
 export const usuarios = [
     {
+      id: 1,
       tipoDocumento: "CC",
       noDocumento: 123456789,
       nombres: "Ana Carolina",
@@ -13,6 +14,7 @@ export const usuarios = [
       fechaNacimiento: "2000-10-10",
     },
     {
+      id: 2,
       tipoDocumento: "CC",
       noDocumento: 987654321,
       nombres: "Carlos Alberto",
