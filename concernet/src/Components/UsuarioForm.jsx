@@ -113,7 +113,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
       <div className="grid grid-cols-2 gap-4"> 
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Direccion
+            Manzana
           </label>
           <input
             type="text"
