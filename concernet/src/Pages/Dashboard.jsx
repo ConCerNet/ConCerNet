@@ -1,9 +1,11 @@
 import NavBar from "../Components/NavBar";
-import cancha from "../Images/Cancha.png";
-import parque from "../Images/Parque.png";
-import piscina from "../Images/Piscina.png";
-import salonSocial from "../Images/SalonSocial.png";
-import margaritas from "../Images/LasMargaritas.png";
+import cancha from "../Images/cancha_d.jpg";
+import parque from "../Images/parque1_d.jpg";
+import parque2 from "../Images/parque2_d.jpg";
+import salonSocial from "../Images/salon1_d.jpg";
+import salonSocial2 from "../Images/salon2_d.jpg";
+import salonSocial3 from "../Images/salon3_d.jpg";
+import margaritas from "../Images/login.jpg";
 import salaComedor from "../Images/Sala-comedor.png";
 import Cocina from "../Images/Cocina.png";
 import Balcon from "../Images/Balcon.png";
@@ -17,6 +19,18 @@ import Footer from "../Components/Footer";
 
 const images = [
   {
+    original: salonSocial3,
+    thumbnail: salonSocial3,
+  },
+  {
+    original: salonSocial2,
+    thumbnail: salonSocial2,
+  },
+  {
+    original: salonSocial,
+    thumbnail: salonSocial,
+  },
+  {
     original: cancha,
     thumbnail: cancha,
   },
@@ -25,12 +39,8 @@ const images = [
     thumbnail: parque,
   },
   {
-    original: piscina,
-    thumbnail: piscina,
-  },
-  {
-    original: salonSocial,
-    thumbnail: salonSocial,
+    original: parque2,
+    thumbnail: parque2,
   },
 ];
 
