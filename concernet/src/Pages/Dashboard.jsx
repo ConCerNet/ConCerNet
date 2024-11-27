@@ -5,7 +5,7 @@ import parque2 from "../Images/parque2_d.jpg";
 import salonSocial from "../Images/salon1_d.jpg";
 import salonSocial2 from "../Images/salon2_d.jpg";
 import salonSocial3 from "../Images/salon3_d.jpg";
-import margaritas from "../Images/LasMargaritas.png";
+import margaritas from "../Images/login.jpg";
 import salaComedor from "../Images/Sala-comedor.png";
 import Cocina from "../Images/Cocina.png";
 import Balcon from "../Images/Balcon.png";
