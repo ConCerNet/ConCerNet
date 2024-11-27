@@ -1,4 +1,4 @@
-function ValidarUsuarios({ tipoDocumento, noDocumento, nombres, apellidos, direccion, telefono, email, contraseña, fechaNacimiento, rol }) {
+function ValidarUsuarios({ tipoDocumento, noDocumento, nombres, apellidos, direccion, telefono, email, contraseña, fechaNacimiento }) {
     const tiposDeDocumentos = ["CC", "CE", "PP"];
 
 
@@ -84,16 +84,16 @@ function ValidarUsuarios({ tipoDocumento, noDocumento, nombres, apellidos, direc
         throw new Error("Debe ser mayor de 18 años");
     }
     
-    const roles = ["Arrendatario", "Propietario"];
+    // const roles = ["Arrendatario", "Propietario"];
 
-    if (!rol || rol === "default") {
-      throw new Error("Debe seleccionar una opción para el rol del usuario");
-    }
-    if (!roles.includes(rol)) {
-      throw new Error("La opción seleccionada no es válida");
-    }
+    // if (!rol || rol === "default") {
+    //   throw new Error("Debe seleccionar una opción para el rol del usuario");
+    // }
+    // if (!roles.includes(rol)) {
+    //   throw new Error("La opción seleccionada no es válida");
+    // }
   
-    return { tipoDocumento, noDocumento, nombres, apellidos, direccion, telefono, email, contraseña, fechaNacimiento, rol };
+    return { tipoDocumento, noDocumento, nombres, apellidos, direccion, telefono, email, contraseña, fechaNacimiento};
   }
   
   module.exports = ValidarUsuarios;
