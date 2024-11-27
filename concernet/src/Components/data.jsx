@@ -80,7 +80,7 @@ export const usuarios = [
     {
       id: 1,
       direccion: "Manzana F",
-      noCasa: "10",
+      noCasa: "Casa 10",
       titular: "Ana Carolina Hernandez",
       descripcion: "Cuota mensual noviembre",
       valor: 150000,
@@ -91,7 +91,7 @@ export const usuarios = [
     {
       id: 2,
       direccion: "Manzana B",
-      noCasa: "7",
+      noCasa: "Casa 7",
       titular: "Carlos Alberto Guillen",
       descripcion: "Cuota mensual noviembre",
       valor: 200000,
