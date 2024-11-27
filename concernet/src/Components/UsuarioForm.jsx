@@ -34,7 +34,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
       email: formData.get("email"),
       contraseña: formData.get("contraseña"),
       fechaNacimiento: formData.get("fechaNacimiento"),
-      rol: formData.get("rol"),
+      // rol: formData.get("rol"),
     };
 
     try {
@@ -165,7 +165,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      {/* <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Rol
@@ -193,7 +193,20 @@ export default function UsuarioForm({ usuario, onSubmit }) {
             required
           />
         </div>
-      </div>
+      </div> */}
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Contraseña
+          </label>
+          <input
+            type="password"
+            name="contraseña"
+            defaultValue={usuario?.contraseña}
+            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
+            required
+          />
+        </div>
       
       <div className="flex justify-end space-x-3 pt-4">
         <button

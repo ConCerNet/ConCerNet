@@ -50,9 +50,9 @@ export default function UsuariosTable({ usuarios, onAdd, onEdit, onDelete }) {
               <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Direccion
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+              {/* <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Rol
-              </th>
+              </th> */}
               <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Telefono
               </th>
@@ -80,9 +80,9 @@ export default function UsuariosTable({ usuarios, onAdd, onEdit, onDelete }) {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {usuario.direccion}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {usuario.rol}
-                </td>
+                </td> */}
 
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {usuario.telefono}

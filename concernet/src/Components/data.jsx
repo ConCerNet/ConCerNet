@@ -7,7 +7,7 @@ export const usuarios = [
       direccion: "Mz I Casa 10B",
       telefono: 3045161578,
       email: "ana.hernandez@ejemplo.com",
-      rol: "Arrendatario",
+      // rol: "Arrendatario",
       contraseña: "anahernandez123",
       fechaNacimiento: "2000-10-10"
     },
@@ -19,7 +19,7 @@ export const usuarios = [
       direccion: "Mz I Casa 10B",
       telefono: 3045161578,
       email: "ana.hernandez@ejemplo.com",
-      rol: "Propietario",
+      // rol: "Propietario",
       contraseña: "anahernandez123",
       fechaNacimiento: "2002-12-16"
     }
