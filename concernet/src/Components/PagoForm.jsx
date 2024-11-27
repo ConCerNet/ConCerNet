@@ -23,6 +23,7 @@ export default function PagoForm({ pago, onSubmit }) {
 
     // Obtener los datos del formulario
     const direccion = formData.get("direccion")
+    const noCasa = formData.get("noCasa")
     const titular = formData.get("titular")
     const descripcion = formData.get("descripcion")
     const valor = Number(formData.get("valor"))
@@ -34,6 +35,7 @@ export default function PagoForm({ pago, onSubmit }) {
       // Validar los datos antes de enviarlos
       const validatedData = ValidarPagos({
         direccion,
+        noCasa,
         descripcion,
         valor,
         fechaPago,
@@ -55,7 +57,7 @@ export default function PagoForm({ pago, onSubmit }) {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Direccion
+            Manzana
           </label>
           <input
             type="text"
@@ -65,7 +67,22 @@ export default function PagoForm({ pago, onSubmit }) {
             required
           />
         </div>
+        
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Número de Casa
+          </label>
+          <input
+            type="text"
+            name="noCasa"
+            defaultValue={pago?.noCasa}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
+            required
+          />
+        </div>
+      </div>
 
+      <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Titular
@@ -79,9 +96,6 @@ export default function PagoForm({ pago, onSubmit }) {
             disabled
           />
         </div>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">Descripción</label>
           <input
@@ -92,6 +106,9 @@ export default function PagoForm({ pago, onSubmit }) {
             required
           />
         </div>
+      </div>
+      
+      <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Valor ($)
@@ -104,9 +121,6 @@ export default function PagoForm({ pago, onSubmit }) {
             required
           />
         </div>
-      </div>
-      
-      <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Fecha de Pago
@@ -119,6 +133,9 @@ export default function PagoForm({ pago, onSubmit }) {
             required
           />
         </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Estado
@@ -134,23 +151,22 @@ export default function PagoForm({ pago, onSubmit }) {
             <option value="Abono">Abono</option>
           </select>
         </div>
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-gray-700">
-          Método de Pago
-        </label>
-        <select
-          name="entidadDePago"
-          defaultValue={pago?.entidadDePago}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 select"
-          required
-        >
-          <option value="default" disabled selected>Seleccione un método de pago</option>
-          <option value="Efectivo">Efectivo</option>
-          <option value="Transferencia">Transferencia</option>
-          <option value="Mercado Pago">Mercado Pago</option>
-        </select>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Método de Pago
+          </label>
+          <select
+            name="entidadDePago"
+            defaultValue={pago?.entidadDePago}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 select"
+            required
+          >
+            <option value="default" disabled selected>Seleccione un método de pago</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Transferencia">Transferencia</option>
+            <option value="Mercado Pago">Mercado Pago</option>
+          </select>
+        </div>
       </div>
       
       
