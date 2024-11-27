@@ -4,54 +4,40 @@ const ValidarLogin = require("./ValidarLogin");
 describe("Validar Login", () => {
   it("Datos de login correctos", () => {
     const resultado = ValidarLogin({
-      username: "Juan123",
+      username: "JuanCarmona",
       password: "jjcarmona321",
     });
     expect(resultado).toEqual({
-      username: "Juan123",
+      username: "JuanCarmona",
       password: "jjcarmona321",
     });
-  });
-
-  it("Usuario debajo del rango", () => {
-    try {
-      ValidarLogin({ 
-        username: "Jose", 
-        password: "jjcarmona321" });
-    } catch (error) {
-      expect(error.message).toBe("El nombre de usuario debe tener al menos 5 caracteres.");
-    }
-  });
-
-  it("Usuario encima del rango", () => {
-    try {
-      ValidarLogin({ username: "JuanJose987654321", password: "jjcarmona321" });
-    } catch (error) {
-      expect(error.message).toBe("El nombre de usuario debe tener menos de 17 caracteres.");
-    }
   });
 
   it("Usuario vacío", () => {
     try {
       ValidarLogin({ username: "", password: "jjcarmona321" });
     } catch (error) {
-      expect(error.message).toBe("El nombre de usuario debe tener al menos 5 caracteres.");
+      expect(error.message).toBe("El usuario no puede estar vacío");
     }
   });
 
-  it("Contraseña debajo del rango", () => {
+  it("Usuario debajo del rango", () => {
     try {
-      ValidarLogin({ username: "Juan123", password: "Juan10" });
+      ValidarLogin({ 
+        username: "", 
+        password: "jjcarmona321" });
     } catch (error) {
-      expect(error.message).toBe("La contraseña debe tener al menos 8 caracteres.");
+      expect(error.message).toBe("El usuario no puede estar vacío");
     }
   });
-
-  it("Contraseña encima del rango", () => {
+  
+  it("Usuario encima del rango", () => {
     try {
-      ValidarLogin({ username: "Juan123", password: "JuanJoseCarmona10" });
+      ValidarLogin({ 
+        username: "JuanEstebanCarmonaPeraltaa", 
+        password: "jjcarmona321" });
     } catch (error) {
-      expect(error.message).toBe("La contraseña debe tener menos de 15 caracteres.");
+      expect(error.message).toBe("El username no puede tener más de 25 caracteres");
     }
   });
 
@@ -59,7 +45,27 @@ describe("Validar Login", () => {
     try {
       ValidarLogin({ username: "Juan123", password: "" });
     } catch (error) {
-      expect(error.message).toBe("La contraseña debe tener al menos 8 caracteres.");
+      expect(error.message).toBe("La contraseña no puede estar vacía");
+    }
+  });
+
+  it("Contraseña debajo del rango", () => {
+    try {
+      ValidarLogin({ 
+        username: "JuanCarmona", 
+        password: "JuanCar" });
+    } catch (error) {
+      expect(error.message).toBe("La contraseña no puede tener menos de 8 caracteres");
+    }
+  });
+
+  it("Contraseña encima del rango", () => {
+    try {
+      ValidarLogin({ 
+        username: "JuanCarmona", 
+        password: "JuanJJoseCarmonaortiz" });
+    } catch (error) {
+      expect(error.message).toBe("La contraseña no puede tener más de 20 caracteres");
     }
   });
 });
