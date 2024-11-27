@@ -23,14 +23,6 @@ module.exports = function(sequelize, DataTypes) {
         key: 'idusuario'
       }
     },
-    idpagoagendamiento: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'pagosagendamiento',
-        key: 'idpagoagendamiento'
-      }
-    },
     fechaagendamiento: {
       type: DataTypes.DATEONLY,
       allowNull: false
@@ -46,6 +38,14 @@ module.exports = function(sequelize, DataTypes) {
     horaFin: {
       type: DataTypes.TIME,
       allowNull: false
+    },
+    idpagoagendamiento: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'pagosagendamiento',
+        key: 'idpagoagendamiento'
+      }
     }
   }, {
     sequelize,
@@ -75,7 +75,7 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "fk_idpagoagendamiento",
+        name: "fk_agendamientos_idpagoagendamiento",
         using: "BTREE",
         fields: [
           { name: "idpagoagendamiento" },

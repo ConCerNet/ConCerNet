@@ -55,7 +55,9 @@ usuarioRouter.get('/:id', async function (req, res, next) {
 
 usuarioRouter.post('/login', async function(req, res, next) {
     try {
-        const { nombre, contraseña } = req.body;
+        const {username, password} = req.body;
+        const nombre = username || req.body.nombre;
+        const contraseña = password || req.body.contraseña;
         const resultado = await usuarioService.autenticarUsuario(nombre, contraseña);
         
         if (!resultado.autenticado) {
