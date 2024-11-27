@@ -50,6 +50,9 @@ export default function UsuariosTable({ usuarios, onAdd, onEdit, onDelete }) {
               <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Direccion
               </th>
+              <th style={{textAlign: "center"}} className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                Numero de Casa
+              </th>
               {/* <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Rol
               </th> */}
@@ -79,6 +82,9 @@ export default function UsuariosTable({ usuarios, onAdd, onEdit, onDelete }) {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {usuario.direccion}
+                </td>
+                <td style={{textAlign: "center"}} className="py-4 whitespace-nowrap  text-gray-500">
+                  {usuario.noCasa}
                 </td>
                 {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {usuario.rol}

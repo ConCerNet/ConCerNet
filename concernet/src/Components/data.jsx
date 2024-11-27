@@ -5,23 +5,25 @@ export const usuarios = [
       nombres: "Ana Carolina",
       apellidos: "Hernandez Diaz",
       direccion: "Mz I Casa 10B",
+      noCasa: "10",
       telefono: 3045161578,
       email: "ana.hernandez@ejemplo.com",
       // rol: "Arrendatario",
       contraseña: "anahernandez123",
-      fechaNacimiento: "2000-10-10"
+      fechaNacimiento: "2000-10-10",
     },
     {
       tipoDocumento: "CC",
       noDocumento: 987654321,
-      nombres: "Ana Carolina",
-      apellidos: "Hernandez Diaz",
-      direccion: "Mz I Casa 10B",
-      telefono: 3045161578,
-      email: "ana.hernandez@ejemplo.com",
+      nombres: "Carlos Alberto",
+      apellidos: "Guillen Herrera",
+      direccion: "Mz g Casa 9a",
+      noCasa: "9",
+      telefono: 3044656158,
+      email: "carlos.guillen@ejemplo.com",
       // rol: "Propietario",
-      contraseña: "anahernandez123",
-      fechaNacimiento: "2002-12-16"
+      contraseña: "carlosguillen123",
+      fechaNacimiento: "2000-10-22,"
     }
   ]
   
