@@ -34,19 +34,19 @@
 }
 
 .boton-contactar {
-  font-size: 15px;
+  font-size: 12px;
   display: inline-block;
-  background-color: #0e9102;
+  background-color: #2563eb;
   color: white;
   font-weight: bold;
   text-decoration: none;
-  padding: 1rem 3rem;
+  padding: 0.5rem;
   text-align: center;
-  border: none;
-  margin-top: 15px;
+  border: solid 1px white;
+  border-radius: 5px;
 }
 
 .boton-contactar:hover {
-  background-color: #0c7e02;
+  background-color: #1f479d;
   cursor: pointer;
 }

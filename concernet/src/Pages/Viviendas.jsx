@@ -45,6 +45,9 @@ const ViviendasPage = () => {
                     {vivienda.precio.toLocaleString("es-ES")}$ 
                   </span>
                 </div>
+                <div className="flex justify-between items-center mb-4">
+                  <a href="https://api.whatsapp.com/send/?phone=573207388253&text&type=phone_number&app_absent=0" target="_blank"><button className="boton-contactar">Contactar</button></a>
+                </div>
                 <div className="flex justify-between text-gray-500 mb-4">
                   <div className="flex items-center">
                     <Square className="w-4 h-4 mr-1" />
