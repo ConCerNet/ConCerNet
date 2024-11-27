@@ -4,9 +4,6 @@ function ValidarLogin({ username, password }) {
     if (!username || username.length < 1) {
       throw new Error("Por favor ingrese un usuario");
     }
-    if (username.length <  3) {
-      throw new Error("El usuario no puede tener menos de 3 caracteres");
-    }
     if (username.length > 25) {
       throw new Error("El username no puede tener más de 25 caracteres");
     }

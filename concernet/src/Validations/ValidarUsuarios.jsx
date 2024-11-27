@@ -25,9 +25,6 @@ function ValidarUsuarios({ tipoDocumento, noDocumento, nombres, apellidos, direc
     if (!nombres || nombres.length < 1) {
       throw new Error("El nombre no puede estar vacío");
     }
-    if (nombres.length <  3) {
-      throw new Error("El nombre no puede tener menos de 3 caracteres");
-    }
     if (nombres.length > 25) {
       throw new Error("El nombre no puede tener más de 25 caracteres");
     }
