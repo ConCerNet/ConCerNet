@@ -17,7 +17,7 @@ const Management = () => {
     const [payments, setPayments] = useState([
         {
             id: 1,
-            usuario: "JJCO10",
+            usuario: "JCarmona",
             fecha: "2024/06/10",
             numero: 3,
             descripcion: "Pago de Administración del conjunto",
@@ -25,7 +25,7 @@ const Management = () => {
         },
         {
             id: 2,
-            usuario: "DPeralta",
+            usuario: "JCarmona",
             fecha: "2024/05/10",
             numero: 2,
             descripcion: "Pago de Administración del conjunto",
@@ -33,7 +33,7 @@ const Management = () => {
         },
         {
             id: 3,
-            usuario: "AGonzalez",
+            usuario: "JCarmona",
             fecha: "2024/04/10",
             numero: 1,
             descripcion: "Pago de Administración del conjunto",
