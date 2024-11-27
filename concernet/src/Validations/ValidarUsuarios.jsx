@@ -52,8 +52,8 @@ function ValidarUsuarios({ tipoDocumento, noDocumento, nombres, apellidos, direc
     if (!noCasa || noCasa.length < 1) {
       throw new Error("El número de la casa no puede estar vacío");
     }
-    if (noCasa.length > 10) {
-      throw new Error("El número de la casa no puede tener más de 10 caracteres");
+    if (noCasa.length > 5) {
+      throw new Error("El número de la casa no puede tener más de 5 caracteres");
     } 
 
     //telefono
