@@ -1,6 +1,6 @@
 import NavBar from "../Components/NavBar";
 import "../Styles/Management.css";
-import pagoimg from "../Images/cash-register.svg";
+import pagoimg from "../Images/facturacion.png";
 import Footer from "../Components/Footer";
 import { useState } from "react";
 
@@ -17,7 +17,7 @@ const Management = () => {
     const [payments, setPayments] = useState([
         {
             id: 1,
-            usuario: "JJCO10",
+            usuario: "JCarmona",
             fecha: "2024/06/10",
             numero: 3,
             descripcion: "Pago de Administración del conjunto",
@@ -25,7 +25,7 @@ const Management = () => {
         },
         {
             id: 2,
-            usuario: "DPeralta",
+            usuario: "JCarmona",
             fecha: "2024/05/10",
             numero: 2,
             descripcion: "Pago de Administración del conjunto",
@@ -33,7 +33,7 @@ const Management = () => {
         },
         {
             id: 3,
-            usuario: "AGonzalez",
+            usuario: "JCarmona",
             fecha: "2024/04/10",
             numero: 1,
             descripcion: "Pago de Administración del conjunto",
@@ -52,7 +52,7 @@ const Management = () => {
             <NavBar />
             <br /><br /><br />
             <div className="containerManagement">
-                <h2>Lista de Pagos</h2>
+                <h1 className="lista-de-pagos">Lista de Pagos</h1>
                 {payments.map((pago) => (
                     <div key={pago.id} className="factura lista">
                         <div className="Usuario">
@@ -70,6 +70,10 @@ const Management = () => {
                         <div className="descripcionFactura">
                             <h3>Descripción</h3>
                             <p>{pago.descripcion}</p>
+                        </div>
+                        <div className="precioFactura">
+                            <h3>Precio</h3>
+                            <p>{pago.monto.toLocaleString("es-ES")}$</p>
                         </div>
                         <button className="botonPago" onClick={() => handleBuy(pago)}>
                             <img src={pagoimg} alt="pago" />

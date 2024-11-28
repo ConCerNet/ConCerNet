@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     valorpago: {
-      type: DataTypes.DECIMAL(6,2),
+      type: DataTypes.DECIMAL(7,2),
       allowNull: false
     }
   }, {

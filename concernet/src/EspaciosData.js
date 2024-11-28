@@ -1,6 +1,6 @@
-import piscina from './Images/piscina.jpg';
-import cancha from './Images/cancha.jpg';
-import salon from './Images/salonSocial.jpeg';
+import piscina from './Images/piscina_d.jpg';
+import cancha from './Images/cancha_d.jpg';
+import salon from './Images/salon1_d.jpg';
 
 export const EspaciosData = [
         {

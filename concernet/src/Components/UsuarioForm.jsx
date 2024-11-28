@@ -1,39 +1,177 @@
-import React from "react"
+import { useState } from "react"
 import '../Styles/UsuarioForm.css'
+import ValidarUsuarios from "../Validations/ValidarUsuarios";
+import axios from "axios";
 
-export default function UsuarioForm({ usuario, onSubmit }) {
-  const handleSubmit = e => {
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
-    onSubmit({
-      tipoDocumento: formData.get("tipoDocumento"),
-      noDocumento: formData.get("noDocumento"),
-      nombres: formData.get("nombres"),
-      apellidos: formData.get("apellidos"),
-      direccion: formData.get("direccion"),
-      telefono: formData.get("telefono"),
-      fechaNacimiento: formData.get("fechaNacimiento"),
-      email: formData.get("email"),
-      rol: formData.get("rol"),
-      contraseña: formData.get("contraseña")
-    })
+const UsuarioForm = ({ usuario, onSubmit }) => {
+  const [tipodocumento, setTipoDocumento] = useState('');
+  const [nodocumento, setNoDocumento] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [contraseña, setContraseña] = useState('');
+  const [direccion, setDireccion] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [fechanacimiento, setFechaNacimiento] = useState('');
+  const [correo, setCorreo] = useState('');
+  const [numerovivienda, setNumeroVivienda] = useState('');
+  const [mensajeError, setMensajeError] = useState('');
+  
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   const formData = new FormData(e.currentTarget)
+  //   onSubmit({
+  //     tipoDocumento: formData.get("tipoDocumento"),
+  //     noDocumento: formData.get("noDocumento"),
+  //     nombres: formData.get("nombres"),
+  //     apellidos: formData.get("apellidos"),
+  //     direccion: formData.get("direccion"),
+  //     telefono: formData.get("telefono"),
+  //     email: formData.get("email"),
+  //     contraseña: formData.get("contraseña"),
+  //     rol: formData.get("rol"),
+  //     fechaNacimiento: formData.get("fechaNacimiento")
+  //   })
+  // }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const datosFormulario = {
+      tipoDocumento: tipodocumento,
+      noDocumento: nodocumento,
+      nombres: nombre,
+      apellidos: apellido,
+      direccion,
+      noCasa: numerovivienda,
+      telefono,
+      fechaNacimiento: fechanacimiento,
+      email: correo,
+      contraseña,
+    };
+
+    try {
+      // Validación de datos
+      ValidarUsuarios(datosFormulario);
+      
+      // Si las validaciones pasan, se realiza la solicitud
+      const response = await axios.post('http://localhost:4000/usuarios/registrar', {
+        tipodocumento,
+        nodocumento,
+        nombre,
+        apellido,
+        contraseña,
+        direccion,
+        telefono,
+        fechanacimiento,
+        correo,
+        numerovivienda,
+        idrol: 2, // Asigna el rol manualmente
+      });
+
+      
+
+      alert(response.data.mensaje);
+
+      // Limpieza del formulario
+      onSubmit(datosFormulario);
+      // setTipoDocumento('');
+      // setNoDocumento('');
+      // setNombre('');
+      // setApellido('');
+      // setContraseña('');
+      // setDireccion('');
+      // setTelefono('');
+      // setFechaNacimiento('');
+      // setCorreo('');
+      // setNumeroVivienda('');
+      // setMensajeError('');
+    } catch (error) {
+      // Manejando errores (tanto de validaciones como de servidor)
+      alert(error.message);
+      console.error('Error:', error);
+    }
+
+    // try {
+    //   ValidarUsuarios(datosFormulario);
+    //   const response = await axios.post('http://localhost:4000/usuarios/registrar', {
+    //     tipodocumento,
+    //     nodocumento,
+    //     nombre,
+    //     apellido,
+    //     contraseña,
+    //     direccion,
+    //     telefono,
+    //     fechanacimiento,
+    //     correo,
+    //     numerovivienda,
+    //     idrol: 2,
+    //   });
+    //   alert(response.data.mensaje);
+    //   setTipoDocumento('');
+    //   setNoDocumento('');
+    //   setNombre('');
+    //   setApellido('');
+    //   setContraseña('');
+    //   setDireccion('');
+    //   setTelefono('');
+    //   setFechaNacimiento('');
+    //   setCorreo('');
+    //   setNumeroVivienda('');
+    // } catch (error) {
+    //   console.error('Error al crear nuevo usuario', error);
+    // }
   }
 
+  const handleSubmit2 = async (e) => {
+    e.preventDefault();
+    console.log('hola');
+  }
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData(e.currentTarget);
+
+  //   const datosFormulario = {
+  //     tipoDocumento: formData.get("tipoDocumento"),
+  //     noDocumento: formData.get("noDocumento"),
+  //     nombres: formData.get("nombres"),
+  //     apellidos: formData.get("apellidos"),
+  //     direccion: formData.get("direccion"),
+  //     noCasa: formData.get("noCasa"),
+  //     telefono: formData.get("telefono"),
+  //     email: formData.get("email"),
+  //     contraseña: formData.get("contraseña"),
+  //     fechaNacimiento: formData.get("fechaNacimiento"),
+  //     // rol: formData.get("rol"),
+  //   };
+
+  //   try {
+  //     // Llama a la función de validación
+  //     ValidarUsuarios(datosFormulario);
+
+  //     // Si pasa la validación, llama al callback onSubmit
+  //     onSubmit(datosFormulario);
+  //   } catch (error) {
+  //     // Muestra el error al usuario
+  //     alert(error.message);
+  //   }
+  // };
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={onSubmit ? handleSubmit: handleSubmit2} className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">Tipo de Documento</label>
           <select
-            name="TipoDocumento"
-            defaultValue={usuario?.tipoDocumento}
+            name="tipoDocumento"
+            value={tipodocumento}
+            onChange={(e) => setTipoDocumento(e.target.value)}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 select"
             required
           >
-            <option value="default" disabled>Seleccione una opcion</option>
-            <option value="Cedula">CC</option>
-            <option value="CedulaExtrangeria">CE</option>
-            <option value="Pasaporte">PP</option>
+            <option value="" disabled>Seleccione una opcion</option>
+            <option value="CC">CC</option>
+            <option value="CE">CE</option>
+            <option value="PP">PP</option>
           </select>
         </div>
 
@@ -44,7 +182,8 @@ export default function UsuarioForm({ usuario, onSubmit }) {
           <input
             type="number"
             name="noDocumento"
-            defaultValue={usuario?.noDocumento}
+            value={nodocumento}
+            onChange={(e) => setNoDocumento(e.target.value)}
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
@@ -59,7 +198,8 @@ export default function UsuarioForm({ usuario, onSubmit }) {
           <input
             type="text"
             name="nombres"
-            defaultValue={usuario?.nombres}
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
@@ -72,7 +212,8 @@ export default function UsuarioForm({ usuario, onSubmit }) {
           <input
             type="text"
             name="apellidos"
-            defaultValue={usuario?.apellidos}
+            value={apellido}
+            onChange={(e) => setApellido(e.target.value)}
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
@@ -82,17 +223,36 @@ export default function UsuarioForm({ usuario, onSubmit }) {
       <div className="grid grid-cols-2 gap-4"> 
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Direccion
+            Manzana
           </label>
           <input
             type="text"
             name="direccion"
-            defaultValue={usuario?.direccion}
+            value={direccion}
+            onChange={(e) => setDireccion(e.target.value)}
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
         </div>
         
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Numero de la Casa
+          </label>
+          <input
+            type="text"
+            name="noCasa"
+            value={numerovivienda}
+            onChange={(e) => setNumeroVivienda(e.target.value)}
+            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
+            required
+          />
+        </div>
+        
+      </div>
+      
+      <div className="grid grid-cols-2 gap-4"> 
+
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Telefono
@@ -100,22 +260,8 @@ export default function UsuarioForm({ usuario, onSubmit }) {
           <input
             type="number"
             name="telefono"
-            defaultValue={usuario?.telefono}
-            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
-            required
-          />
-        </div>
-      </div>
-      
-      <div className="grid grid-cols-2 gap-4"> 
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Fecha de Nacimiento
-          </label>
-          <input
-            type="date"
-            name="fechaNacimiento"
-            defaultValue={usuario?.fechaNacimiento}
+            value={telefono}
+            onChange={(e) => setTelefono(e.target.value)}
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
@@ -123,19 +269,20 @@ export default function UsuarioForm({ usuario, onSubmit }) {
         
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Correo Electronico
+            Fecha de Nacimiento
           </label>
           <input
-            type="email"
-            name="email"
-            defaultValue={usuario?.email}
+            type="date"
+            name="fechaNacimiento"
+            value={fechanacimiento}
+            onChange={(e) => setFechaNacimiento(e.target.value)}
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      {/* <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Rol
@@ -146,7 +293,7 @@ export default function UsuarioForm({ usuario, onSubmit }) {
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 select"
             required
           >
-            <option value="default" disabled>Seleccione un rol</option>
+            <option value="default" disabled selected>Seleccione un rol</option>
             <option value="Propietario">Propietario</option>
             <option value="Arrendatario">Arrendatario</option>
           </select>
@@ -159,6 +306,36 @@ export default function UsuarioForm({ usuario, onSubmit }) {
             type="password"
             name="contraseña"
             defaultValue={usuario?.contraseña}
+            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
+            required
+          />
+        </div>
+      </div> */}
+
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Correo Electronico
+          </label>
+          <input
+            type="email"
+            name="email"
+            value={correo}
+            onChange={(e) => setCorreo(e.target.value)}
+            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Contraseña
+          </label>
+          <input
+            type="password"
+            name="contraseña"
+            value={contraseña}
+            onChange={(e) => setContraseña(e.target.value)}
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 input"
             required
           />
@@ -176,3 +353,4 @@ export default function UsuarioForm({ usuario, onSubmit }) {
     </form>
   )
 }
+export default UsuarioForm;

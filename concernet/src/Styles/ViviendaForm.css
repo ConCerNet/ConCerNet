@@ -1,0 +1,31 @@
+.input, .select {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 0.875rem;
+    box-sizing: border-box;
+  }
+
+  .input:focus, .select:focus {
+    border-color: #3b82f6; /* Blue 500 */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Blue ring */
+  }
+
+.inputImagen {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    /* border: 1px solid #d1d5db; */
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+    font-size: 0.875rem;
+    box-sizing: border-box;
+  }
+
+.inputImagen:focus {
+    border-color: #3b82f6; /* Blue 500 */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Blue ring */
+}

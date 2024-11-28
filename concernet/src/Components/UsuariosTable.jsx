@@ -48,11 +48,14 @@ export default function UsuariosTable({ usuarios, onAdd, onEdit, onDelete }) {
                 Email
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                Direccion
+                Manzana
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+              <th style={{textAlign: "center"}} className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                Numero de Casa
+              </th>
+              {/* <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Rol
-              </th>
+              </th> */}
               <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Telefono
               </th>
@@ -80,9 +83,12 @@ export default function UsuariosTable({ usuarios, onAdd, onEdit, onDelete }) {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {usuario.direccion}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {usuario.rol}
+                <td style={{textAlign: "center"}} className="py-4 whitespace-nowrap  text-gray-500">
+                  {usuario.noCasa}
                 </td>
+                {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {usuario.rol}
+                </td> */}
 
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {usuario.telefono}

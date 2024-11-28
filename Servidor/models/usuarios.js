@@ -44,7 +44,23 @@ module.exports = function(sequelize, DataTypes) {
     fechanacimiento: {
       type: DataTypes.DATEONLY,
       allowNull: false
-    }
+    },
+    direccion: {
+      type: DataTypes.STRING(20),
+      allowNull: false
+    },
+    correo: {
+      type: DataTypes.STRING(50),
+      allowNull: false
+    },
+    numerovivienda: {
+      type: DataTypes.STRING(3),
+      allowNull: false,
+      references: {
+        model: 'viviendas',
+        key: 'numerovivienda'
+      }
+    },
   }, {
     sequelize,
     tableName: 'usuarios',
@@ -73,6 +89,13 @@ module.exports = function(sequelize, DataTypes) {
           { name: "idrol" },
         ]
       },
+      {
+        name: "fk_numerovivienda",
+        using: "BTREE",
+        fields: [
+          { name: "numerovivienda" },
+        ]
+      }
     ]
   });
 };

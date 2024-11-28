@@ -1,10 +1,11 @@
 const Validarviviendas = require("./ValidarViviendas");
 
 describe("Validar Login", () => {
+
   it("Datos de vivienda correctos", () => {
     const resultado = Validarviviendas({
       direccion: "Mz F Casa 7A",
-      estado: "En arriendo",
+      estado: "En Arriendo",
       precio: 450000,
       metrosCuadrados: 157,
       habitaciones: 3,
@@ -13,7 +14,7 @@ describe("Validar Login", () => {
     });
     expect(resultado).toEqual({
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -26,7 +27,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -42,7 +43,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Cra 33B #20A-34 Calle 4",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -58,7 +59,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Cr",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -122,7 +123,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 0,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -130,7 +131,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El precio no puede estar vacío o ser menor a 1");
+      expect(error.message).toBe("El precio no puede estar vacío o en 0");
     }
   });
   
@@ -138,7 +139,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: -450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -146,7 +147,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El precio no puede ser menor a 1");
+      expect(error.message).toBe("El precio no puede ser menor o igual a 0");
     }
   });
   
@@ -154,7 +155,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 0,
         habitaciones: 3,
@@ -162,15 +163,15 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de metros cuadrados no puede estar vacío o ser menor a 1");
+      expect(error.message).toBe("El número de metros cuadrados no puede estar vacío o en 0");
     }
   });
   
-  it("Metros cuadrados menor a 0", () => {
+  it("Metros cuadrados menor a 1", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: -157,
         habitaciones: 3,
@@ -178,7 +179,23 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de metros cuadrados no puede ser menor a 1");
+      expect(error.message).toBe("El número de metros cuadrados no puede ser menor o igual a 0");
+    }
+  });
+ 
+  it("Metros cuadrados de un dígito", () => {
+    try {
+      Validarviviendas({ 
+        direccion: "Mz F Casa 7A",
+        estado: "En Arriendo",
+        precio: 450000,
+        metrosCuadrados: 5,
+        habitaciones: 3,
+        baños: 3,
+        imagen: "casa.png",
+      });
+    } catch (error) {
+      expect(error.message).toBe("El número de metros cuadrados debe tener al menos 2 dígitos");
     }
   });
   
@@ -186,7 +203,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 0,
@@ -194,7 +211,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de habitaciones no puede estar vacío o ser menor a 1");
+      expect(error.message).toBe("El número de habitaciones no puede estar vacío o en 0");
     }
   });
   
@@ -202,7 +219,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: -3,
@@ -210,7 +227,23 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de habitaciones no puede ser menor a 1");
+      expect(error.message).toBe("El número de habitaciones no puede ser menor o igual 0");
+    }
+  });
+  
+  it("Habitaciones mayor a 9", () => {
+    try {
+      Validarviviendas({ 
+        direccion: "Mz F Casa 7A",
+        estado: "En Arriendo",
+        precio: 450000,
+        metrosCuadrados: 157,
+        habitaciones: 15,
+        baños: 3,
+        imagen: "casa.png",
+      });
+    } catch (error) {
+      expect(error.message).toBe("El número de habitaciones no puede ser mayor a 9");
     }
   });
   
@@ -218,7 +251,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -226,7 +259,7 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de baños no puede estar vacío o ser menor a 1");
+      expect(error.message).toBe("El número de baños no puede estar vacío o en 0");
     }
   });
   
@@ -234,7 +267,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -242,7 +275,23 @@ describe("Validar Login", () => {
         imagen: "casa.png",
       });
     } catch (error) {
-      expect(error.message).toBe("El número de baños no puede ser menor a 1");
+      expect(error.message).toBe("El número de baños no puede ser menor o igual a 0");
+    }
+  });
+  
+  it("Baños mayor a 9", () => {
+    try {
+      Validarviviendas({ 
+        direccion: "Mz F Casa 7A",
+        estado: "En Arriendo",
+        precio: 450000,
+        metrosCuadrados: 157,
+        habitaciones: 3,
+        baños: 15,
+        imagen: "casa.png",
+      });
+    } catch (error) {
+      expect(error.message).toBe("El número de baños no puede ser mayor a 9");
     }
   });
   
@@ -250,7 +299,7 @@ describe("Validar Login", () => {
     try {
       Validarviviendas({ 
         direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
+        estado: "En Arriendo",
         precio: 450000,
         metrosCuadrados: 157,
         habitaciones: 3,
@@ -262,21 +311,24 @@ describe("Validar Login", () => {
     }
   });
   
-  it("Formato de imágen inválido", () => {
-    try {
-      Validarviviendas({ 
-        direccion: "Mz F Casa 7A",
-        estado: "En arriendo",
-        precio: 450000,
-        metrosCuadrados: 157,
-        habitaciones: 3,
-        baños: 3,
-        imagen: "casa.pdf",
-      });
-    } catch (error) {
-      expect(error.message).toBe("El archivo debe ser una imagen en formato .jpg, .jpeg, .png o .gif");
-    }
-  });
+  // it("Imagen de más de 10 MB", () => {
+  //   try {
+
+  //     const tamañoImagen = { size: 15 * 1024 * 1024 };
+
+  //     Validarviviendas({ 
+  //       direccion: "Mz F Casa 7A",
+  //       estado: "En Arriendo",
+  //       precio: 450000,
+  //       metrosCuadrados: 157,
+  //       habitaciones: 3,
+  //       baños: 3,
+  //       imagen: tamañoImagen,
+  //     });
+  //   } catch (error) {
+  //     expect(error.message).toBe("El tamaño del archivo no debe exceder los 10 MB");
+  //   }
+  // });
 
   
 });
