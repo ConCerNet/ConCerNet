@@ -7,6 +7,7 @@ import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import ValidarAgendamiento from "../Validations/ValidarAgendamiento";
 
 const Agendamiento = () => {
   const { id } = useParams();
@@ -45,6 +46,8 @@ const Agendamiento = () => {
     e.preventDefault();
     try {
       
+      ValidarAgendamiento({ idusuario, fechaagendamiento, horaInicio, horaFin });
+
       const responseUsuario = await axios.get(`http://localhost:4000/usuarios/${idusuario}`);
       if(responseUsuario.data.mensaje === "Usuario no encontrado"){
         alert('El usuario no existe');
@@ -92,6 +95,7 @@ const Agendamiento = () => {
       alert("Agendamiento creado con éxito");
       navigate("/Dashboard");
     } catch (error) {
+      alert(error.message);
       console.error('Error al agendar', error);
     }
   };

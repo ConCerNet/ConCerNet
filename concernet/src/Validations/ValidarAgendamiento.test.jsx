@@ -83,7 +83,7 @@ describe("Validar Agendamiento", () => {
         horaFin: "18:00",
       });
     } catch (error) {
-      expect(error.message).toBe("El horario ya no está disponible.");
+      expect(error.message).toBe("El horario no está disponible.");
     }
   });
 
@@ -100,7 +100,7 @@ describe("Validar Agendamiento", () => {
     }
   });
   
-  it("horaInicio mayor o igual a horaFin", () => {
+  it("Hora de Inicio mayor o igual a hora de Finalizacion", () => {
     try {
       validarAgendamiento({
         idusuario: "1121357955",

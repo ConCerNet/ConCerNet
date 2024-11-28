@@ -31,7 +31,7 @@ function validarAgendamiento({ idusuario, fechaagendamiento, horaInicio, horaFin
 
     //horario no disponible
     if (fechaagendamiento === fechaActual && horaInicio <= horaActual) {
-      throw new Error("El horario ya no está disponible.");
+      throw new Error("El horario no está disponible.");
     }
   
     //hora de finalizacion
