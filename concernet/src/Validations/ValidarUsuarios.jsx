@@ -17,7 +17,7 @@ function ValidarUsuarios({ tipoDocumento, noDocumento, nombres, apellidos, direc
     if (noDocumento.length < 8 || noDocumento < 10000000) {
       throw new Error("El número de documento debe tener al menos 8 digitos");
     }
-    if (noDocumento.length < 10 || noDocumento > 9999999999) {
+    if (noDocumento.length > 10 || noDocumento > 9999999999) {
       throw new Error("El número de documento no puede tener más de 10 dígitos");
     }
 
