@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "react-scripts": "^5.0.1",
+    "sonarqube-scanner": "^4.2.6"
+  },
+  "scripts": {
+    "test:coverage": "react-scripts test --coverage"
+  }
+}
