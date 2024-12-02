@@ -12,7 +12,6 @@
 .containerManagement .factura {
     background-color: #f9f9f9;
     padding: 10px 15px; /* Reducido para mayor compactación */
-    margin-bottom: 15px; /* Menor separación entre facturas */
     border-radius: 12px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     display: grid;
