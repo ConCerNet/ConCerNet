@@ -24,9 +24,9 @@ usuarioRouter.get('/', async function(req, res, next){
         }
 });
 
-usuarioRouter.get('/:id', async function (req, res, next) {
+usuarioRouter.get('/:nodocumento', async function (req, res, next) {
   try {
-    const usuario = await usuarioService.buscarUsuario(req.params.id);
+    const usuario = await usuarioService.buscarUsuarioCedula(req.params.nodocumento);
     if (!usuario) {
       return res.status(404).json({ mensaje: "Usuario no encontrado" });
     }

@@ -26,8 +26,8 @@ function initModels(sequelize) {
   pagosagendamiento.hasMany(agendamientos, { as: "agendamientos", foreignKey: "idpagoagendamiento"});
   usuarios.belongsTo(roles, { as: "idrol_role", foreignKey: "idrol"});
   roles.hasMany(usuarios, { as: "usuarios", foreignKey: "idrol"});
-  agendamientos.belongsTo(usuarios, { as: "idusuario_usuario", foreignKey: "idusuario"});
-  usuarios.hasMany(agendamientos, { as: "agendamientos", foreignKey: "idusuario"});
+  agendamientos.belongsTo(usuarios, { as: "nodocumento_usuario", foreignKey: "nodocumento"});
+  usuarios.hasMany(agendamientos, { as: "agendamientos", foreignKey: "nodocumento"});
   detallesadmon.belongsTo(usuarios, { as: "idusuario_usuario", foreignKey: "idusuario"});
   usuarios.hasMany(detallesadmon, { as: "detallesadmons", foreignKey: "idusuario"});
   usuarios.belongsTo(viviendas, { as: "vivienda", foreignKey: "numerovivienda" });
