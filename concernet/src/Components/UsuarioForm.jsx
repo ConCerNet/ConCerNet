@@ -14,6 +14,8 @@ const UsuarioForm = ({ usuario, onSubmit }) => {
   const [fechanacimiento, setFechaNacimiento] = useState('');
   const [correo, setCorreo] = useState('');
   const [numerovivienda, setNumeroVivienda] = useState('');
+  const [mensajeError, setMensajeError] = useState('');
+  
   // const handleSubmit = (e) => {
   //   e.preventDefault()
   //   const formData = new FormData(e.currentTarget)
@@ -33,7 +35,24 @@ const UsuarioForm = ({ usuario, onSubmit }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const datosFormulario = {
+      tipoDocumento: tipodocumento,
+      noDocumento: nodocumento,
+      nombres: nombre,
+      apellidos: apellido,
+      direccion,
+      noCasa: numerovivienda,
+      telefono,
+      fechaNacimiento: fechanacimiento,
+      email: correo,
+      contraseña,
+    };
+
     try {
+      // Validación de datos
+      ValidarUsuarios(datosFormulario);
+      
+      // Si las validaciones pasan, se realiza la solicitud
       const response = await axios.post('http://localhost:4000/usuarios/registrar', {
         tipodocumento,
         nodocumento,
@@ -45,22 +64,61 @@ const UsuarioForm = ({ usuario, onSubmit }) => {
         fechanacimiento,
         correo,
         numerovivienda,
-        idrol: 2,
+        idrol: 2, // Asigna el rol manualmente
       });
+
+      
+
       alert(response.data.mensaje);
-      setTipoDocumento('');
-      setNoDocumento('');
-      setNombre('');
-      setApellido('');
-      setContraseña('');
-      setDireccion('');
-      setTelefono('');
-      setFechaNacimiento('');
-      setCorreo('');
-      setNumeroVivienda('');
+
+      // Limpieza del formulario
+      onSubmit(datosFormulario);
+      // setTipoDocumento('');
+      // setNoDocumento('');
+      // setNombre('');
+      // setApellido('');
+      // setContraseña('');
+      // setDireccion('');
+      // setTelefono('');
+      // setFechaNacimiento('');
+      // setCorreo('');
+      // setNumeroVivienda('');
+      // setMensajeError('');
     } catch (error) {
-      console.error('Error al crear nuevo usuario', error);
+      // Manejando errores (tanto de validaciones como de servidor)
+      alert(error.message);
+      console.error('Error:', error);
     }
+
+    // try {
+    //   ValidarUsuarios(datosFormulario);
+    //   const response = await axios.post('http://localhost:4000/usuarios/registrar', {
+    //     tipodocumento,
+    //     nodocumento,
+    //     nombre,
+    //     apellido,
+    //     contraseña,
+    //     direccion,
+    //     telefono,
+    //     fechanacimiento,
+    //     correo,
+    //     numerovivienda,
+    //     idrol: 2,
+    //   });
+    //   alert(response.data.mensaje);
+    //   setTipoDocumento('');
+    //   setNoDocumento('');
+    //   setNombre('');
+    //   setApellido('');
+    //   setContraseña('');
+    //   setDireccion('');
+    //   setTelefono('');
+    //   setFechaNacimiento('');
+    //   setCorreo('');
+    //   setNumeroVivienda('');
+    // } catch (error) {
+    //   console.error('Error al crear nuevo usuario', error);
+    // }
   }
 
   const handleSubmit2 = async (e) => {
