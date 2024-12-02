@@ -43,18 +43,17 @@ async function buscarUsuario(id) {
 }
 
 
-async function buscarUsuarioCedula(cedula) {
+async function buscarUsuarioCedula(nodocumento) {
     try {
      const usuario = await models.usuarios.findOne({
-        where: {
-            nodocumento: cedula}
+        where: { nodocumento: nodocumento },
      });
-     if(usuario){
-        return {mensaje: "El usuario fue encontrado", usuario};
+     if(!usuario){
+        return {mensaje: "Usuario no encontrado por cédula", usuario: []};
      }
-     return {mensaje: "Usuario no encontrado por cédula"};
+     return {mensaje: "El usuario fue encontrado", usuario};
     } catch (error) {
-        return {mensaje: 'Error al encontrar usuario'};
+        throw new Error('Error al encontrar usuario');
     }
 }
 
