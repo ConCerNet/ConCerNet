@@ -11,7 +11,7 @@ import axios from "axios";
 const Agendamiento = () => {
   const { id } = useParams();
   const espacio = espacios.find((espacio) => espacio.id === parseInt(id));
-  const [idusuario, setIdUsuario] = useState('');
+  const [nodocumento, setNoDocumento] = useState('');
   const [nombreusuario, setNombreUsuario] = useState('');
   const [fechaagendamiento, setFechaAgendamiento] = useState('');
   const [horaInicio, setHoraInicio] = useState('');
@@ -19,34 +19,35 @@ const Agendamiento = () => {
   const navigate = useNavigate();
 
   const handleChangeCedula = async (valor) => {
-
-    setIdUsuario(valor);
-
-    if(valor === ''){
+    setNoDocumento(valor);
+  
+    if (valor === '') {
       setNombreUsuario('');
       return;
     }
-
+  
     try {
-
       const responseComplete = await axios.get(`http://localhost:4000/usuarios/${valor}`);
-      const user = responseComplete.data;
+      const user = responseComplete.data.usuario;
+      const error = responseComplete.data;
 
+      if(error.mensaje === "Usuario no encontrado por cédula"){
+        setNombreUsuario('Usuario no encontrado');
+        return
+      }
       setNombreUsuario(user.nombre);
-
     } catch (error) {
-      
       console.error("Error al buscar usuario:", error);
       setNombreUsuario('Usuario no encontrado');
     }
-  }
-
+  };
+  
   const agendarEspacio = async (e) => {
     e.preventDefault();
     try {
       
-      const responseUsuario = await axios.get(`http://localhost:4000/usuarios/${idusuario}`);
-      if(responseUsuario.data.mensaje === "Usuario no encontrado"){
+      const responseUsuario = await axios.get(`http://localhost:4000/usuarios/${nodocumento}`);
+      if(responseUsuario.data.mensaje === "Usuario no encontrado por cédula"){
         alert('El usuario no existe');
         return;
       }
@@ -82,7 +83,7 @@ const Agendamiento = () => {
 
       const response = await axios.post('http://localhost:4000/agendamiento/agendar', {
         idespacio: id,
-        idusuario,
+        nodocumento,
         fechaagendamiento,
         horaInicio,
         horaFin,
@@ -109,10 +110,10 @@ const Agendamiento = () => {
           </div>
           <div className="calendarioimputs">
             <label for="cedula"><b>Cédula:</b></label>
-            <input type="number" id="cedula" name="cedula" value={idusuario} onChange={(e) => handleChangeCedula(e.target.value)} required/>
+            <input type="number" id="cedula" name="cedula" value={nodocumento} onChange={(e) => handleChangeCedula(e.target.value)} required/>
 
             <label for="nombre"><b>Nombre:</b></label>
-            <input type="text" disabled id="nombre" name="nombre" value={nombreusuario} required/>
+            <input type="text" disabled id="nombre" name="nombre" value={nombreusuario} readOnly/>
             
             <label for="fecha"><b>Fecha:</b></label>
             <input type="date" id="fecha" name="fecha" value={fechaagendamiento} onChange={(e) => setFechaAgendamiento(e.target.value)} required/>

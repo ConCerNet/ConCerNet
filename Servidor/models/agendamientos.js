@@ -15,14 +15,6 @@ module.exports = function(sequelize, DataTypes) {
         key: 'idespacio'
       }
     },
-    idusuario: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'usuarios',
-        key: 'idusuario'
-      }
-    },
     fechaagendamiento: {
       type: DataTypes.DATEONLY,
       allowNull: false
@@ -46,6 +38,14 @@ module.exports = function(sequelize, DataTypes) {
         model: 'pagosagendamiento',
         key: 'idpagoagendamiento'
       }
+    },
+    nodocumento: {
+      type: DataTypes.STRING(12),
+      allowNull: false,
+      references: {
+        model: 'usuarios',
+        key: 'nodocumento'
+      }
     }
   }, {
     sequelize,
@@ -68,17 +68,17 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "fk_idusuario",
-        using: "BTREE",
-        fields: [
-          { name: "idusuario" },
-        ]
-      },
-      {
         name: "fk_agendamientos_idpagoagendamiento",
         using: "BTREE",
         fields: [
           { name: "idpagoagendamiento" },
+        ]
+      },
+      {
+        name: "fk_nodocumento",
+        using: "BTREE",
+        fields: [
+          { name: "nodocumento" },
         ]
       },
     ]
