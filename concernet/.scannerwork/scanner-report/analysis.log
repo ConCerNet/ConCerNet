@@ -1,0 +1,66 @@
+SonarCloud plugins:
+  - Text Code Quality and Security 2.19.0.4883 (textenterprise)
+  - JaCoCo 1.3.0.1538 (jacoco)
+  - License for SonarLint 8.0.0.58332 (license)
+  - IaC Code Quality and Security 1.39.0.13718 (iacenterprise)
+  - IaC Code Quality and Security 1.39.0.13718 (iac)
+Project server settings:
+  - sonar.abap.file.suffixes=.abap,.ab4,.flow,.asprog
+  - sonar.apex.file.suffixes=.cls,.trigger
+  - sonar.autoscan.enabled=false
+  - sonar.azureresourcemanager.file.suffixes=.bicep
+  - sonar.c.file.suffixes=.c,.h
+  - sonar.cpp.file.suffixes=.cc,.cpp,.cxx,.c++,.hh,.hpp,.hxx,.h++,.ipp,.ixx,.mxx,.cppm,.ccm,.cxxm,.c++m
+  - sonar.cs.file.suffixes=.cs,.razor
+  - sonar.css.file.suffixes=.css,.less,.scss,.sass
+  - sonar.dart.file.suffixes=.dart
+  - sonar.docker.file.patterns=Dockerfile,*.dockerfile
+  - sonar.flex.file.suffixes=as
+  - sonar.go.file.suffixes=.go
+  - sonar.html.file.suffixes=.html,.xhtml,.cshtml,.vbhtml,.aspx,.ascx,.rhtml,.erb,.shtm,.shtml,.cmp,.twig
+  - sonar.ipynb.file.suffixes=ipynb
+  - sonar.java.file.suffixes=.java,.jav
+  - sonar.java.jvmframeworkconfig.file.patterns=**/src/main/resources/**/*app*.properties,**/src/main/resources/**/*app*.yaml,**/src/main/resources/**/*app*.yml
+  - sonar.javascript.file.suffixes=.js,.jsx,.cjs,.mjs,.vue
+  - sonar.jcl.file.suffixes=.jcl
+  - sonar.json.file.suffixes=.json
+  - sonar.jsp.file.suffixes=.jsp,.jspf,.jspx
+  - sonar.kotlin.file.suffixes=.kt,.kts
+  - sonar.objc.file.suffixes=.m
+  - sonar.php.file.suffixes=php,php3,php4,php5,phtml,inc
+  - sonar.pli.file.suffixes=.pli
+  - sonar.plsql.file.suffixes=sql,tab,pkb
+  - sonar.python.file.suffixes=py
+  - sonar.rpg.file.suffixes=.rpg,.rpgle,.sqlrpgle,.RPG,.RPGLE,.SQLRPGLE
+  - sonar.ruby.file.suffixes=.rb
+  - sonar.scala.file.suffixes=.scala
+  - sonar.swift.file.suffixes=.swift
+  - sonar.terraform.file.suffixes=.tf
+  - sonar.tsql.file.suffixes=.tsql
+  - sonar.typescript.file.suffixes=.ts,.tsx,.cts,.mts
+  - sonar.vb.file.suffixes=.bas,.frm,.ctl
+  - sonar.vbnet.file.suffixes=.vb
+  - sonar.xml.file.suffixes=.xml,.xsd,.xsl,.config
+  - sonar.yaml.file.suffixes=.yaml,.yml
+Project scanner properties:
+  - sonar.host.url=https://sonarcloud.io
+  - sonar.organization=concernet
+  - sonar.projectBaseDir=C:\Users\Andresito\Documents\AppWeb\concernet
+  - sonar.projectKey=ConCerNet_ConCerNet
+  - sonar.projectName=ConCerNet
+  - sonar.projectVersion=1.0
+  - sonar.scanner.apiBaseUrl=https://api.sonarcloud.io
+  - sonar.scanner.app=ScannerCLI
+  - sonar.scanner.appVersion=6.2.1.4610
+  - sonar.scanner.arch=amd64
+  - sonar.scanner.bootstrapStartTime=1733240988506
+  - sonar.scanner.home=C:\sonar-scanner-6.2.1.4610-windows-x64\bin\..
+  - sonar.scanner.os=windows
+  - sonar.scanner.wasEngineCacheHit=true
+  - sonar.scanner.wasJreCacheHit=HIT
+  - sonar.sources=.
+  - sonar.testExecutionReportPaths=coverage/test-report.xml
+  - sonar.tests=src
+  - sonar.token=******
+  - sonar.verbose=true
+  - sonar.working.directory=C:\Users\Andresito\Documents\AppWeb\concernet\.scannerwork
